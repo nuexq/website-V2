@@ -12,5 +12,6 @@ export default defineConfig({
       plugins: [tailwindcss()]
     },
 
+  site: "https://nuexq.vercel.app",
   integrations: [mdx(), sitemap()]
 });

@@ -1,1 +1,11 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-32;
+	}
+}

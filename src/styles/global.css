@@ -4,14 +4,28 @@
 	--color-background: #f9f4da;
 	--color-foreground: #231f20;
 	--color-accent: #301917;
+	--font-libreBaskerville: "Libre Baskerville", "serif";
 }
 
 @layer base {
+	@font-face {
+		font-family: "Libre Baskerville";
+		src: url("/fonts/LibreBaskerville-Regular.ttf") format("tff");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
+
 	html {
 		scroll-behavior: smooth;
 	}
 
+	::selection,
+	::-moz-selection {
+		@apply bg-accent text-background;
+	}
+
 	body {
-		@apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-32 bg-background text-foreground;
+		@apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-32 bg-background text-foreground font-libreBaskerville;
 	}
 }

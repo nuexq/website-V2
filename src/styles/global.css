@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+	--color-background: #f9f4da;
+	--color-foreground: #231f20;
+	--color-accent: #301917;
+}
+
 @layer base {
 	html {
 		scroll-behavior: smooth;
 	}
 
 	body {
-		@apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-32;
+		@apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-32 bg-background text-foreground;
 	}
 }

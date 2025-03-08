@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
 @theme {
   --color-background: #f9f4da;
   --color-foreground: #231f20;
   --color-accent: #5a3e36;
   --font-libreBaskerville: "Libre Baskerville", "serif";
+  --spacing: 0.5rem;
 }
 
 @layer base {
@@ -26,6 +29,21 @@
   }
 
   body {
-    @apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-32 bg-background text-foreground font-libreBaskerville;
+    @apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-24 bg-background text-foreground font-libreBaskerville;
+  }
+
+}
+
+.prose {
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong {
+    @apply text-foreground;
   }
 }

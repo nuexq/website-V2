@@ -33,11 +33,11 @@
   }
 
   body {
-    @apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-24 bg-background text-foreground font-libreBaskerville;
+    @apply min-h-fit overflow-hidden bg-background font-libreBaskerville text-foreground antialiased;
   }
 }
 
-.prose {
+.prose-lg {
 
   & * {
     @apply m-0 text-foreground
@@ -72,7 +72,7 @@
   }
 
   a {
-    @apply text-accent underline decoration-[0.5px] underline-offset-3 decoration-dashed hover:decoration-solid hover:bg-accent/20 transition-colors;
+    @apply font-medium text-accent underline decoration-solid decoration-[0.5px] underline-offset-2 transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-accent/10;
   }
 
   code {
@@ -84,6 +84,6 @@
   }
 
   mark {
-    @apply text-accent bg-accent/10;
+    @apply bg-accent/10 text-accent;
   }
 }

@@ -24,7 +24,10 @@
     scroll-behavior: smooth;
   }
 
-  ::selection,
+  ::selection {
+    @apply bg-accent/20;
+  }
+
   ::-moz-selection {
     @apply bg-accent/20;
   }

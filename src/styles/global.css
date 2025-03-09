@@ -79,6 +79,10 @@
     @apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-sm font-semibold before:content-none after:content-none;
   }
 
+  hr {
+    @apply mt-6 border-accent/20;
+  }
+
   mark {
     @apply text-accent bg-accent/10;
   }

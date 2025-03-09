@@ -3,9 +3,10 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-background: #f9f4da;
-  --color-foreground: #231f20;
-  --color-accent: #5a3e36;
+  --color-background: #F9F4DA;
+  --color-foreground: #1E1E1E;
+  --color-accent: #5A3E36;
+
   --font-libreBaskerville: "Libre Baskerville", "serif";
   --spacing: 0.5rem;
 }
@@ -25,25 +26,54 @@
 
   ::selection,
   ::-moz-selection {
-    @apply bg-accent text-background;
+    @apply bg-accent/20;
   }
 
   body {
     @apply antialiased min-h-fit flex flex-col md:flex-row p-4 lg:p-24 bg-background text-foreground font-libreBaskerville;
   }
-
 }
 
 .prose {
 
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong {
-    @apply text-foreground;
+  & * {
+    @apply m-0 text-foreground
   }
+
+  h1 {
+    @apply mt-8;
+  }
+
+  h2 {
+    @apply mt-7;
+  }
+
+  h3 {
+    @apply mt-6;
+  }
+
+  h4 {
+    @apply mt-5;
+  }
+
+  h5 {
+    @apply mt-4 font-[420];
+  }
+
+  h6 {
+    @apply mt-3;
+  }
+
+  p {
+    @apply mt-3 leading-relaxed;
+  }
+
+  a {
+    @apply text-accent underline decoration-[0.5px] underline-offset-3 decoration-dashed hover:decoration-solid hover:bg-accent/20 transition-colors;
+  }
+
+  code {
+    @apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-sm font-semibold before:content-none after:content-none;
+  }
+
 }

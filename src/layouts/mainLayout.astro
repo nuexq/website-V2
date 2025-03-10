@@ -4,6 +4,7 @@ interface Props {
 }
 import "../styles/global.css";
 const { title } = Astro.props;
+import Nav from "../components/Nav.astro";
 ---
 
 <html lang="en">
@@ -14,17 +15,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <nav class="flex h-6 w-screen items-center justify-between bg-foreground px-6 text-background">
-      <p>nuexq</p>
-      <div class="flex items-center gap-4">
-        <a href="/">Home</a>
-        <a href="/about">Project</a>
-        <a href="/contact">Writing</a>
-      </div>
-      </div>
-    </nav>
+    <Nav />
     <main
-      class="mx-auto prose-lg flex w-full flex-col px-4 pb-4 max-md:pt-6 sm:px-6 md:max-w-screen-lg"
+      class="mx-auto prose flex w-full flex-col px-4 pb-4 max-md:pt-6 sm:px-6 md:max-w-screen-lg"
     >
       <slot />
     </main>

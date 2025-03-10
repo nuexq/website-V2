@@ -6,6 +6,7 @@
   --color-background: hsl(50, 72%, 92%);
   --color-foreground: hsl(0, 0%, 12%);
   --color-accent: hsl(13, 25%, 28%);
+  --color-muted-foreground: hsl(0, 0%, 42%);
 
   --font-libreBaskerville: "Libre Baskerville", "serif";
   --spacing: 0.5rem;
@@ -37,7 +38,7 @@
   }
 }
 
-.prose-lg {
+.prose {
 
   & * {
     @apply m-0 text-foreground

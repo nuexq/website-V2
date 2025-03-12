@@ -10,10 +10,8 @@ const currentPath = Astro.url.pathname;
 <a
   href={`/${href}`}
   class={cn(
-    "text-background/80 px-1 text-sm relative",
-    currentPath === `/${href}`
-      ? " font-background font-semibold "
-      : "hover:text-background",
+    "text-background/80 px-1 text-sm",
+    currentPath === `/${href}` ? "font-semibold" : "hover:text-background",
   )}
 >
   <slot />

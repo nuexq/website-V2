@@ -73,7 +73,7 @@
   }
 
   a {
-    @apply font-medium text-accent underline decoration-solid decoration-[0.5px] underline-offset-2 transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-accent/10;
+    @apply border-b-[1px] border-b-accent/30 font-medium text-accent no-underline transition-colors duration-300 ease-in-out hover:border-b-accent hover:bg-accent/10;
   }
 
   code {

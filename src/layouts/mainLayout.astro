@@ -4,7 +4,7 @@ interface Props {
 }
 import "../styles/global.css";
 const { title } = Astro.props;
-import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro";
 ---
 
 <html lang="en">
@@ -15,7 +15,7 @@ import Nav from "../components/Nav.astro";
     <title>{title}</title>
   </head>
   <body>
-    <Nav />
+    <Header />
     <main
       class="mx-auto prose flex w-full flex-col px-4 pb-4 max-md:pt-6 sm:px-6 md:max-w-screen-md"
     >

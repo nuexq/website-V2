@@ -9,7 +9,7 @@
   --color-muted-foreground: hsl(0, 0%, 42%);
 
   --font-libreBaskerville: "Libre Baskerville", "serif";
-  --spacing: 0.5rem;
+  --spacing: 0.25rem;
 }
 
 @layer base {
@@ -34,13 +34,14 @@
   }
 
   body {
-    @apply min-h-fit overflow-hidden bg-background font-libreBaskerville text-foreground antialiased;
+    @apply flex flex-col gap-12 mx-auto min-h-fit overflow-hidden bg-background font-libreBaskerville text-foreground antialiased;
   }
 }
 
 .prose {
 
-  & * {
+  & *,
+  & *:first-child {
     @apply m-0 text-foreground
   }
 

@@ -3,12 +3,41 @@ import Link from "@/components/ui/Link.astro";
 ---
 
 <header
-  class="flex flex-col sm:flex-row gap-6 sm:gap-0 sm:space-y-0 sm:items-center justify-between leading-6 py-5 sm:py-3 px-12 bg-foreground text-background"
+  id="header"
+  class="sticky top-0 flex max-h-12 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 leading-6 text-background sm:flex-row sm:items-center sm:gap-0 sm:space-y-0 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]"
 >
-  <p>nuexq</p>
-  <nav class="flex flex-col sm:flex-row sm:items-center gap-6">
-    <Link href="">Home</Link>
-    <Link href="projects">Projects</Link>
-    <Link href="writing">Writing</Link>
+  <div class="flex justify-between w-full">
+    <p class="font-semibold">nuexq</p>
+    <button class="sm:hidden cursor-pointer" id="menu-btn">Menu</button>
+  </div>
+  <nav class="flex items-start max-sm:pb-2 gap-4 opacity-0 sm:flex-row sm:opacity-100 transition-opacity duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]">
+    <Link href="/">Home</Link>
+    <Link href="/projects">Projects</Link>
+    <Link href="/writing">Writing</Link>
   </nav>
 </header>
+
+<script client:load>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const header = document.getElementById("header");
+    const nav = header.querySelector("nav");
+
+    menuBtn.addEventListener("click", () => {
+      console.log("Toggling menu");
+
+      if (header.classList.contains("max-h-12")) {
+        header.classList.remove("max-h-12");
+        header.classList.add("max-h-32");
+        nav.classList.remove("opacity-0");
+        nav.classList.add("opacity-100");
+      } else {
+        header.classList.remove("max-h-32");
+        header.classList.add("max-h-12");
+        nav.classList.remove("opacity-100");
+        nav.classList.add("opacity-0");
+      }
+    });
+  });
+</script>
+

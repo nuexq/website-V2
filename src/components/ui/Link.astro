@@ -1,19 +1,22 @@
 ---
 import { cn } from "@/lib/utils";
+
 interface Props {
   href: string;
 }
 const { href } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+const normalizedHref = href.startsWith("/") ? href : `/${href}`;
 ---
 
 <a
-  href={`/${href}`}
+  href={normalizedHref}
   class={cn(
-    "text-background/80 text-sm", // flex gap-1
-    currentPath === `/${href}` ? "text-background" : "hover:text-background",
+    "text-background/80 text-sm transition-colors",
+    currentPath === normalizedHref ? "text-background" : "hover:text-background"
   )}
 >
-  <!-- {currentPath === `/${href}` ? <span class="size-[6px] self-center bg-background"></span> : null} -->
   <slot />
 </a>
+

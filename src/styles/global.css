@@ -9,6 +9,7 @@
   --color-muted-foreground: hsl(0, 0%, 42%);
 
   --font-libreBaskerville: "Libre Baskerville", "serif";
+  --font-inter: "Inter", "sans-serif";
   --spacing: 0.25rem;
 }
 
@@ -16,6 +17,14 @@
   @font-face {
     font-family: "Libre Baskerville";
     src: url("/fonts/LibreBaskerville-Regular.ttf") format("tff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-VariableFont.ttf") format("tff");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -34,15 +43,18 @@
   }
 
   body {
-    @apply flex flex-col gap-12 mx-auto min-h-fit overflow-hidden bg-background font-libreBaskerville text-foreground antialiased;
+    @apply mx-auto flex min-h-fit flex-col gap-12 bg-background font-libreBaskerville text-foreground antialiased;
   }
 }
 
 .prose {
+  & * {
+    @apply text-foreground;
+  }
 
   & *,
   & *:first-child {
-    @apply m-0 text-foreground
+    @apply m-0;
   }
 
   h1 {
@@ -70,7 +82,7 @@
   }
 
   p {
-    @apply mt-3 leading-relaxed;
+    @apply mt-3 font-inter leading-relaxed;
   }
 
   a {

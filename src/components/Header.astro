@@ -4,40 +4,54 @@ import Link from "@/components/ui/Link.astro";
 
 <header
   id="header"
-  class="sticky top-0 flex max-h-12 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 leading-6 text-background sm:flex-row sm:items-center sm:gap-0 sm:space-y-0 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]"
+  class="sticky top-0 flex max-h-16 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 leading-6 text-background sm:flex-row sm:items-center sm:gap-0 sm:space-y-0 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]"
 >
-  <div class="flex justify-between w-full">
-    <p class="font-semibold">nuexq</p>
-    <button class="sm:hidden cursor-pointer" id="menu-btn">Menu</button>
+  <div class="flex justify-between items-center min-h-10">
+    <p class="text-xl">nuexq</p>
+    <button
+      class="sm:hidden cursor-pointer text-sm"
+      id="menu-btn"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      aria-label="Toggle menu"
+    >
+      Menu
+    </button>
   </div>
-  <nav class="flex items-start max-sm:pb-2 gap-4 opacity-0 sm:flex-row sm:opacity-100 transition-opacity duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]">
+  <nav
+    id="main-nav"
+    aria-label="Main navigation"
+    class="flex items-start max-sm:pb-2 gap-8 opacity-0 sm:flex-row sm:opacity-100 transition-opacity duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]"
+    aria-hidden="true"
+  >
     <Link href="/">Home</Link>
     <Link href="/projects">Projects</Link>
     <Link href="/writing">Writing</Link>
   </nav>
 </header>
 
-<script client:load>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById("menu-btn");
     const header = document.getElementById("header");
-    const nav = header.querySelector("nav");
+    const nav = document.getElementById("main-nav");
 
-    menuBtn.addEventListener("click", () => {
-      console.log("Toggling menu");
+    // Check if elements exist
+    if (menuBtn && header && nav) {
+      let isOpen = false;
 
-      if (header.classList.contains("max-h-12")) {
-        header.classList.remove("max-h-12");
-        header.classList.add("max-h-32");
-        nav.classList.remove("opacity-0");
-        nav.classList.add("opacity-100");
-      } else {
-        header.classList.remove("max-h-32");
-        header.classList.add("max-h-12");
-        nav.classList.remove("opacity-100");
-        nav.classList.add("opacity-0");
-      }
-    });
+      menuBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+
+        header.classList.toggle("max-h-16", !isOpen);
+        header.classList.toggle("max-h-32", isOpen);
+
+        nav.classList.toggle("opacity-0", !isOpen);
+        nav.classList.toggle("opacity-100", isOpen);
+
+        menuBtn.setAttribute("aria-expanded", isOpen.toString());
+        nav.setAttribute("aria-hidden", (!isOpen).toString());
+      });
+    }
   });
 </script>
-

@@ -13,7 +13,7 @@ const normalizedHref = href.startsWith("/") ? href : `/${href}`;
 <a
   href={normalizedHref}
   class={cn(
-    "text-background/80 text-sm transition-colors",
+    "text-background/80 transition-colors font-inter",
     currentPath === normalizedHref ? "text-background" : "hover:text-background"
   )}
 >

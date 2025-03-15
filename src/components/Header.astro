@@ -4,12 +4,12 @@ import Link from "@/components/ui/Link.astro";
 
 <header
   id="header"
-  class="sticky top-0 flex max-h-16 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 leading-6 text-background sm:flex-row sm:items-center sm:gap-0 sm:space-y-0 transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]"
+  class="flex max-h-32 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 text-background transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] has-[nav[aria-hidden='true']]:max-h-16 sm:flex-row sm:items-center sm:gap-0"
 >
-  <div class="flex justify-between items-center min-h-10">
+  <div class="flex min-h-10 items-center justify-between">
     <p class="text-xl">nuexq</p>
     <button
-      class="sm:hidden cursor-pointer text-sm"
+      class="cursor-pointer text-sm sm:hidden"
       id="menu-btn"
       aria-expanded="false"
       aria-controls="main-nav"
@@ -21,7 +21,7 @@ import Link from "@/components/ui/Link.astro";
   <nav
     id="main-nav"
     aria-label="Main navigation"
-    class="flex items-start max-sm:pb-2 gap-8 opacity-0 sm:flex-row sm:opacity-100 transition-opacity duration-600 ease-[cubic-bezier(0.4,0,0.2,1)]"
+    class="group flex items-start gap-8 opacity-100 transition-opacity duration-800 ease-[cubic-bezier(0.4,0,0.2,1)] max-sm:pb-2 max-sm:aria-hidden:opacity-0 sm:flex-row"
     aria-hidden="true"
   >
     <Link href="/">Home</Link>
@@ -36,18 +36,11 @@ import Link from "@/components/ui/Link.astro";
     const header = document.getElementById("header");
     const nav = document.getElementById("main-nav");
 
-    // Check if elements exist
     if (menuBtn && header && nav) {
       let isOpen = false;
 
       menuBtn.addEventListener("click", () => {
         isOpen = !isOpen;
-
-        header.classList.toggle("max-h-16", !isOpen);
-        header.classList.toggle("max-h-32", isOpen);
-
-        nav.classList.toggle("opacity-0", !isOpen);
-        nav.classList.toggle("opacity-100", isOpen);
 
         menuBtn.setAttribute("aria-expanded", isOpen.toString());
         nav.setAttribute("aria-hidden", (!isOpen).toString());

@@ -43,7 +43,7 @@
   }
 
   body {
-    @apply mx-auto flex min-h-screen flex-col bg-background font-inter text-foreground antialiased;
+    @apply mx-auto flex min-h-screen flex-col gap-8 bg-background font-inter text-foreground antialiased;
   }
 }
 
@@ -74,7 +74,7 @@
   }
 
   h5 {
-    @apply mt-4 font-[420] font-libreBaskerville;
+    @apply mt-4 font-libreBaskerville font-[420];
   }
 
   h6 {
@@ -98,6 +98,6 @@
   }
 
   mark {
-    @apply bg-accent/10 text-accent font-libreBaskerville;
+    @apply bg-accent/10 font-libreBaskerville text-accent;
   }
 }

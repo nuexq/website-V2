@@ -2,8 +2,8 @@
 import Link from "@/components/ui/Link.astro";
 
 let currentPath = Astro.url.pathname;
-const pathSegments = currentPath.split('/'); 
-const cleanPath = `/${pathSegments[1]}`
+const pathSegments = currentPath.split("/");
+const cleanPath = `/${pathSegments[1]}`;
 ---
 
 <header
@@ -11,10 +11,10 @@ const cleanPath = `/${pathSegments[1]}`
   class="flex max-h-32 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 text-background transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] has-[nav[aria-hidden='true']]:max-h-12 sm:flex-row sm:items-center sm:gap-0"
 >
   <div class="flex min-h-6 items-center justify-between">
-    <a href="/" class="font-libreBaskerville text-xl">
-      nuexq
+    <div class="font-libreBaskerville text-xl">
+      <a href="/">nuexq</a>
       <span class="text-xs text-background/90 sm:hidden">{cleanPath}</span>
-    </a>
+    </div>
     <button
       class="cursor-pointer text-sm sm:hidden"
       id="menu-btn"

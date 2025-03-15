@@ -43,7 +43,7 @@
   }
 
   body {
-    @apply mx-auto flex min-h-fit flex-col gap-12 bg-background font-inter text-foreground antialiased;
+    @apply mx-auto flex min-h-screen flex-col bg-background font-inter text-foreground antialiased;
   }
 }
 

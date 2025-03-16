@@ -5,7 +5,7 @@ export const siteConfig = {
   author: "nuexq",
   links: {
     github: "https://github.com/nuexq",
-    twitter: "https://x.com/_neuxq",
+    x: "https://x.com/_neuxq",
     bluesky: "https://bsky.app/profile/nuexq.bsky.social"
   },
 };

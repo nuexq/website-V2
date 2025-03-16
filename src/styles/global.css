@@ -8,15 +8,15 @@
   --color-accent: hsl(13, 25%, 28%);
   --color-muted-foreground: hsl(0, 0%, 42%);
 
-  --font-libreBaskerville: "Libre Baskerville", "serif";
+  --font-libreBaskerville: "Lora", "serif";
   --font-inter: "Inter", "sans-serif";
   --spacing: 0.25rem;
 }
 
 @layer base {
   @font-face {
-    font-family: "Libre Baskerville";
-    src: url("/fonts/LibreBaskerville-Regular.ttf") format("tff");
+    font-family: "Lora";
+    src: url("/fonts/LibreBaskerville-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -24,8 +24,8 @@
 
   @font-face {
     font-family: "Inter";
-    src: url("/fonts/Inter-VariableFont.ttf") format("tff");
-    font-weight: normal;
+    src: url("/fonts/Inter-VariableFont.ttf") format("truetype");
+    font-weight: 200 900;
     font-style: normal;
     font-display: swap;
   }
@@ -57,28 +57,37 @@
     @apply m-0;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-libreBaskerville;
+  }
+
   h1 {
-    @apply mt-8 font-libreBaskerville;
+    @apply mt-8;
   }
 
   h2 {
-    @apply mt-7 font-libreBaskerville;
+    @apply mt-7;
   }
 
   h3 {
-    @apply mt-6 font-libreBaskerville;
+    @apply mt-6;
   }
 
   h4 {
-    @apply mt-5 font-libreBaskerville;
+    @apply mt-5;
   }
 
   h5 {
-    @apply mt-4 font-libreBaskerville font-[420];
+    @apply mt-4;
   }
 
   h6 {
-    @apply mt-3 font-libreBaskerville;
+    @apply mt-3;
   }
 
   p {
@@ -117,8 +126,8 @@
     @apply text-accent;
   }
 
-  li > ul,
-  li > ol {
+  li>ul,
+  li>ol {
     @apply pt-0 pl-4;
   }
 }

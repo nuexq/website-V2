@@ -67,23 +67,23 @@
   }
 
   h2::before {
-    @apply content-["2"] text-xs align-text-top mr-1 text-accent;
+    @apply mr-1 align-text-top text-xs text-accent content-["2"];
   }
 
   h3::before {
-    @apply content-["3"] text-xs align-text-top mr-1 text-accent;
+    @apply mr-1 align-text-top text-xs text-accent content-["3"];
   }
 
   h1 {
-    @apply mt-8 tracking-[-0.015em] leading-[1.3];
+    @apply mt-8 leading-[1.3] tracking-[-0.015em];
   }
 
   h2 {
-    @apply mt-7 tracking-[-0.01em] leading-[1.4];
+    @apply mt-7 leading-[1.4] tracking-[-0.01em];
   }
 
   h3 {
-    @apply mt-6 tracking-[-0.005em] leading-[1.5];
+    @apply mt-6 leading-[1.5] tracking-[-0.005em];
   }
 
   h4 {

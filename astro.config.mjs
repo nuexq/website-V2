@@ -6,6 +6,7 @@ import path from "path";
 import mdx from "@astrojs/mdx";
 
 import sitemap from "@astrojs/sitemap";
+import { siteConfig } from "./src/config/site";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,6 @@ resolve: {
     },
   },
 
-  site: "https://nuexq.vercel.app",
+  site: siteConfig.url,
   integrations: [mdx(), sitemap()],
 });

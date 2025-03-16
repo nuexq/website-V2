@@ -8,8 +8,8 @@
   --color-accent: hsl(13, 25%, 28%);
   --color-muted-foreground: hsl(0, 0%, 42%);
 
-  --font-libreBaskerville: "Merriweather", "serif";
-  --font-inter: "Inter", "sans-serif";
+  --font-display: "Merriweather", "serif";
+  --font-body: "Inter", "sans-serif";
   --spacing: 0.25rem;
 }
 
@@ -43,7 +43,7 @@
   }
 
   body {
-    @apply mx-auto flex min-h-screen flex-col gap-8 bg-background font-inter text-foreground antialiased;
+    @apply mx-auto flex min-h-screen flex-col gap-8 bg-background font-body text-foreground antialiased;
   }
 }
 
@@ -63,7 +63,7 @@
   h4,
   h5,
   h6 {
-    @apply font-libreBaskerville font-normal;
+    @apply font-display font-normal;
   }
 
   h2::before {
@@ -115,7 +115,7 @@
   }
 
   mark {
-    @apply bg-accent/10 font-libreBaskerville text-accent;
+    @apply bg-accent/10 font-display text-accent;
   }
 
   ul {

@@ -1,7 +1,11 @@
+---
+import { siteConfig } from "@/config/site";
+---
+
 <footer class="mx-auto w-full border-t-[1px] border-t-accent/20 py-5 text-sm">
-  <a href="http://github.com/nuexq" target="_blank">Github</a> •
-  <a href="https://x.com/_neuxq" target="_blank">X</a> •
-  <a href="https://bsky.app/profile/nuexq.bsky.social" target="_blank"
+  <a href={siteConfig.links.github} target="_blank">GitHub</a> •
+  <a href={siteConfig.links.x} target="_blank">X</a> •
+  <a href={siteConfig.links.bluesky} target="_blank"
     >Bluesky</a
-  > • <span>Discord: @nuexq</span>
+  > • <span>Discord: @{siteConfig.links.discord}</span>
 </footer>

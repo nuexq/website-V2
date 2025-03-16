@@ -1,5 +1,6 @@
 ---
 import Link from "@/components/ui/Link.astro";
+import { siteConfig } from "@/config/site";
 
 let currentPath = Astro.url.pathname;
 const pathSegments = currentPath.split("/");
@@ -12,7 +13,7 @@ const cleanPath = `/${pathSegments[1]}`;
 >
   <div class="flex min-h-6 items-center justify-between">
     <div class="font-libreBaskerville text-xl">
-      <a href="/">nuexq</a>
+      <a href="/">{siteConfig.name}</a>
       <span class="text-xs text-background/90 sm:hidden">{cleanPath}</span>
     </div>
     <button

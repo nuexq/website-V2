@@ -12,9 +12,9 @@ import { siteConfig } from "./src/config/site";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-resolve: {
+    resolve: {
       alias: {
-        '@': path.resolve('./src'),
+        "@": path.resolve("./src"),
       },
     },
   },

@@ -7,7 +7,7 @@ export const siteConfig = {
     github: "https://github.com/nuexq",
     x: "https://x.com/_neuxq",
     bluesky: "https://bsky.app/profile/nuexq.bsky.social",
-    discord: "nuexq"
+    discord: "nuexq",
   },
 };
 

@@ -14,9 +14,10 @@ const normalizedHref = href.startsWith("/") ? href : `/${href}`;
   href={normalizedHref}
   class={cn(
     "text-background/80 transition-colors",
-    currentPath === normalizedHref ? "text-background" : "hover:text-background"
+    currentPath === normalizedHref
+      ? "text-background"
+      : "hover:text-background",
   )}
 >
   <slot />
 </a>
-

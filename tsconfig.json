@@ -4,17 +4,10 @@
   "allowSyntheticDefaultImports": true,
   "esModuleInterop": true,
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "baseUrl": ".",
   "paths": {
-    "@/*": [
-      "./src/*"
-    ]
+    "@/*": ["./src/*"]
   }
 }

@@ -12,12 +12,12 @@ See more projects on my [GitHub](https://github.com/yourusername).
 
 ---
 
-Here are some of my favorite projects:
+Here are some of my favorite projects btw:
 
 <ul>
   {props.projects.map((project) => (
     <li>
-      <strong><a href={`${siteConfig.links.github}/${project.slug}`}>{project.name}</a></strong>: {project.description}
+      <a href={`${siteConfig.links.github}/${project.slug}`}>{project.name}</a>: {project.description}
     </li>
   ))}
 </ul>

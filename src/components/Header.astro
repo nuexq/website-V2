@@ -9,7 +9,7 @@ const cleanPath = `/${pathSegments[1]}`;
 
 <header
   id="header"
-  class="flex max-h-32 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 text-background transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] has-[nav[aria-hidden='true']]:max-h-12 sm:flex-row sm:items-center sm:gap-0"
+  class="flex max-h-32 flex-col justify-between gap-6 overflow-hidden bg-foreground px-12 py-3 text-background transition-all duration-600 ease-in-out has-[nav[aria-hidden='true']]:max-h-12 sm:flex-row sm:items-center sm:gap-0"
 >
   <div class="flex min-h-6 items-center justify-between">
     <div class="font-display text-xl">
@@ -29,7 +29,7 @@ const cleanPath = `/${pathSegments[1]}`;
   <nav
     id="main-nav"
     aria-label="Main navigation"
-    class="group flex items-start gap-8 opacity-100 transition-opacity duration-800 ease-[cubic-bezier(0.4,0,0.2,1)] max-sm:pb-2 max-sm:aria-hidden:opacity-0 sm:flex-row"
+    class="group flex items-start gap-8 opacity-100 transition-opacity duration-800 ease-in-out max-sm:pb-2 max-sm:aria-hidden:opacity-0 sm:flex-row"
     aria-hidden="true"
   >
     <Link href="/">Home</Link>

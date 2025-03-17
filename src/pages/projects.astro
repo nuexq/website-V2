@@ -1,8 +1,44 @@
 ---
 import Projects from "../content/projects.mdx";
 import MainLayout from "../layouts/mainLayout.astro";
+
+const projects = [
+  {
+    name: "Conway's Game of Life",
+    slug: "game-of-life",
+    description:
+      "A Conway's Game of Life implementation using WebGPU and React/Vite.",
+  },
+  {
+    name: "Website",
+    slug: "website",
+    description: "The first version of my personal website, built in Next.js.",
+  },
+  {
+    name: "My dotfiles",
+    slug: "dotfiles",
+    description:
+      "My dotfiles for Arch Linux Hyprland, including my Neovim config.",
+  },
+  {
+    name: "Events website",
+    slug: "events-website",
+    description: "An improved version of 'urba events' website.",
+  },
+  {
+    name: "Simple Blog",
+    slug: "simpleBlog",
+    description: "A simple blog built with Next.js and Velite.",
+  },
+  {
+    name: "React Projects",
+    slug: "react-projects",
+    description:
+      "Collection of open-source projects, components, React hooks, and more made with React.",
+  },
+];
 ---
 
 <MainLayout title="projects">
-  <Projects />
+  <Projects projects={projects} />
 </MainLayout>

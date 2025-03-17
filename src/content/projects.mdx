@@ -1,19 +1,24 @@
-# projects
-
-See more project on my [GitHub](https://github.com/yourusername).
+---
+props:
+  projects: []
 
 ---
 
-Here is Some of my favorite projects:
+import { siteConfig } from "../config/site";
 
-- **[Conway's Game of Life](https://github.com/yourusername/game-of-life)**: A Conway's Game of Life implementation using WebGPU and React/Vite.
+# Projects
 
-- **[Website](https://github.com/yourusername/website)**: The first version of my personal website, built in Next.js.
+See more projects on my [GitHub](https://github.com/yourusername).
 
-- **[My dotfiles](https://github.com/yourusername/dotfiles)**: My dotfiles for Arch Linux Hyprland, including my Neovim config.
+---
 
-- **[Events website](https://github.com/yourusername/events-website)**: An improved version of 'urba events' website.
+Here are some of my favorite projects:
 
-- **[Simple Blog](https://github.com/yourusername/simpleBlog)**: A simple blog built with Next.js and Velite.
+<ul>
+  {props.projects.map((project) => (
+    <li>
+      <strong><a href={`${siteConfig.links.github}/${project.slug}`}>{project.name}</a></strong>: {project.description}
+    </li>
+  ))}
+</ul>
 
-- **[React Projects](https://github.com/yourusername/react-projects)**: Collection of open-source projects, components, React hooks, and more made with React.

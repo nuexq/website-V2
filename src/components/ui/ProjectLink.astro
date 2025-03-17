@@ -13,23 +13,20 @@ interface Props {
 const { name, description, link, slug, tech, type } = Astro.props;
 ---
 
-<li class="mb-2">
+<li>
   <span class="group relative">
-    <a
-      class="text-link"
-      aria-label={`View ${name} on GitHub`}
-    >
+    <a aria-label={`View ${name} on GitHub`}>
       {name}
     </a>
     <div
       role="tooltip"
       aria-hidden="true"
-      class="top-[calc(100% - 1px)] invisible absolute left-0 z-10 mt-2 w-full max-w-sm min-w-sm scale-95 transform bg-foreground p-4 opacity-0 shadow-lg transition-all duration-150 ease-in-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
+      class="invisible absolute left-0 z-10 w-full max-w-sm min-w-xs scale-95 transform bg-foreground p-4 opacity-0 shadow-lg transition-all duration-150 ease-in-out group-hover:visible group-hover:scale-100 group-hover:opacity-100 sm:min-w-sm"
     >
       <div
         class="flex w-full flex-wrap items-center justify-between gap-3 text-xs"
       >
-        <div class="font-body font-medium !text-background">
+        <div class="!text-background">
           {tech.join(" - ")}
         </div>
         <div class="flex gap-4">

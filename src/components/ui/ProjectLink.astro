@@ -1,0 +1,49 @@
+---
+import { siteConfig } from "../../config/site";
+
+interface Props {
+  name: string;
+  description: string;
+  link?: string;
+  slug: string;
+  tech: string[];
+  type: string;
+}
+
+const { name, description, link, slug, tech, type } = Astro.props;
+---
+
+<li class="mb-2">
+  <span class="relative group">
+    <a href={`${siteConfig.links.github}/${slug}`} class="text-link">
+      {name}
+    </a>
+    <div
+      class="absolute left-0 top-[calc(100% - 1px)] mt-2 p-4 bg-foreground shadow-lg w-full max-w-sm min-w-sm z-10 pointer-events-none opacity-0 transition-opacity duration-100 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto"
+    >
+      <div class="flex flex-wrap w-full justify-between items-center gap-3">
+        <div class="font-body text-xs font-medium !text-background">
+          {tech.join(" • ")}
+        </div>
+        <div class="flex gap-4">
+          <a
+            href={`${siteConfig.links.github}/${slug}`}
+            class="font-body text-xs font-medium !text-background/80 hover:!text-background border-none"
+          >
+            GitHub
+          </a>
+          {link && (
+            <a
+              href={link}
+              class="font-body text-xs font-medium !text-background/80 hover:!text-background border-none first-letter:uppercase"
+            >
+              {type}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </span>
+  <span>{description}</span>
+</li>
+

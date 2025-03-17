@@ -10,15 +10,14 @@ Check out my [GitHub](${siteConfig.links.github}) for more projects and contribu
 Here are some of my favorite projects:
 
 <ul>
-    {props.projects.map((project) => (
-      <ProjectLink
-        slug={project.slug}
-        name={project.name}
-        description={project.description}
-        link={project.link}
-        tech={project.tech}
-        type={project.type}
-      />
-    ))}
+  {props.projects.map((project) => (
+    <ProjectLink
+      slug={project.slug}
+      name={project.name}
+      description={project.description}
+      link={project.link}
+      tech={project.tech}
+      type={project.type}
+    />
+  ))}
 </ul>
-

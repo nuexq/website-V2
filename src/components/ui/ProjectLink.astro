@@ -21,7 +21,9 @@ const { name, description, link, slug, tech, type } = Astro.props;
     <div
       class="top-[calc(100% - 1px)] pointer-events-none absolute left-0 z-10 mt-2 w-full max-w-sm min-w-sm bg-foreground p-4 opacity-0 shadow-lg transition-opacity duration-100 ease-in-out group-hover:pointer-events-auto group-hover:opacity-100"
     >
-      <div class="flex w-full flex-wrap items-center justify-between gap-3 text-xs">
+      <div
+        class="flex w-full flex-wrap items-center justify-between gap-3 text-xs"
+      >
         <div class="font-body font-medium !text-background">
           {tech.join(" • ")}
         </div>

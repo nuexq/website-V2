@@ -16,7 +16,6 @@ const { name, description, link, slug, tech, type } = Astro.props;
 <li class="mb-2">
   <span class="group relative">
     <a
-      href={`${siteConfig.links.github}/${slug}`}
       class="text-link"
       aria-label={`View ${name} on GitHub`}
     >
@@ -25,7 +24,7 @@ const { name, description, link, slug, tech, type } = Astro.props;
     <div
       role="tooltip"
       aria-hidden="true"
-      class="top-[calc(100% - 1px)] pointer-events-none absolute left-0 z-10 mt-2 w-full max-w-sm min-w-sm scale-95 transform bg-foreground p-4 opacity-0 shadow-lg transition-all duration-150 ease-in-out group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100"
+      class="top-[calc(100% - 1px)] invisible absolute left-0 z-10 mt-2 w-full max-w-sm min-w-sm scale-95 transform bg-foreground p-4 opacity-0 shadow-lg transition-all duration-150 ease-in-out group-hover:visible group-hover:scale-100 group-hover:opacity-100"
     >
       <div
         class="flex w-full flex-wrap items-center justify-between gap-3 text-xs"

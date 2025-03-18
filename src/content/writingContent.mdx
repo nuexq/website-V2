@@ -1,9 +1,14 @@
 import { siteConfig } from "../config/site";
 
-# Projects
+# Writing
 
 welcome to my blog
 
 ---
 
-nothing here yet
+<ul>
+{props.posts.map(post => (
+    <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>
+))}
+</ul>
+

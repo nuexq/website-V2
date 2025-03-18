@@ -1,0 +1,10 @@
+---
+import WritingContent from "@/content/writingContent.mdx";
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+import MainLayout from "@/layouts/mainLayout.astro";
+---
+
+<MainLayout title="writing">
+  <WritingContent posts={posts} />
+</MainLayout>

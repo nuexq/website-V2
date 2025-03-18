@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "@/layouts/mainLayout.astro";
+import WritingHeader from "@/layouts/writingHeader.mdx";
+import { getEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("writing");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntry("writing", slug);
+if (!post) return Astro.redirect("/404");
+
+const { title, date, description } = post.data;
+const { Content } = await post.render();
+---
+
+<MainLayout title={title}>
+  <Content />
+</MainLayout>
+

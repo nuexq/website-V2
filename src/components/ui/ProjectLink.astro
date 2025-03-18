@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from "../../config/site";
+import { siteConfig } from "@/config/site";
 
 interface Props {
   name: string;
@@ -13,42 +13,27 @@ interface Props {
 const { name, description, link, slug, tech, type } = Astro.props;
 ---
 
-<li>
-  <span class="group relative">
-    <a aria-label={`View ${name} on GitHub`}>
-      {name}
-    </a>
-    <div
-      role="tooltip"
-      aria-hidden="true"
-      class="top-[calc(100% - 1px)] invisible absolute left-0 z-10 w-full max-w-sm min-w-xs scale-95 transform bg-foreground p-4 opacity-0 shadow-lg transition-all duration-150 ease-in-out group-hover:visible group-hover:scale-100 group-hover:opacity-100 sm:min-w-sm"
-    >
-      <div
-        class="flex w-full flex-wrap items-center justify-between gap-3 text-xs"
+<li class="flex min-h-full flex-col justify-between gap-1">
+  <div>
+    <a
+      href={`${siteConfig.links.github}/${slug}`}
+      aria-label={`View ${name} on GitHub`}>{name}</a
+    >: {description}
+  </div>
+  <div class="flex justify-between items-end text-sm">
+    <mark class="max-w-[60%]">{tech.join(", ")}</mark>
+    <div class="flex gap-2">
+      <a
+        href={`${siteConfig.links.github}/${slug}`}
+        aria-label={`View ${name} on GitHub`}>github</a
       >
-        <div class="!text-background">
-          {tech.join(" - ")}
-        </div>
-        <div class="flex gap-4">
-          <a
-            href={`${siteConfig.links.github}/${slug}`}
-            class="border-none !text-background/80 hover:!text-background"
-          >
-            GitHub
+      {
+        link && (
+          <a href={link} aria-label={`View ${name} on ${type}`}>
+            {type}
           </a>
-          {
-            link && (
-              <a
-                href={link}
-                class="border-none !text-background/80 first-letter:uppercase hover:!text-background"
-              >
-                {type}
-              </a>
-            )
-          }
-        </div>
-      </div>
+        )
+      }
     </div>
-  </span>
-  <span>: {description}</span>
+  </div>
 </li>

@@ -16,8 +16,7 @@
 @layer base {
   @font-face {
     font-family: "Merriweather";
-    src: url("/fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf")
-      format("truetype");
+    src: url("/fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf") format("truetype");
     font-weight: 300 900;
     font-style: normal;
     font-display: swap;
@@ -54,10 +53,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
-      --alpha(var(--color-foreground) / 40%) 1px,
-      transparent 1px
-    );
+    background-image: linear-gradient(--alpha(var(--color-foreground) / 40%) 1px,
+        transparent 1px);
     background-size: 2px 2px;
     background-repeat: repeat;
     pointer-events: none;
@@ -137,8 +134,12 @@
     @apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-sm font-semibold before:content-none after:content-none;
   }
 
-  pre {
-    @apply mt-4 overflow-scroll rounded-none p-4;
+  figure:has(pre) {
+    @apply mt-4;
+
+    pre {
+      @apply overflow-scroll rounded-none p-4
+    }
   }
 
   hr {
@@ -165,8 +166,24 @@
     @apply text-accent;
   }
 
-  li > ul,
-  li > ol {
+  li>ul,
+  li>ol {
     @apply pt-0 pl-4;
+  }
+
+  .hint {
+    @apply px-3 py-2 border-[1px] border-solid border-l-4;
+  }
+
+  .hint.tip {
+    @apply bg-teal-200/10 text-teal-800 border-teal-700/40;
+  }
+
+  .hint.warn {
+    @apply bg-amber-200/10 text-amber-800 border-amber-700/40;
+  }
+
+  .hint.error {
+    @apply bg-rose-200/10 text-rose-800 border-rose-700/40;
   }
 }

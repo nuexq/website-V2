@@ -4,6 +4,10 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 import mdx from "@astrojs/mdx";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeShiki from "@shikijs/rehype";
+import remarkHint from "remark-hint";
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -17,6 +21,27 @@ export default defineConfig({
         "@": path.resolve("./src"),
       },
     },
+  },
+
+  markdown: {
+    shikiConfig: {
+      theme: "catppuccin-mocha",
+    },
+    remarkPlugins: [remarkHint],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "append",
+          properties: {
+            className: "subheading-anchor",
+            ariaLabel: "Link to section",
+          },
+        },
+      ],
+      rehypeShiki,
+    ],
   },
 
   site: siteConfig.url,

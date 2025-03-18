@@ -20,8 +20,10 @@ const { name, description, link, slug, tech, type } = Astro.props;
       aria-label={`View ${name} on GitHub`}>{name}</a
     >: {description}
   </div>
-  <div class="flex justify-between items-end text-sm">
-    <mark class="max-w-[60%]">{tech.join(", ")}</mark>
+  <div class="flex items-end justify-between text-sm">
+    <div class="max-w-[60%]">
+      <mark>{tech.join(", ")}</mark>
+    </div>
     <div class="flex gap-2">
       <a
         href={`${siteConfig.links.github}/${slug}`}

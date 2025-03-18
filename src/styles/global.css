@@ -128,8 +128,17 @@
     @apply font-semibold;
   }
 
+  pre,
+  code {
+    @apply text-sm;
+  }
+
   code {
     @apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-sm font-semibold before:content-none after:content-none;
+  }
+
+  pre {
+    @apply mt-4 overflow-scroll rounded-none p-4;
   }
 
   hr {

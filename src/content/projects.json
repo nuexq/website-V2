@@ -16,11 +16,12 @@
     "tech": ["Typescript", "Astro", "Tailwindcss"]
   },
   {
-    "name": "My dotfiles",
-    "slug": "dotfiles",
-    "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config.",
-    "type": "project",
-    "tech": ["Bash"]
+    "name": "Simple Blog",
+    "slug": "simpleBlog",
+    "description": "A simple blog built with Next.js and Velite.",
+    "type": "site",
+    "link": "https://simpleblog003.vercel.app/",
+    "tech": ["Next.js", "Velite", "Tailwindcss"]
   },
   {
     "name": "Events website",
@@ -31,12 +32,11 @@
     "tech": ["Next.js", "Tailwindcss"]
   },
   {
-    "name": "Simple Blog",
-    "slug": "simpleBlog",
-    "description": "A simple blog built with Next.js and Velite.",
-    "type": "site",
-    "link": "https://simpleblog003.vercel.app/",
-    "tech": ["Next.js", "Velite", "Tailwindcss"]
+    "name": "My dotfiles",
+    "slug": "dotfiles",
+    "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config.",
+    "type": "project",
+    "tech": ["Bash"]
   },
   {
     "name": "React Projects",

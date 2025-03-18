@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
+import WritingHeader from "@/layouts/writingHeader.mdx";
 import { getEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -20,6 +21,7 @@ const { Content } = await post.render();
 ---
 
 <MainLayout title={title}>
+  <WritingHeader title={title} date={date} description={description} />
   <Content />
 </MainLayout>
 

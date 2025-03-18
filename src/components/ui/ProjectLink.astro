@@ -13,7 +13,7 @@ interface Props {
 const { name, description, link, slug, tech, type } = Astro.props;
 ---
 
-<li class="flex min-h-full flex-col justify-between gap-1">
+<li class="flex min-h-full flex-col justify-between gap-1 !p-0">
   <div>
     <a
       href={`${siteConfig.links.github}/${slug}`}

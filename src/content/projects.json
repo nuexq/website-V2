@@ -5,12 +5,7 @@
     "description": "A Conway's Game of Life implementation using WebGPU and React/Vite.",
     "type": "site",
     "link": "https://game-of-life-henna-zeta.vercel.app/",
-    "tech": [
-      "Typescript",
-      "WebGPU",
-      "React",
-      "Vite"
-    ]
+    "tech": ["Typescript", "WebGPU", "React", "Vite"]
   },
   {
     "name": "Website",
@@ -18,11 +13,7 @@
     "description": "The first version of my personal website, built in Next.js.",
     "type": "site",
     "link": "https://nuexq.vercel.app",
-    "tech": [
-      "Typescript",
-      "Astro",
-      "Tailwindcss"
-    ]
+    "tech": ["Typescript", "Astro", "Tailwindcss"]
   },
   {
     "name": "Simple Blog",
@@ -30,11 +21,7 @@
     "description": "A simple blog built with Next.js and Velite.",
     "type": "site",
     "link": "https://simpleblog003.vercel.app/",
-    "tech": [
-      "Next.js",
-      "Velite",
-      "Tailwindcss"
-    ]
+    "tech": ["Next.js", "Velite", "Tailwindcss"]
   },
   {
     "name": "Events website",
@@ -42,19 +29,14 @@
     "description": "An improved version of 'urba events' website.",
     "type": "site",
     "link": "https://eventswebsite.vercel.app/en",
-    "tech": [
-      "Next.js",
-      "Tailwindcss"
-    ]
+    "tech": ["Next.js", "Tailwindcss"]
   },
   {
     "name": "My dotfiles",
     "slug": "dotfiles",
     "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config.",
     "type": "project",
-    "tech": [
-      "Bash"
-    ]
+    "tech": ["Bash"]
   },
   {
     "name": "React Projects",
@@ -62,11 +44,6 @@
     "description": "Collection of open-source projects, components, React hooks, and more made with React.",
     "type": "site",
     "link": "https://nuexq.github.io/React-Projects/",
-    "tech": [
-      "JavaScript",
-      "React",
-      "Vite",
-      "Tailwindcss"
-    ]
+    "tech": ["JavaScript", "React", "Vite", "Tailwindcss"]
   }
 ]

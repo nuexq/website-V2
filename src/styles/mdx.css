@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+[data-rehype-pretty-code-figure] {
+  @apply mt-4;
+}
+
+[data-rehype-pretty-code-figure] [data-rehype-pretty-code-title] {
+  @apply bg-[#181825] px-2 py-1 text-[#bac2de];
+}
+
+[data-rehype-pretty-code-figure] [data-rehype-pretty-code-caption] {
+  @apply text-muted-foreground
+}
+
+[data-rehype-pretty-code-figure] pre {
+  @apply rounded-none px-0;
+}
+
+[data-rehype-pretty-code-figure] code {
+  @apply border-0 !p-0 !text-sm !leading-loose md:text-base;
+}
+
+[data-rehype-pretty-code-figure] code span span::selection {
+  background-color: --alpha(#9399b2 / 20%) !important;
+}
+
+[data-rehype-pretty-code-figure] code span span::-moz-selection {
+  background-color: --alpha(#9399b2 / 20%) !important;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers]>[data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply mr-4 inline-block w-4 text-right text-[#7f849c];
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply border-l-2 border-l-transparent px-3;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  background: rgba(88, 91, 112, 0.4);
+  @apply border-l-[#89b4fa];
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  background-color: rgba(88, 91, 112, 0.4);
+  box-shadow: 0 0 0 4px rgba(88, 91, 112, 0.4);
+}
+
+[data-rehype-pretty-code-figure] [data-chars-id] {
+  @apply border-b-2 p-1 shadow-none;
+}

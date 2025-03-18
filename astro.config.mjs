@@ -6,8 +6,8 @@ import path from "path";
 import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeShiki from "@shikijs/rehype";
 import remarkHint from "remark-hint";
+import rehypePrettyCode from "rehype-pretty-code";
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -24,11 +24,10 @@ export default defineConfig({
   },
 
   markdown: {
-    shikiConfig: {
-      theme: "catppuccin-mocha",
-    },
+    syntaxHighlight: false,
     remarkPlugins: [remarkHint],
     rehypePlugins: [
+      [rehypePrettyCode, { theme: "catppuccin-mocha" }],
       rehypeSlug,
       [
         rehypeAutolinkHeadings,
@@ -40,7 +39,6 @@ export default defineConfig({
           },
         },
       ],
-      rehypeShiki,
     ],
   },
 

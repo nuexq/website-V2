@@ -11,13 +11,10 @@ import { formateDate } from "@/lib/utils";
   <ul class="!mt-5 flex flex-col gap-6 !p-0">
     {
       posts.map((post) => {
-        const { title, date, edited, description } = post.data;
+        const { title, date, description } = post.data;
 
         const isoStringDate = date ? date.toISOString() : null;
         const formattedDate = date ? formateDate(date) : "Date not available";
-
-        const isoStringEdited = edited ? edited.toISOString() : null;
-        const formattedEdited = edited ? formateDate(edited) : null;
 
         return (
           <li class="list-none gap-1 !p-0">
@@ -28,15 +25,6 @@ import { formateDate } from "@/lib/utils";
                 </h3>
                 <div class="text-sm">
                   <time dateTime={isoStringDate}>{formattedDate}</time>
-                  {edited && (
-                    <time
-                      dateTime={isoStringEdited}
-                      class="!text-muted-foreground"
-                    >
-                      {" "}
-                      (last edited {formattedEdited})
-                    </time>
-                  )}
                 </div>
               </div>
               <p class="!mt-0 !text-muted-foreground">{description}</p>

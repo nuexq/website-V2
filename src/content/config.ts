@@ -6,7 +6,6 @@ const writingCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    edited: z.coerce.date().optional(),
   }),
 });
 

@@ -5,9 +5,11 @@ interface Props {
   href: string;
 }
 const { href } = Astro.props;
-const currentPath = Astro.url.pathname;
+const currentPath = `/${Astro.url.pathname.split("/")[1]}`;
 
 const normalizedHref = href.startsWith("/") ? href : `/${href}`;
+console.log(normalizedHref);
+console.log(currentPath.split("/")[1]);
 ---
 
 <a

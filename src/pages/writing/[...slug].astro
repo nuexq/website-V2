@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
-import WritingHeader from "@/layouts/writingHeader.mdx";
 import { getEntry } from "astro:content";
 import { formateDate } from "@/lib/utils";
 
@@ -17,7 +16,7 @@ const { slug } = Astro.params;
 const post = await getEntry("writing", slug);
 if (!post) return Astro.redirect("/404");
 
-const { title, date, description, edited } = post.data;
+const { title, date, edited } = post.data;
 const { Content } = await post.render();
 
 const isoStringDate = date.toISOString();
@@ -28,11 +27,19 @@ const formattedEdited = edited ? formateDate(edited) : null;
 ---
 
 <MainLayout title={title}>
-  <WritingHeader
-    title={title}
-    description={description}
-    date={{ formattedDate, isoStringDate }}
-    edited={formattedEdited ? { formattedEdited, isoStringEdited } : null}
-  />
+  <h1>{title}</h1>
+  <p class="text-sm !mt-1">
+    <time dateTime={isoStringDate}>{formattedDate}</time>
+    {
+      edited && (
+        <time dateTime={isoStringEdited} class="!text-muted-foreground">
+          {" "}
+          (last edited {formattedEdited})
+        </time>
+      )
+    }
+  </p>
+  <hr />
+
   <Content />
 </MainLayout>

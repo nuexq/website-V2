@@ -4,8 +4,9 @@ const writingCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     date: z.coerce.date(),
-    description: z.string().optional(),
+    edited: z.coerce.date().optional(),
   }),
 });
 

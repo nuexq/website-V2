@@ -17,19 +17,22 @@ const { slug } = Astro.params;
 const post = await getEntry("writing", slug);
 if (!post) return Astro.redirect("/404");
 
-const { title, date, description } = post.data;
+const { title, date, description, edited } = post.data;
 const { Content } = await post.render();
 
-const isoString = date.toISOString();
+const isoStringDate = date.toISOString();
 const formattedDate = formateDate(date);
+
+const isoStringEdited = edited ? edited.toISOString() : null;
+const formattedEdited = edited ? formateDate(edited) : null;
 ---
 
 <MainLayout title={title}>
   <WritingHeader
     title={title}
-    isoString={isoString}
-    formattedDate={formattedDate}
     description={description}
+    date={{ formattedDate, isoStringDate }}
+    edited={formattedEdited ? { formattedEdited, isoStringEdited } : null}
   />
   <Content />
 </MainLayout>

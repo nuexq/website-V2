@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
 import WritingHeader from "@/layouts/writingHeader.mdx";
 import { getEntry } from "astro:content";
+import { formateDate } from "@/lib/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("writing");
@@ -18,9 +19,17 @@ if (!post) return Astro.redirect("/404");
 
 const { title, date, description } = post.data;
 const { Content } = await post.render();
+
+const isoString = date.toISOString();
+const formattedDate = formateDate(date);
 ---
 
 <MainLayout title={title}>
-  <WritingHeader title={title} date={date} description={description} />
+  <WritingHeader
+    title={title}
+    isoString={isoString}
+    formattedDate={formattedDate}
+    description={description}
+  />
   <Content />
 </MainLayout>

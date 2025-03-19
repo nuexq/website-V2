@@ -1,10 +1,9 @@
-
-
 # {props.title}
 
 <div class="flex justify-between items-end">
   <p>{props.description}</p>
-  <p class="text-sm">{props.date}</p>
+  <p class="text-sm">
+    <time dateTime={props.isoString}>{props.formattedDate}</time>
+  </p>
 </div>
 
----

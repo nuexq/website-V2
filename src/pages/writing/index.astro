@@ -1,16 +1,18 @@
 ---
 import Writing from "@/content/writing.mdx";
 import { getCollection } from "astro:content";
-const posts = await getCollection("writing");
 import MainLayout from "@/layouts/mainLayout.astro";
-import { formateDate } from "@/lib/utils";
+import { formateDate, sortPosts, type Post } from "@/lib/utils";
+
+const posts: Post[] = await getCollection("writing");
+const sortedPosts = sortPosts(posts);
 ---
 
 <MainLayout title="writing">
   <Writing />
   <ul class="!mt-5 flex flex-col gap-6 !p-0">
     {
-      posts.map((post) => {
+      sortedPosts.map((post) => {
         const { title, date, description } = post.data;
 
         const isoStringDate = date ? date.toISOString() : null;

@@ -1,4 +1,3 @@
-// @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
@@ -8,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkHint from "remark-hint";
 import rehypePrettyCode from "rehype-pretty-code";
+import { transformerCopyButton } from '@rehype-pretty/transformers'
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -27,7 +27,18 @@ export default defineConfig({
     syntaxHighlight: false,
     remarkPlugins: [remarkHint],
     rehypePlugins: [
-      [rehypePrettyCode, { theme: "catppuccin-mocha" }],
+      [
+        rehypePrettyCode,
+        {
+          theme: "catppuccin-mocha",
+          transformers: [
+            transformerCopyButton({
+              visibility: "always",
+              feedbackDuration: 3000,
+            }),
+          ],
+        },
+      ],
       rehypeSlug,
       [
         rehypeAutolinkHeadings,
@@ -45,3 +56,4 @@ export default defineConfig({
   site: siteConfig.url,
   integrations: [mdx(), sitemap()],
 });
+

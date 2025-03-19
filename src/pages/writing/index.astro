@@ -1,10 +1,10 @@
 ---
-import WritingContent from "@/content/writingContent.mdx";
+import Writing from "@/content/writing.mdx";
 import { getCollection } from 'astro:content';
 const posts = await getCollection('writing');
 import MainLayout from "@/layouts/mainLayout.astro";
 ---
 
 <MainLayout title="writing">
-  <WritingContent posts={posts} />
+  <Writing posts={posts} />
 </MainLayout>

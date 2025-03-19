@@ -53,5 +53,6 @@
 }
 
 [data-rehype-pretty-code-figure] [data-chars-id] {
+  border-color: rgb(88, 91, 112);
   @apply border-b-2 p-1 shadow-none;
 }

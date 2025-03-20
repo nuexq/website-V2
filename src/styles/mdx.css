@@ -9,7 +9,7 @@
 }
 
 [data-rehype-pretty-code-figure] [data-rehype-pretty-code-caption] {
-  @apply text-muted-foreground
+  @apply text-muted-foreground;
 }
 
 [data-rehype-pretty-code-figure] pre {
@@ -32,7 +32,7 @@
   counter-reset: line;
 }
 
-[data-rehype-pretty-code-figure] code[data-line-numbers]>[data-line]::before {
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
   @apply mr-4 inline-block w-4 text-right text-[#7f849c];

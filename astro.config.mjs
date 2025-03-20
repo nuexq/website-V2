@@ -53,6 +53,6 @@ export default defineConfig({
     ],
   },
 
-  site: siteConfig.url,
+  site: `${siteConfig.url}/`,
   integrations: [mdx(), sitemap()],
 });

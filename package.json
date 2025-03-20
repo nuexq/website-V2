@@ -15,6 +15,7 @@
     "@tailwindcss/vite": "^4.0.9",
     "@types/canvas-confetti": "^1.9.0",
     "astro": "5.5.2",
+    "astro-seo": "^0.8.4",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
     "rehype-autolink-headings": "^7.1.0",

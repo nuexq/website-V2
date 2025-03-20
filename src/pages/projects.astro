@@ -2,8 +2,14 @@
 import projects from "@/content/projects/projects.json";
 import ProjectsContent from "@/content/projects/index.mdx";
 import MainLayout from "@/layouts/mainLayout.astro";
+import ContentHeader from "@/components/ContentHeader.astro";
+import { siteConfig } from "@/config/site";
 ---
 
-<MainLayout title="projects">
+<MainLayout title="projects" enableProse={true}>
+  <ContentHeader slot="header" title="Projects">
+    Check out my <a href={siteConfig.links.github}>Github</a> for more projects and contributions.
+  </ContentHeader>
+
   <ProjectsContent projects={projects} />
 </MainLayout>

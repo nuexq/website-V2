@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
   </head>
   <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Header />
-    <main class="mx-auto flex w-full max-w-[80ch] flex-col px-4 py-8 md:px-0">
+    <main class="mx-auto flex w-full max-w-[80ch] flex-col px-10 py-8 md:px-6">
       <slot name="header" />
       <article class={cn("max-w-none", enableProse && "prose")}>
         <slot />

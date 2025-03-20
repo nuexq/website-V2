@@ -1,8 +1,15 @@
 ---
 import Home from "@/content/home.mdx";
 import MainLayout from "@/layouts/mainLayout.astro";
+import ContentHeader from "@/components/contentHeader.astro";
+import { siteConfig } from "@/config/site";
 ---
 
-<MainLayout title="home">
-  <Home />
+<MainLayout title="index" enableProse={true}>
+  <ContentHeader slot="header" title={siteConfig.name}>
+    <a href={siteConfig.links.github}>GitHub</a> •
+    <a href={siteConfig.links.bluesky}>Bluesky</a> •
+    <a href={siteConfig.links.x}>X</a> • Discord: @{siteConfig.links.discord}
+  </ContentHeader>
+  <Home slot="content" />
 </MainLayout>

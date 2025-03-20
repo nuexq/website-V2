@@ -1,12 +1,14 @@
 ---
 interface Props {
   title: string;
+  enableProse: boolean;
 }
 import "../styles/global.css";
-const { title } = Astro.props;
+const { title, enableProse } = Astro.props;
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 ---
 
 <html lang="en">
@@ -14,17 +16,15 @@ import { siteConfig } from "@/config/site";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} - {siteConfig.name}</title>
-  </head><body>
+  </head>
+  <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Header />
-    <main
-      class="mx-auto prose flex w-full max-w-[120ch] flex-col items-center gap-12 px-6 py-8"
-    >
-      <div class="flex w-full max-w-[80ch] flex-col gap-8 px-4 md:px-0">
-        <article>
-          <slot />
-        </article>
-        <Footer />
-      </div>
+    <main class="mx-auto flex w-full max-w-[80ch] flex-col px-4 py-8 md:px-0">
+      <slot name="header" />
+      <article class={cn("max-w-none mt-5", enableProse && "prose")}>
+        <slot name="content" />
+      </article>
+      <Footer />
     </main>
   </body>
 </html>

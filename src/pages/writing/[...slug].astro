@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
+import ContentHeader from "@/components/ContentHeader.astro";
 import { getEntry } from "astro:content";
 import { formateDate, type Post, type PostData } from "@/lib/utils";
 
@@ -23,12 +24,10 @@ const isoStringDate = date.toISOString();
 const formattedDate = formateDate(date);
 ---
 
-<MainLayout title={title}>
-  <h1>{title}</h1>
-  <p class="text-sm !mt-1">
-    <time dateTime={isoStringDate}>{formattedDate}</time>
-  </p>
-  <hr />
+<MainLayout title={title} enableProse={true}>
+  <ContentHeader slot="header" title={title}>
+    <time dateTime={isoStringDate} class="text-sm">{formattedDate}</time>
+  </ContentHeader>
 
   <Content />
 </MainLayout>

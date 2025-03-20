@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 [data-rehype-pretty-code-figure] {
-  @apply mt-4;
+  @apply !mt-4;
 }
 
 [data-rehype-pretty-code-figure] [data-rehype-pretty-code-title] {
@@ -17,7 +17,7 @@
 }
 
 [data-rehype-pretty-code-figure] code {
-  @apply border-0 !p-0 !text-sm !leading-loose md:text-base;
+  @apply border-[1px] border-foreground/20 !p-2 !text-sm !leading-loose md:text-base;
 }
 
 [data-rehype-pretty-code-figure] code span span::selection {
@@ -60,7 +60,7 @@
 
 button.rehype-pretty-copy {
   & {
-    @apply invisible !size-5 cursor-pointer opacity-0;
+    @apply invisible top-5 right-2 !size-5 cursor-pointer opacity-0;
   }
 
   .ready {

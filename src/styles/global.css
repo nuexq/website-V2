@@ -45,7 +45,7 @@
 	}
 
 	body {
-		@apply mx-auto flex min-h-screen flex-col gap-8 bg-background font-body text-foreground antialiased;
+		@apply text-foreground bg-background font-body antialiased;
 	}
 
 	body::after {
@@ -110,7 +110,7 @@
 	}
 
 	p {
-		@apply mt-5 leading-relaxed;
+		@apply mt-3 leading-relaxed;
 	}
 
 	a {

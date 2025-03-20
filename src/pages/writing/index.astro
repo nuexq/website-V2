@@ -1,8 +1,7 @@
 ---
-import Writing from "@/content/writing.mdx";
 import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
-import ContentHeader from "@/components/ContentHeader.astro";
+import ContentHeader from "@/components/layout/ContentHeader.astro";
 import WritingCard from "@/components/writing/WritingCard.astro";
 import { formateDate, sortPosts, type Post } from "@/lib/utils";
 
@@ -17,7 +16,7 @@ const sortedPosts = sortPosts(posts);
 
   <ul class="mt-5 flex flex-col gap-6">
     {
-      sortedPosts.map((post) => {
+      sortedPosts.map((post: Post) => {
         const { title, date, description } = post.data;
 
         const isoStringDate = date ? date.toISOString() : null;

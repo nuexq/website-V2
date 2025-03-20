@@ -1,8 +1,8 @@
-import ProjectLink from "@/components/ui/ProjectLink.astro";
+import ProjectCard from "@/components/projects/ProjectCard.astro";
 
 <ul class="grid grid-cols-1 md:grid-cols-2 gap-[2rem_1.5rem] !mt-5 !p-0">
   {props.projects.map((project) => (
-    <ProjectLink
+    <ProjectCard
       slug={project.slug}
       name={project.name}
       description={project.description}

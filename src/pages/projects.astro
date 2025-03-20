@@ -1,9 +1,29 @@
 ---
 import projects from "@/content/projects/projects.json";
-import ProjectsContent from "@/content/projects/index.mdx";
 import MainLayout from "@/layouts/mainLayout.astro";
+import ContentHeader from "@/components/layout/ContentHeader.astro";
+import ProjectCard from "@/components/projects/ProjectCard.astro";
+import { siteConfig } from "@/config/site";
 ---
 
-<MainLayout title="projects">
-  <ProjectsContent projects={projects} />
+<MainLayout title="projects" enableProse={true}>
+  <ContentHeader slot="header" title="Projects">
+    Check out my <a href={siteConfig.links.github}>Github</a> for more projects and
+    contributions.
+  </ContentHeader>
+
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-[2rem_1.5rem] !mt-5 !p-0">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          slug={project.slug}
+          name={project.name}
+          description={project.description}
+          link={project.link}
+          tech={project.tech}
+          type={project.type}
+        />
+      ))
+    }
+  </ul>
 </MainLayout>

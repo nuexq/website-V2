@@ -1,5 +1,5 @@
 ---
-import Link from "@/components/ui/Link.astro";
+import NavLink from "@/components/NavLink.astro";
 import { siteConfig } from "@/config/site";
 
 let currentPath = Astro.url.pathname;
@@ -32,9 +32,9 @@ const cleanPath = `/${pathSegments[1]}`;
     class="group flex items-start gap-8 opacity-100 transition-opacity duration-800 ease-in-out max-sm:pb-2 max-sm:aria-hidden:opacity-0 sm:flex-row"
     aria-hidden="true"
   >
-    <Link href="/">Home</Link>
-    <Link href="/projects">Projects</Link>
-    <Link href="/writing">Writing</Link>
+    <NavLink href="/">Home</NavLink>
+    <NavLink href="/projects">Projects</NavLink>
+    <NavLink href="/writing">Writing</NavLink>
   </nav>
 </header>
 

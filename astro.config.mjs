@@ -7,7 +7,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkHint from "remark-hint";
 import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from '@rehype-pretty/transformers'
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -56,4 +56,3 @@ export default defineConfig({
   site: siteConfig.url,
   integrations: [mdx(), sitemap()],
 });
-

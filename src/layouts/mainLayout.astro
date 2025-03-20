@@ -1,21 +1,32 @@
 ---
-interface Props {
-  title: string;
-  enableProse: boolean;
-}
 import "../styles/global.css";
-const { title, enableProse } = Astro.props;
 import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+
+interface Props {
+  title: string;
+
+  description: string;
+  enableProse: boolean;
+}
+const { title, description, enableProse } = Astro.props;
+import { SEO } from "astro-seo";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} - {siteConfig.name}</title>
+    <SEO
+      title={`${title} - ${siteConfig.name}`}
+      description={description}
+      canonical={`${siteConfig.url}${Astro.url.pathname}`}
+    />
+    <meta name="author" content={siteConfig.author} />
+    <meta name="theme-color" content="#F9F4DC" />
+    <link href={siteConfig.links.github} rel="me" />
   </head>
   <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Header />

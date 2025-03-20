@@ -17,14 +17,19 @@ const { slug } = Astro.params;
 const post: Post = await getEntry("writing", slug);
 if (!post) return Astro.redirect("/404");
 
-const { title, date }: PostData = post.data;
+const { title, description, date }: PostData = post.data;
 const { Content } = await post.render();
 
 const isoStringDate = date.toISOString();
 const formattedDate = formateDate(date);
+let layoutProps = {
+  title: title,
+  description: description,
+  enableProse: true,
+};
 ---
 
-<MainLayout title={title} enableProse={true}>
+<MainLayout {...layoutProps}>
   <ContentHeader slot="header" title={title}>
     <time dateTime={isoStringDate} class="text-sm">{formattedDate}</time>
   </ContentHeader>

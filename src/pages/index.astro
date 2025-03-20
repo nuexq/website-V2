@@ -3,9 +3,14 @@ import Home from "@/content/home.mdx";
 import MainLayout from "@/layouts/mainLayout.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
 import { siteConfig } from "@/config/site";
+let layoutProps = {
+  title: "index",
+  description: "Web developer and a high school student",
+  enableProse: true,
+};
 ---
 
-<MainLayout title="index" enableProse={true}>
+<MainLayout {...layoutProps}>
   <ContentHeader slot="header" title={siteConfig.name}>
     <a href={siteConfig.links.github}>GitHub</a> •
     <a href={siteConfig.links.bluesky}>Bluesky</a> •

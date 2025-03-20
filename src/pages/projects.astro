@@ -4,9 +4,14 @@ import MainLayout from "@/layouts/mainLayout.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
 import ProjectCard from "@/components/projects/ProjectCard.astro";
 import { siteConfig } from "@/config/site";
+let layoutProps = {
+  title: "projects",
+  description: "Projects I've made",
+  enableProse: true,
+};
 ---
 
-<MainLayout title="projects" enableProse={true}>
+<MainLayout {...layoutProps}>
   <ContentHeader slot="header" title="Projects">
     Check out my <a href={siteConfig.links.github}>Github</a> for more projects and
     contributions.

@@ -7,9 +7,14 @@ import { formateDate, sortPosts, type Post } from "@/lib/utils";
 
 const posts: Post[] = await getCollection("writing");
 const sortedPosts = sortPosts(posts);
+let layoutProps = {
+  title: "writing",
+  description: "Writing about programming and other things",
+  enableProse: false,
+};
 ---
 
-<MainLayout title="writing" enableProse={false}>
+<MainLayout {...layoutProps}>
   <ContentHeader slot="header" title="Writing">
     welcome to my blog
   </ContentHeader>

@@ -17,7 +17,7 @@
 }
 
 [data-rehype-pretty-code-figure] code {
-  @apply border-[1px] border-foreground/20 !py-2 !text-sm !leading-loose md:text-base;
+  @apply border-[1px] border-foreground/20 !text-sm !leading-loose md:text-base !p-0;
 }
 
 [data-rehype-pretty-code-figure] code span span::selection {

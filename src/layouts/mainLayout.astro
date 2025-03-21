@@ -23,6 +23,12 @@ const isWritingPost =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="alternate"
+      type="application/xml"
+      title=`${siteConfig.name}'s Atom Feed`
+      href="/feed.xml"
+    />
     <SEO
       title={`${title} - ${siteConfig.name}`}
       description={description}

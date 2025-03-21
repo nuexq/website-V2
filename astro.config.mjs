@@ -6,8 +6,6 @@ import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkHint from "remark-hint";
-import rehypePrettyCode from "rehype-pretty-code";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -24,21 +22,11 @@ export default defineConfig({
   },
 
   markdown: {
-    syntaxHighlight: false,
+    shikiConfig: {
+      theme: "catppuccin-mocha",
+    },
     remarkPlugins: [remarkHint],
     rehypePlugins: [
-      [
-        rehypePrettyCode,
-        {
-          theme: "catppuccin-mocha",
-          transformers: [
-            transformerCopyButton({
-              visibility: "always",
-              feedbackDuration: 3000,
-            }),
-          ],
-        },
-      ],
       rehypeSlug,
       [
         rehypeAutolinkHeadings,

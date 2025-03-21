@@ -16,7 +16,7 @@ export async function GET() {
     language: "en",
     // favicon: "http://example.com/favicon.ico", // TODO: favicon
     copyright: `All rights reserved ${new Date().getFullYear()}`,
-    feedLinks: { atom: `${siteUrl}/feed.xml` },
+    feedLinks: { atom: `${siteUrl}feed.xml` },
     author: { name: siteConfig.author },
     updated: new Date(),
   });

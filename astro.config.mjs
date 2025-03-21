@@ -6,6 +6,11 @@ import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkHint from "remark-hint";
+import {
+  transformerNotationDiff,
+  transformerNotationFocus,
+  transformerNotationHighlight,
+} from "@shikijs/transformers";
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -24,6 +29,11 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha",
+      transformers: [
+        transformerNotationDiff(),
+        transformerNotationFocus(),
+        transformerNotationHighlight(),
+      ],
     },
     remarkPlugins: [remarkHint],
     rehypePlugins: [

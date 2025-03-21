@@ -5,7 +5,7 @@ import MarkdownIt from "markdown-it";
 import { siteConfig } from "@/config/site";
 
 export async function GET() {
-  const siteUrl = siteConfig.url;
+  const siteUrl = `${siteConfig.url}/`;
   const md = new MarkdownIt({ html: true, breaks: true, linkify: true });
 
   const feed = new Feed({
@@ -78,7 +78,7 @@ export async function GET() {
   const rss = feed.atom1();
   const xmlWithBase = rss.replace(
     '<feed xmlns="http://www.w3.org/2005/Atom">',
-    `<feed xmlns="http://www.w3.org/2005/Atom" xml:base="${siteConfig.url}">`,
+    `<feed xmlns="http://www.w3.org/2005/Atom" xml:base="${siteConfig.url}/">`,
   );
 
   return new Response(xmlWithBase, {

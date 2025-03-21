@@ -4,15 +4,18 @@ import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { SEO } from "astro-seo";
 
 interface Props {
   title: string;
-
   description: string;
   enableProse: boolean;
+  publishedTime: string;
 }
-const { title, description, enableProse } = Astro.props;
-import { SEO } from "astro-seo";
+const { title, description, enableProse, publishedTime } = Astro.props;
+const currentPath = Astro.url.pathname;
+const isWritingPost =
+  currentPath.startsWith("/writing") && currentPath.split("/").length > 2;
 ---
 
 <html lang="en">
@@ -22,11 +25,56 @@ import { SEO } from "astro-seo";
     <SEO
       title={`${title} - ${siteConfig.name}`}
       description={description}
-      canonical={`${siteConfig.url}${Astro.url.pathname}`}
+      canonical={`${siteConfig.url}${currentPath}`}
+      openGraph={{
+        basic: {
+          title: `${title} - ${siteConfig.name}`,
+          type: isWritingPost ? "article" : "website",
+          image:
+            "https://i.pinimg.com/736x/55/f2/47/55f2472a92dead2bbadd82c48c0726f9.jpg", // TODO: add og image
+        },
+        ...(isWritingPost && {
+          article: {
+            publishedTime: publishedTime,
+            authors: [siteConfig.author],
+            section: "Writing",
+          },
+        }),
+      }}
+      twitter={{
+        creator: `@${siteConfig.links.x.split("/")[3]}`,
+        card: isWritingPost ? "summary_large_image" : "summary",
+      }}
+      extend={{
+        link: [
+          { rel: "icon", href: "/favicon.ico" }, // TODO: add favicon
+          { rel: "me", href: siteConfig.links.github },
+          { rel: "me", href: siteConfig.links.x },
+        ],
+        meta: [
+          {
+            name: "twitter:image",
+            content:
+              "https://i.pinimg.com/736x/55/f2/47/55f2472a92dead2bbadd82c48c0726f9.jpg", // TODO: add og image
+          },
+          { name: "twitter:title", content: `${title} - ${siteConfig.name}` },
+          { name: "twitter:description", content: description },
+
+          ...(isWritingPost
+            ? [
+                { property: "og:description", content: description },
+                { property: "article:published_time", content: publishedTime },
+                { property: "article:author", content: siteConfig.author },
+                { property: "article:section", content: "Writing" },
+              ]
+            : []),
+
+          { name: "author", content: siteConfig.author },
+          { name: "theme-color", content: "#F9F4DC" },
+          { name: "generator", content: Astro.generator },
+        ],
+      }}
     />
-    <meta name="author" content={siteConfig.author} />
-    <meta name="theme-color" content="#F9F4DC" />
-    <link href={siteConfig.links.github} rel="me" />
   </head>
   <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Header />

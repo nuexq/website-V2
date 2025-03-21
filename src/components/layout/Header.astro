@@ -30,7 +30,7 @@ const cleanPath = `/${pathSegments[1]}`;
     id="main-nav"
     aria-label="Main navigation"
     class="group flex items-start gap-8 opacity-100 transition-opacity duration-800 ease-in-out max-sm:pb-2 max-sm:aria-hidden:opacity-0 sm:flex-row"
-    aria-hidden="true"
+    aria-hidden="false"
   >
     <NavLink href="/">Home</NavLink>
     <NavLink href="/projects">Projects</NavLink>
@@ -44,15 +44,26 @@ const cleanPath = `/${pathSegments[1]}`;
     const header = document.getElementById("header");
     const nav = document.getElementById("main-nav");
 
+    function updateNavVisibility() {
+      if (window.innerWidth >= 640) {
+        nav.setAttribute("aria-hidden", "false");
+      } else {
+        nav.setAttribute("aria-hidden", "true");
+      }
+    }
+
     if (menuBtn && header && nav) {
       let isOpen = false;
 
       menuBtn.addEventListener("click", () => {
         isOpen = !isOpen;
-
         menuBtn.setAttribute("aria-expanded", isOpen.toString());
         nav.setAttribute("aria-hidden", (!isOpen).toString());
       });
+
+      updateNavVisibility();
+
+      window.addEventListener("resize", updateNavVisibility);
     }
   });
 </script>

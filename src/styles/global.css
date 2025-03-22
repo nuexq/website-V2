@@ -84,7 +84,7 @@
 	}
 
 	h3 {
-		@apply mt-6 leading-[1.5] tracking-[-0.005em] italic;
+		@apply mt-6 leading-[1.5] tracking-[-0.005em];
 	}
 
 	h4 {

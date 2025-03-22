@@ -9,15 +9,15 @@
 	--color-accent: hsl(13, 25%, 28%);
 	--color-muted-foreground: hsl(0, 0%, 40%);
 
-	--font-display: "Merriweather", "serif";
+	--font-display: "Lora", "serif";
 	--font-body: "Inter", "sans-serif";
 	--spacing: 0.25rem;
 }
 
 @layer base {
 	@font-face {
-		font-family: "Merriweather";
-		src: url("/fonts/Merriweather-VariableFont_opsz,wdth,wght.ttf")
+		font-family: "Lora";
+		src: url("/fonts/Lora-VariableFont.ttf")
 			format("truetype");
 		font-weight: 400 700;
 		font-style: normal;

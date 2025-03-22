@@ -22,7 +22,7 @@ const { title, formattedDate, isoStringDate, description, slug } = Astro.props;
         >
       </h3>
       <div class="text-sm text-muted-foreground">
-        <time dateTime={isoStringDate}>{formattedDate}</time>
+        <time datetime={isoStringDate}>{formattedDate}</time>
       </div>
     </div>
     <p class="text-muted-foreground">{description}</p>

@@ -15,6 +15,8 @@ import {
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
 
+import alpinejs from "@astrojs/alpinejs";
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -52,5 +54,5 @@ export default defineConfig({
   },
 
   site: `${siteConfig.url}/`,
-  integrations: [mdx(), sitemap()],
+  integrations: [mdx(), sitemap(), alpinejs({ entrypoint: './alpine.config.ts' })],
 });

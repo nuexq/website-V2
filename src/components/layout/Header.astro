@@ -38,7 +38,7 @@ const cleanPath = `/${pathSegments[1]}`;
     </button>
   </div>
 
-  <div x-show="isOpen" x-collapse.duration.400ms class="sm:hidden" x-cloak>
+  <div x-show="isOpen" x-collapse.duration.400ms class="sm:hidden [&[x-cloak]]:hidden" x-cloak>
     <nav
       id="main-nav"
       aria-label="Main navigation"
@@ -63,9 +63,3 @@ const cleanPath = `/${pathSegments[1]}`;
     </nav>
   </div>
 </header>
-
-<style>
-  [x-cloak] {
-    display: none !important;
-  }
-</style>

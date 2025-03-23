@@ -14,14 +14,6 @@
 }
 
 @layer base {
-	@font-face {
-		font-family: "Crimson Pro";
-		src: url("/fonts/CrimsonPro-VariableFont.ttf") format("truetype");
-		font-weight: 400 700;
-		font-style: normal;
-		font-display: swap;
-	}
-
 	html {
 		scroll-behavior: smooth;
     font-size: 18px;
@@ -36,7 +28,7 @@
 	}
 
 	body {
-		@apply text-foreground bg-background antialiased font-display;
+		@apply text-foreground bg-background antialiased;
 	}
 }
 

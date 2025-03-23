@@ -83,7 +83,29 @@ const isWritingPost =
         ],
       }}
     />
-
+    <AstroFont
+      config={[
+        {
+          name: "Crimson Pro",
+          src: [
+            {
+              style: "normal",
+              weight: "400 700",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "CrimsonPro-VariableFont.ttf",
+              ),
+            },
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "serif",
+        },
+      ]}
+    />
   </head>
   <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Header />

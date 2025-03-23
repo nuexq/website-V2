@@ -19,6 +19,7 @@
     "@types/canvas-confetti": "^1.9.0",
     "alpinejs": "^3.14.9",
     "astro": "5.5.2",
+    "astro-font": "^1.0.0",
     "astro-seo": "^0.8.4",
     "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",

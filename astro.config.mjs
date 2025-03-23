@@ -56,7 +56,11 @@ export default defineConfig({
   site: `${siteConfig.url}/`,
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      xslURL: "/sitemap.xsl",
+      changefreq: "weekly",
+      priority: 0.7,
+    }),
     alpinejs({ entrypoint: "./alpine.config.ts" }),
   ],
 });

@@ -133,6 +133,10 @@
 		@apply pt-0 pl-4;
 	}
 
+  blockquote {
+    @apply mt-3 border-accent/30 bg-accent/5 pl-6 pr-4 w-fit italic
+  }
+
 	.hint {
 		@apply border-[1px] border-l-4 border-solid px-3 py-2;
 	}

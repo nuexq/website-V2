@@ -108,7 +108,7 @@
 	}
 
 	code {
-		@apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-sm font-semibold before:content-none after:content-none;
+		@apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-xs before:content-none after:content-none;
 	}
 
 	hr {

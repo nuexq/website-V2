@@ -57,7 +57,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      xslURL: "/sitemap.xsl",
       changefreq: "weekly",
       priority: 0.7,
     }),

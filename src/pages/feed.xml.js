@@ -47,11 +47,11 @@ export async function GET() {
           tagName,
           attribs: attribs.href?.startsWith("/")
             ? {
-              ...attribs,
-              href: `${siteUrl}${attribs.href}`,
-              target: "_blank",
-              rel: "noopener",
-            }
+                ...attribs,
+                href: `${siteUrl}${attribs.href}`,
+                target: "_blank",
+                rel: "noopener",
+              }
             : attribs,
         }),
         img: (tagName, attribs) => ({

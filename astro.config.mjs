@@ -54,5 +54,9 @@ export default defineConfig({
   },
 
   site: `${siteConfig.url}/`,
-  integrations: [mdx(), sitemap(), alpinejs({ entrypoint: './alpine.config.ts' })],
+  integrations: [
+    mdx(),
+    sitemap(),
+    alpinejs({ entrypoint: "./alpine.config.ts" }),
+  ],
 });

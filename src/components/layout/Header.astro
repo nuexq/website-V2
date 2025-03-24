@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 
 let currentPath = Astro.url.pathname;
 const pathSegments = currentPath.split("/");
-const cleanPath = `/${pathSegments[1]}`;
+const cleanPath = pathSegments.length >= 3 ? `/${pathSegments[1]}/...` : `/${pathSegments[1]}`;
 ---
 
 <header
@@ -25,7 +25,7 @@ const cleanPath = `/${pathSegments[1]}`;
   <div class="flex items-center justify-between">
     <div class="font-display text-xl">
       <a href="/">{siteConfig.name}</a>
-      <span class="text-xs text-background/90 sm:hidden">{cleanPath}</span>
+      <span class="text-[10px] text-background/90 sm:hidden font-mono">{cleanPath}</span>
     </div>
     <button
       class="cursor-pointer text-sm sm:hidden"

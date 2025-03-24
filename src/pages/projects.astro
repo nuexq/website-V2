@@ -4,6 +4,10 @@ import MainLayout from "@/layouts/mainLayout.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
 import ProjectCard from "@/components/projects/ProjectCard.astro";
 import { siteConfig } from "@/config/site";
+import type { Projects, Project } from "@/types/projects";
+
+const projectsData: Projects = projects;
+
 let layoutProps = {
   title: "projects",
   description: "Projects I've made",
@@ -18,7 +22,7 @@ let layoutProps = {
 
   <ul class="grid grid-cols-1 md:grid-cols-2 gap-[2rem_1.5rem] !mt-5 !p-0">
     {
-      projects.map((project) => (
+      projectsData.map((project: Project) => (
         <ProjectCard
           slug={project.slug}
           name={project.name}

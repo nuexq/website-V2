@@ -43,3 +43,14 @@ export function sortPosts(posts: Post[]): Post[] {
     return 0;
   });
 }
+
+export interface Project {
+  name: string;
+  slug: string;
+  description: string;
+  type: "site" | "project";
+  link?: string;
+  tech: string[];
+}
+
+export type Projects = Project[];

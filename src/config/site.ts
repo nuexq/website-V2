@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "nuexq",
   url: "https://nuexq.vercel.app",
-  description:
-    "16-year-old developer passionate about programming.",
+  description: "16-year-old developer passionate about programming.",
   author: "nuexq",
   links: {
     github: "https://github.com/nuexq",

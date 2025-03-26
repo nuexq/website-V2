@@ -1,12 +1,9 @@
 ---
 import "../styles/global.css";
-import { SEO } from "astro-seo";
-import { AstroFont } from "astro-font";
 import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
-import { siteConfig } from "@/config/site";
+import Head from "@/components/layout/Head.astro";
 import { cn } from "@/lib/utils";
-import { join } from "node:path";
 
 interface Props {
   title: string;
@@ -15,103 +12,10 @@ interface Props {
   publishedTime: string;
 }
 const { title, description, enableProse, publishedTime } = Astro.props;
-const currentPath = Astro.url.pathname;
-console.log(currentPath);
-const isWritingPost =
-  currentPath.startsWith("/writing") && currentPath.split("/").length > 2;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="alternate"
-      type="application/xml"
-      title=`${siteConfig.name}'s Atom Feed`
-      href="/feed.xml"
-    />
-    <SEO
-      title={`${title} - ${siteConfig.name}`}
-      description={description}
-      canonical={`${siteConfig.url}${currentPath}`}
-      openGraph={{
-        basic: {
-          title: `${title} - ${siteConfig.name}`,
-          type: isWritingPost ? "article" : "website",
-          url: `${siteConfig.url}${currentPath}`,
-          image: `https://nuexq-og-img.vercel.app/api/og?title=${currentPath === "/" ? "nuexq" : title}`,
-        },
-        image: {
-          width: 1200,
-          height: 630,
-        },
-        ...(isWritingPost && {
-          article: {
-            publishedTime: publishedTime,
-            authors: [siteConfig.author],
-            section: "Writing",
-          },
-        }),
-      }}
-      twitter={{
-        creator: `@${siteConfig.links.x.split("/")[3]}`,
-        card: "summary_large_image",
-      }}
-      extend={{
-        link: [
-          { rel: "icon", href: "/favicon.ico" }, // TODO: add favicon
-          { rel: "me", href: siteConfig.links.github },
-          { rel: "me", href: siteConfig.links.x },
-          { rel: "sitemap", href: "/sitemap-index.xml" },
-        ],
-        meta: [
-          {
-            name: "twitter:image",
-            content: `https://nuexq-og-img.vercel.app/api/og?title=${currentPath === "/" ? "nuexq" : title}`,
-          },
-          { name: "twitter:title", content: `${title} - ${siteConfig.name}` },
-          { name: "twitter:description", content: description },
-
-          ...(isWritingPost
-            ? [
-                { property: "og:description", content: description },
-                { property: "article:published_time", content: publishedTime },
-                { property: "article:author", content: siteConfig.author },
-                { property: "article:section", content: "Writing" },
-              ]
-            : []),
-
-          { name: "author", content: siteConfig.author },
-          { name: "theme-color", content: "#F9F4DC" },
-          { name: "generator", content: Astro.generator },
-        ],
-      }}
-    />
-    <AstroFont
-      config={[
-        {
-          name: "Crimson Pro",
-          src: [
-            {
-              style: "normal",
-              weight: "400 700",
-              path: join(
-                process.cwd(),
-                "public",
-                "fonts",
-                "CrimsonPro-VariableFont.ttf",
-              ),
-            },
-          ],
-          preload: true,
-          display: "swap",
-          selector: "body",
-          fallback: "serif",
-        },
-      ]}
-    />
-  </head>
+  <Head title={title} description={description} publishedTime={publishedTime} />
   <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Header />
     <main

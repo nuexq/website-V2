@@ -16,6 +16,7 @@ interface Props {
 }
 const { title, description, enableProse, publishedTime } = Astro.props;
 const currentPath = Astro.url.pathname;
+console.log(currentPath);
 const isWritingPost =
   currentPath.startsWith("/writing") && currentPath.split("/").length > 2;
 ---
@@ -38,8 +39,12 @@ const isWritingPost =
         basic: {
           title: `${title} - ${siteConfig.name}`,
           type: isWritingPost ? "article" : "website",
-          image:
-            "https://i.pinimg.com/736x/55/f2/47/55f2472a92dead2bbadd82c48c0726f9.jpg", // TODO: add og image
+          url: `${siteConfig.url}${currentPath}`,
+          image: `https://nuexq-og-img.vercel.app/api/og?title=${currentPath === "/" ? "nuexq" : title}`,
+        },
+        image: {
+          width: 1200,
+          height: 630,
         },
         ...(isWritingPost && {
           article: {
@@ -51,7 +56,7 @@ const isWritingPost =
       }}
       twitter={{
         creator: `@${siteConfig.links.x.split("/")[3]}`,
-        card: isWritingPost ? "summary_large_image" : "summary",
+        card: "summary_large_image",
       }}
       extend={{
         link: [
@@ -63,8 +68,7 @@ const isWritingPost =
         meta: [
           {
             name: "twitter:image",
-            content:
-              "https://i.pinimg.com/736x/55/f2/47/55f2472a92dead2bbadd82c48c0726f9.jpg", // TODO: add og image
+            content: `https://nuexq-og-img.vercel.app/api/og?title=${currentPath === "/" ? "nuexq" : title}`,
           },
           { name: "twitter:title", content: `${title} - ${siteConfig.name}` },
           { name: "twitter:description", content: description },

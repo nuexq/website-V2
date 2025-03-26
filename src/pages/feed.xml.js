@@ -1,8 +1,8 @@
-import { Feed } from "feed";
 import { getCollection } from "astro:content";
-import sanitizeHtml from "sanitize-html";
-import MarkdownIt from "markdown-it";
 import { siteConfig } from "@/config/site";
+import { Feed } from "feed";
+import MarkdownIt from "markdown-it";
+import sanitizeHtml from "sanitize-html";
 
 export async function GET() {
   const siteUrl = `${siteConfig.url}/`;
@@ -14,7 +14,7 @@ export async function GET() {
     id: siteUrl,
     link: siteUrl,
     language: "en",
-    // favicon: "http://example.com/favicon.ico", // TODO: favicon
+    favicon: `${siteUrl}favicon.ico`,
     copyright: `All rights reserved ${new Date().getFullYear()}`,
     feedLinks: { atom: `${siteUrl}feed.xml` },
     author: { name: siteConfig.author },
@@ -24,7 +24,7 @@ export async function GET() {
   const writing = await getCollection("writing");
 
   writing.map((post) => {
-    const url = `${siteUrl}/writing/${post.slug}`;
+    const url = `${siteUrl}writing/${post.slug}`;
     const publishDate = new Date(post.data.date);
     const updatedDate = post.data.modified
       ? new Date(post.data.modified)
@@ -47,11 +47,11 @@ export async function GET() {
           tagName,
           attribs: attribs.href?.startsWith("/")
             ? {
-                ...attribs,
-                href: `${siteUrl}${attribs.href}`,
-                target: "_blank",
-                rel: "noopener",
-              }
+              ...attribs,
+              href: `${siteUrl}${attribs.href}`,
+              target: "_blank",
+              rel: "noopener",
+            }
             : attribs,
         }),
         img: (tagName, attribs) => ({

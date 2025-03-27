@@ -29,7 +29,7 @@
   }
 
   body {
-    @apply text-foreground bg-background antialiased;
+    @apply text-foreground bg-background font-display antialiased;
   }
 }
 
@@ -69,6 +69,7 @@
 
   h3 {
     @apply mt-6 leading-[1.5] tracking-[-0.005em] italic;
+
     a {
       @apply font-normal;
     }
@@ -116,11 +117,11 @@
   }
 
   ul {
-    @apply list-outside list-disc pt-3 pl-4;
+    @apply list-outside list-disc;
   }
 
   ol {
-    @apply list-outside list-decimal pt-3 pl-4;
+    @apply list-outside list-decimal;
   }
 
   li {
@@ -128,11 +129,11 @@
   }
 
   li::marker {
-    @apply text-accent;
+    @apply text-accent/50;
   }
 
-  li > ul,
-  li > ol {
+  li>ul,
+  li>ol {
     @apply pt-0 pl-4;
   }
 

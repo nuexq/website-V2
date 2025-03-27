@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
+import Comments from "@/components/Comments.astro";
 import { getEntry } from "astro:content";
 import { formateDate, type Post, type PostData } from "@/lib/utils";
 
@@ -36,4 +37,5 @@ let layoutProps = {
   </ContentHeader>
 
   <Content />
+  <Comments />
 </MainLayout>

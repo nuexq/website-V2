@@ -1,16 +1,16 @@
-import { defineConfig } from "astro/config";
+import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
-import path from "path";
+import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import remarkHint from "remark-hint";
 import {
   transformerNotationDiff,
   transformerNotationFocus,
   transformerNotationHighlight,
 } from "@shikijs/transformers";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+import remarkHint from "remark-hint";
 
 import sitemap from "@astrojs/sitemap";
 import { siteConfig } from "./src/config/site";
@@ -56,10 +56,7 @@ export default defineConfig({
   site: `${siteConfig.url}/`,
   integrations: [
     mdx(),
-    sitemap({
-      changefreq: "weekly",
-      priority: 0.7,
-    }),
+    sitemap(),
     alpinejs({ entrypoint: "./alpine.config.ts" }),
   ],
 });

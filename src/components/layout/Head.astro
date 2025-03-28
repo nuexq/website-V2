@@ -30,7 +30,7 @@ const isWritingPost =
     canonical={`${siteConfig.url}${currentPath}`}
     openGraph={{
       basic: {
-        title: `${title} - ${siteConfig.name}`,
+        title: title,
         type: isWritingPost ? "article" : "website",
         url: `${siteConfig.url}${currentPath}`,
         image: `https://nuexq-og-img.vercel.app/api/og?title=${title}`,

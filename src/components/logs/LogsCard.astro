@@ -1,11 +1,14 @@
 ---
-const { name, type, startDate, endDate, rating } = Astro.props;
+import type { LogItem } from "@/lib/utils";
+const { name, type, startDate, endDate, rating }: LogItem = Astro.props;
 ---
 
 <li class="flex flex-col gap-1 !p-0">
   <div class="flex items-center justify-between">
     <div>
-      <span class="text-xl">{name}</span><span class="text-sm !text-accent italic">: {type}</span>
+      <span class="text-xl">{name}</span><span
+        class="text-sm !text-accent italic">: {type}</span
+      >
     </div>
 
     <div class="text-sm text-accent">{rating}/10</div>

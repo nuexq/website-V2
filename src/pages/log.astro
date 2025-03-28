@@ -3,10 +3,11 @@ import logs from "@/data/log.json";
 import MainLayout from "@/layouts/mainLayout.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
 import LogsCard from "@/components/logs/LogsCard.astro";
-import { formateDate, sortLogs } from "@/lib/utils";
+import { formateDate, sortLogs, type LogItem, type Log } from "@/lib/utils";
 
-const logsData = sortLogs(logs).filter((item) => item.endDate !== null);
-
+const logsData: Log = sortLogs(logs).filter(
+  (item: LogItem) => item.endDate !== null && item.rating !== null
+);
 let layoutProps = {
   title: "Log",
   description: "Games, TV Shows, Movies, Books, I've tried.",
@@ -21,7 +22,7 @@ let layoutProps = {
 
   <ul class="flex flex-col gap-4 !mt-5 !p-0">
     {
-      logsData.map((item) => (
+      logsData.map((item: LogItem) => (
         <LogsCard
           name={item.name}
           type={item.type}

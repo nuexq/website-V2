@@ -62,3 +62,13 @@ export interface Project {
 }
 
 export type Projects = Project[];
+
+export interface LogItem {
+  name: string;
+  type: "game" | "tv-show" | "movie" | "book";
+  startDate: string;
+  endDate: string | null;
+  rating: number | null;
+}
+
+export type Log = LogItem[];

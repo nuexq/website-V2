@@ -1,0 +1,35 @@
+---
+import logs from "@/data/logs.json";
+import MainLayout from "@/layouts/mainLayout.astro";
+import ContentHeader from "@/components/layout/ContentHeader.astro";
+import LogsCard from "@/components/logs/LogsCard.astro";
+import { formateDate, sortLogs } from "@/lib/utils";
+
+const logsData = sortLogs(logs).filter((item) => item.endDate !== null);
+
+let layoutProps = {
+  title: "Log",
+  description: "Games, TV Shows, Movies, Books, I've tried.",
+  enableProse: true,
+};
+---
+
+<MainLayout {...layoutProps}>
+  <ContentHeader slot="header" title="Log">
+    Games, TV Shows, Movies, Books, I've tried.
+  </ContentHeader>
+
+  <ul class="flex flex-col gap-4 !mt-5 !p-0">
+    {
+      logsData.map((item) => (
+        <LogsCard
+          name={item.name}
+          type={item.type}
+          startDate={formateDate(item.startDate)}
+          endDate={item.endDate}
+          rating={item.rating}
+        />
+      ))
+    }
+  </ul>
+</MainLayout>

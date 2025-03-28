@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Re:zero",
+    "type": "tv-show",
+    "startDate": "2025-01-22",
+    "endDate": "2025-03-25",
+    "rating": 9
+  },
+  {
+    "name": "Post Void",
+    "type": "game",
+    "startDate": "2025-01-03",
+    "endDate": null,
+    "rating": null
+  }
+]

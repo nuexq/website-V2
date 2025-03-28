@@ -44,6 +44,14 @@ export function sortPosts(posts: Post[]): Post[] {
   });
 }
 
+export function sortLogs(item) {
+  return item.sort((a, b) => {
+    if (a.endDate > b.endDate) return -1;
+    if (a.endDate < b.endDate) return 1;
+    return 0;
+  });
+}
+
 export interface Project {
   name: string;
   slug: string;

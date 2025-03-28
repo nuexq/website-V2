@@ -6,6 +6,12 @@ let currentPath = Astro.url.pathname;
 const pathSegments = currentPath.split("/");
 const cleanPath =
   pathSegments.length >= 3 ? `/${pathSegments[1]}/...` : `/${pathSegments[1]}`;
+
+const navLinks = [
+  { name: "Projects", href: "/projects" },
+  { name: "Writing", href: "/writing" },
+  { name: "Logs", href: "/logs" },
+];
 ---
 
 <header
@@ -26,9 +32,9 @@ const cleanPath =
   <div class="flex items-center justify-between">
     <div class="font-display text-xl">
       <a href="/">{siteConfig.name}</a>
-      <span class="text-[10px] text-background/90 sm:hidden font-mono"
-        >{cleanPath}</span
-      >
+      <span class="text-[10px] text-background/90 sm:hidden font-mono">
+        {cleanPath}
+      </span>
     </div>
     <button
       class="cursor-pointer text-sm sm:hidden"
@@ -54,9 +60,13 @@ const cleanPath =
       class="pt-6 pb-1"
     >
       <div class="flex items-start gap-6">
-        <NavLink href="/" x-on:click="isOpen = false">Home</NavLink>
-        <NavLink href="/projects" x-on:click="isOpen = false">Projects</NavLink>
-        <NavLink href="/writing" x-on:click="isOpen = false">Writing</NavLink>
+        {
+          navLinks.map((link) => (
+            <NavLink href={link.href} x-on:click="isOpen = false">
+              {link.name}
+            </NavLink>
+          ))
+        }
       </div>
     </nav>
   </div>
@@ -64,9 +74,11 @@ const cleanPath =
   <div class="hidden sm:block">
     <nav id="main-nav" aria-label="Main navigation" class="opacity-100">
       <div class="flex items-start gap-6">
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
-        <NavLink href="/writing">Writing</NavLink>
+        {
+          navLinks.map((link) => (
+            <NavLink href={link.href}>{link.name}</NavLink>
+          ))
+        }
       </div>
     </nav>
   </div>

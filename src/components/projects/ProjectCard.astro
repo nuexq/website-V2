@@ -24,9 +24,7 @@ const { name, description, link, slug, tech, type } = Astro.props;
   </div>
   <div class="flex items-end justify-between text-sm">
     <div class="max-w-[60%]">
-      <code class="!p-0 !font-display !font-normal !text-sm"
-        >{tech.join(" · ")}</code
-      >
+      <mark>{tech.join(" · ")}</mark>
     </div>
     <div class="flex gap-2">
       <a

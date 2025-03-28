@@ -1,49 +1,33 @@
 [
-  {
-    "name": "Conway's Game of Life",
-    "slug": "game-of-life",
-    "description": "A Conway's Game of Life implementation using WebGPU and React/Vite.",
-    "type": "site",
-    "link": "https://game-of-life-henna-zeta.vercel.app/",
-    "tech": ["Typescript", "WebGPU", "React", "Vite"]
-  },
-  {
-    "name": "Website",
-    "slug": "website",
-    "description": "The first version of my personal website, built in Next.js.",
-    "type": "site",
-    "link": "https://nuexq.vercel.app",
-    "tech": ["Typescript", "Astro", "Tailwindcss"]
-  },
-  {
-    "name": "Simple Blog",
-    "slug": "simpleBlog",
-    "description": "A simple blog build with Nextjs, velite, taiwindcss and shadcn ui.",
-    "type": "site",
-    "link": "https://simpleblog003.vercel.app/",
-    "tech": ["Next.js", "Velite", "Tailwindcss"]
-  },
-  {
-    "name": "Events website",
-    "slug": "events-website",
-    "description": "A simple clone for 'urba events' website just for learning.",
-    "type": "site",
-    "link": "https://eventswebsite.vercel.app/en",
-    "tech": ["Next.js", "Tailwindcss"]
-  },
-  {
-    "name": "My dotfiles",
-    "slug": "dotfiles",
-    "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config, and other tools and apps.",
-    "type": "project",
-    "tech": ["Bash"]
-  },
-  {
-    "name": "React Projects",
-    "slug": "react-projects",
-    "description": "Collection of open-source projects, components, React hooks made with React.",
-    "type": "site",
-    "link": "https://nuexq.github.io/React-Projects/",
-    "tech": ["JavaScript", "React", "Vite", "Tailwindcss"]
-  }
+	{
+		"name": "Conway's Game of Life",
+		"slug": "game-of-life",
+		"description": "A Conway's Game of Life implementation using WebGPU and React/Vite.",
+		"type": "site",
+		"link": "https://game-of-life-henna-zeta.vercel.app/",
+		"tech": ["Typescript", "WebGPU", "React", "Vite"]
+	},
+	{
+		"name": "Website",
+		"slug": "website",
+		"description": "The first version of my personal website, built in Next.js.",
+		"type": "site",
+		"link": "https://nuexq.vercel.app",
+		"tech": ["Typescript", "Astro", "Tailwindcss"]
+	},
+	{
+		"name": "My dotfiles",
+		"slug": "dotfiles",
+		"description": "My dotfiles for Arch Linux Hyprland, including my Neovim config, and other tools and apps.",
+		"type": "project",
+		"tech": ["Bash"]
+	},
+	{
+		"name": "React Projects",
+		"slug": "react-projects",
+		"description": "Collection of open-source projects, components, React hooks made with React.",
+		"type": "site",
+		"link": "https://nuexq.github.io/React-Projects/",
+		"tech": ["JavaScript", "React", "Vite", "Tailwindcss"]
+	}
 ]

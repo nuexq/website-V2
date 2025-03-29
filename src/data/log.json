@@ -1,16 +1,191 @@
 [
-	{
-		"name": "Re:zero",
-		"type": "tv-show",
-		"startDate": "2025-01-22",
-		"endDate": "2025-03-25",
-		"rating": 9
-	},
-	{
-		"name": "Post Void",
-		"type": "game",
-		"startDate": "2025-01-03",
-		"endDate": "2025-01-04",
-		"rating": null
-	}
+  {
+    "name": "Jujutsu Kaisen",
+    "type": "tv-show",
+    "startDate": "2024-01-05",
+    "endDate": "2024-01-21",
+    "rating": 8
+  },
+  {
+    "name": "Better Call Saul",
+    "type": "tv-show",
+    "startDate": "2024-06-11",
+    "endDate": "2024-07-26",
+    "rating": 10
+  },
+  {
+    "name": "Hajime no Ippo",
+    "type": "tv-show",
+    "startDate": "2024-03-??",
+    "endDate": "2024-07-11",
+    "rating": 9
+  },
+  {
+    "name": "One Punch Man",
+    "type": "tv-show",
+    "startDate": "2024-06-11",
+    "endDate": "2024-06-13",
+    "rating": 8
+  },
+  {
+    "name": "Dark Souls 1",
+    "type": "game",
+    "startDate": "2024-06-29",
+    "endDate": "2024-07-17",
+    "rating": 8
+  },
+  {
+    "name": "Minecraft",
+    "type": "game",
+    "startDate": "2024-07-18",
+    "endDate": "2024-07-19",
+    "rating": 7
+  },
+  {
+    "name": "SCP: Containment Breach Multiplayer",
+    "type": "game",
+    "startDate": "2024-09-04",
+    "endDate": "2024-09-27",
+    "rating": 8
+  },
+  {
+    "name": "Joker",
+    "type": "movie",
+    "startDate": "2024-04-21",
+    "endDate": "2024-04-21",
+    "rating": 9
+  },
+  {
+    "name": "Spider-Man: Across the Spider-Verse",
+    "type": "movie",
+    "startDate": "2024-06-16",
+    "endDate": "2024-06-16",
+    "rating": 8
+  },
+  {
+    "name": "There Will Be Blood",
+    "type": "movie",
+    "startDate": "2024-06-18",
+    "endDate": "2024-06-18",
+    "rating": 8
+  },
+  {
+    "name": "1917",
+    "type": "movie",
+    "startDate": "2024-06-19",
+    "endDate": "2024-06-19",
+    "rating": 8
+  },
+  {
+    "name": "12 Angry Men",
+    "type": "movie",
+    "startDate": "2024-06-23",
+    "endDate": "2024-06-23",
+    "rating": 9
+  },
+  {
+    "name": "The Goat Life",
+    "type": "movie",
+    "startDate": "2024-08-25",
+    "endDate": "2024-08-25",
+    "rating": 7
+  },
+  {
+    "name": "The Stanford Prison Experiment",
+    "type": "movie",
+    "startDate": "2024-09-04",
+    "endDate": "2024-09-04",
+    "rating": 7
+  },
+  {
+    "name": "Spirited Away",
+    "type": "movie",
+    "startDate": "2024-11-30",
+    "endDate": "2024-11-30",
+    "rating": 8.5
+  },
+  {
+    "name": "Howl's Moving Castle",
+    "type": "movie",
+    "startDate": "2024-11-30",
+    "endDate": "2024-11-30",
+    "rating": 8
+  },
+  {
+    "name": "Grave of the Fireflies",
+    "type": "movie",
+    "startDate": "2024-12-02",
+    "endDate": "2024-12-02",
+    "rating": 9
+  },
+  {
+    "name": "Just Listen to the Song",
+    "type": "manga",
+    "startDate": "2024-02-18",
+    "endDate": "2024-02-18",
+    "rating": 8
+  },
+  {
+    "name": "Surrounded by Idiots",
+    "type": "book",
+    "startDate": "2024-06-04",
+    "endDate": "2024-07-04",
+    "rating": 8
+  },
+  {
+    "name": "Atomic Habits",
+    "type": "book",
+    "startDate": "2024-08-20",
+    "endDate": "2024-12-15",
+    "rating": 8
+  },
+  {
+    "name": "Squid Game",
+    "type": "tv-show",
+    "startDate": "2025-01-01",
+    "endDate": "2025-01-05",
+    "rating": 8
+  },
+  {
+    "name": "Chainsaw Man",
+    "type": "tv-show",
+    "startDate": "2025-01-14",
+    "endDate": "2025-01-15",
+    "rating": 8
+  },
+  {
+    "name": "Re:Zero",
+    "type": "tv-show",
+    "startDate": "2025-01-22",
+    "endDate": "2025-03-27",
+    "rating": 9
+  },
+  {
+    "name": "Solo Leveling",
+    "type": "tv-show",
+    "startDate": "2025-02-21",
+    "endDate": "2025-03-29",
+    "rating": 8
+  },
+  {
+    "name": "Invincible",
+    "type": "tv-show",
+    "startDate": "2025-03-15",
+    "endDate": "2025-03-21",
+    "rating": 8.5
+  },
+  {
+    "name": "Post Void",
+    "type": "game",
+    "startDate": "2025-01-03",
+    "endDate": null,
+    "rating": null
+  },
+  {
+    "name": "Look Back",
+    "type": "movie",
+    "startDate": "2025-01-08",
+    "endDate": "2025-01-08",
+    "rating": 8
+  }
 ]

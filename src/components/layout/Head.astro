@@ -3,6 +3,8 @@ import { SEO } from "astro-seo";
 import { AstroFont } from "astro-font";
 import { siteConfig } from "@/config/site";
 import { join } from "node:path";
+import { ClientRouter } from "astro:transitions";
+
 interface Props {
   title: string;
   description: string;
@@ -24,6 +26,7 @@ const isWritingPost =
     title=`${siteConfig.name}'s Atom Feed`
     href="/feed.xml"
   />
+  <ClientRouter />
   <SEO
     title={`${title} - ${siteConfig.name}`}
     description={description}

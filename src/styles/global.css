@@ -142,12 +142,12 @@
   }
 
   table {
-    @apply w-full table-auto border-collapse mt-6 mb-6;
+    @apply max-sm:min-w-max w-auto table-auto border-collapse mt-6 mb-6;
   }
 
   th,
   td {
-    @apply px-4 py-2 border border-accent/20;
+    @apply px-4 py-2 border border-accent/20 max-w-md;
   }
 
   th {
@@ -190,5 +190,11 @@
     &::before {
       @apply visible opacity-100;
     }
+  }
+}
+
+@layer utilities {
+  .table-overflow {
+    @apply w-full overflow-x-auto;
   }
 }

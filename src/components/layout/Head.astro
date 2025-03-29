@@ -26,7 +26,6 @@ const isWritingPost =
     title=`${siteConfig.name}'s Atom Feed`
     href="/feed.xml"
   />
-  <ClientRouter />
   <SEO
     title={`${title} - ${siteConfig.name}`}
     description={description}
@@ -132,4 +131,6 @@ const isWritingPost =
       },
     ]}
   />
+
+  <ClientRouter />
 </head>

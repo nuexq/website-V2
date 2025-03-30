@@ -18,24 +18,6 @@ export function formateDate(input: string | number): string {
   return `${month} ${day}, ${year}`;
 }
 
-export interface PostData {
-  title: string;
-  description: string;
-  date: Date;
-}
-
-interface Post {
-  id: string;
-  data: PostData;
-  body: string;
-  filePath: string;
-  digest: string;
-  deferredRender: boolean;
-  collection: string;
-  slug: string;
-  render: Function;
-}
-
 export function sortPosts(posts: Post[]): Post[] {
   return posts.sort((a, b) => {
     if (a.data.date > b.data.date) return -1;

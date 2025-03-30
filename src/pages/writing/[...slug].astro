@@ -1,10 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import Default from "@/layouts/Default.astro";
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import Default from "@/layouts/Default.astro"; // Consider moving components
 import PostContentHeader from "./_components/PostContentHeader.astro";
 import Comments from "./_components/Comments.astro";
-import { getEntry } from "astro:content";
-import { formateDate, type Post, type PostData } from "@/lib/utils";
+import { formateDate } from "@/lib/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("writing");
@@ -15,11 +14,22 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const post: Post = await getEntry("writing", slug);
-if (!post) return Astro.redirect("/404");
+const post: CollectionEntry<"writing"> | undefined = await getEntry(
+  "writing",
+  slug!,
+);
 
-const { title, description, date }: PostData = post.data;
+if (!post) {
+  return Astro.redirect("/404");
+}
+
+const { title, description, date } = post.data;
 const { Content } = await post.render();
+
+if (!date) {
+  console.error(`Post ${slug} is missing a date!`);
+  return Astro.redirect("/404");
+}
 
 const isoStringDate = date.toISOString();
 const formattedDate = formateDate(date);
@@ -32,7 +42,12 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <PostContentHeader slot="header" title={title} isoStringDate={isoStringDate} formattedDate={formattedDate} />
+  <PostContentHeader
+    slot="header"
+    title={title}
+    isoStringDate={isoStringDate}
+    formattedDate={formattedDate}
+  />
 
   <Content />
   <Comments />

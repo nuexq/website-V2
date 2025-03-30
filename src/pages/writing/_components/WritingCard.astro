@@ -19,9 +19,7 @@ const { title, formattedDate, isoStringDate, description, slug } = Astro.props;
           href={`/writing/${slug}`}
           class="transition-colors duration-300 ease-in-out border-b-2 border-b-foreground/10 hover:border-b-foreground/60 hover:bg-foreground/5 first-letter:uppdercase"
         >
-          <span
-            transition:name=`writingCard-${title}`>{title}</span
-          >
+          <span transition:name=`writingCard-${title}`>{title}</span>
         </a>
       </h3>
       <div class="text-sm text-muted-foreground">

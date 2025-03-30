@@ -132,8 +132,8 @@
     @apply text-accent/50;
   }
 
-  li>ul,
-  li>ol {
+  li > ul,
+  li > ol {
     @apply pt-0 pl-4;
   }
 

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Default from "@/layouts/Default.astro";
-import WritingPostHeader from "@/components/layout/WritingPostHeader.astro";
+import PostContentHeader from "@/layouts/components/PostContentHeader.astro";
 import Comments from "@/components/Comments.astro";
 import { getEntry } from "astro:content";
 import { formateDate, type Post, type PostData } from "@/lib/utils";
@@ -32,7 +32,7 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <WritingPostHeader slot="header" title={title} isoStringDate={isoStringDate} formattedDate={formattedDate} />
+  <PostContentHeader slot="header" title={title} isoStringDate={isoStringDate} formattedDate={formattedDate} />
 
   <Content />
   <Comments />

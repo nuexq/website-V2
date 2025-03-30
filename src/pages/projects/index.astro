@@ -1,15 +1,14 @@
 ---
-import projects from "@/data/projects.json";
+import { getProjects, ProjectsType } from "@/data/projects.ts";
 import Default from "@/layouts/Default.astro";
 import ContentHeader from "@/layouts/components/ContentHeader.astro";
 import ProjectCard from "./_components/ProjectCard.astro";
 import { siteConfig } from "@/config/site";
-import type { Projects, Project } from "@/types/projects";
 
-const projectsData: Projects = projects;
+const projectsData: ProjectsType[] = getProjects();
 
 let layoutProps = {
-  title: "projects",
+  title: "Projects",
   description: "Projects I've made",
   enableProse: true,
 };
@@ -22,7 +21,7 @@ let layoutProps = {
 
   <ul class="grid grid-cols-1 md:grid-cols-2 gap-[2rem_1.5rem] !mt-5 !p-0">
     {
-      projectsData.map((project: Project) => (
+      projectsData.map((project: ProjectsType) => (
         <ProjectCard
           slug={project.slug}
           name={project.name}

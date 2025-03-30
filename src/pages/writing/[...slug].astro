@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MainLayout from "@/layouts/mainLayout.astro";
+import Default from "@/layouts/Default.astro";
 import WritingPostHeader from "@/components/layout/WritingPostHeader.astro";
 import Comments from "@/components/Comments.astro";
 import { getEntry } from "astro:content";
@@ -31,9 +31,9 @@ let layoutProps = {
 };
 ---
 
-<MainLayout {...layoutProps}>
+<Default {...layoutProps}>
   <WritingPostHeader slot="header" title={title} isoStringDate={isoStringDate} formattedDate={formattedDate} />
 
   <Content />
   <Comments />
-</MainLayout>
+</Default>

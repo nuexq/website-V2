@@ -1,6 +1,6 @@
 ---
 import projects from "@/data/projects.json";
-import MainLayout from "@/layouts/mainLayout.astro";
+import Default from "@/layouts/Default.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
 import ProjectCard from "./_components/ProjectCard.astro";
 import { siteConfig } from "@/config/site";
@@ -15,7 +15,7 @@ let layoutProps = {
 };
 ---
 
-<MainLayout {...layoutProps}>
+<Default {...layoutProps}>
   <ContentHeader slot="header" title="Projects">
     Check out my <a href={siteConfig.links.github}>GitHub</a> for all my projects.
   </ContentHeader>
@@ -34,4 +34,4 @@ let layoutProps = {
       ))
     }
   </ul>
-</MainLayout>
+</Default>

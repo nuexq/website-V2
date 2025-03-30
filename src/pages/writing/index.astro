@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MainLayout from "@/layouts/mainLayout.astro";
+import Default from "@/layouts/Default.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
 import WritingCard from "./_components/WritingCard.astro";
 import { formateDate, sortPosts, type Post } from "@/lib/utils";
@@ -14,7 +14,7 @@ let layoutProps = {
 };
 ---
 
-<MainLayout {...layoutProps}>
+<Default {...layoutProps}>
   <ContentHeader slot="header" title="Writing">
     Some of my notes and thoughts, <a href="/feed.xml" target="_blank"
       >RSS feed</a
@@ -41,4 +41,4 @@ let layoutProps = {
       })
     }
   </ul>
-</MainLayout>
+</Default>

@@ -25,7 +25,8 @@ const { title, formattedDate, isoStringDate, description, slug } = Astro.props;
       <div class="text-sm text-muted-foreground">
         <time
           datetime={isoStringDate}
-          transition:name=`writing-${title}-${isoStringDate}`>{formattedDate}</time
+          transition:name=`writing-${title}-${isoStringDate}`
+          >{formattedDate}</time
         >
       </div>
     </div>

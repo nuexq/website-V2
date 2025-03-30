@@ -1,7 +1,6 @@
 ---
 import { getProjects, ProjectsType } from "@/data/projects.ts";
 import Default from "@/layouts/Default.astro";
-import ContentHeader from "@/components/ContentHeader.astro";
 import ProjectCard from "./_components/ProjectCard.astro";
 import { siteConfig } from "@/config/site";
 
@@ -15,9 +14,9 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <ContentHeader slot="header" title="Projects">
+  <p slot="header">
     Check out my <a href={siteConfig.links.github}>GitHub</a> for all my projects.
-  </ContentHeader>
+  </p>
 
   <ul class="grid grid-cols-1 md:grid-cols-2 gap-[2rem_1.5rem] !mt-5 !p-0">
     {

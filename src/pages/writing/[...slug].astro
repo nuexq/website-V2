@@ -42,12 +42,13 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <PostContentHeader
-    slot="header"
-    title={title}
-    isoStringDate={isoStringDate}
-    formattedDate={formattedDate}
-  />
+  <p slot="header">
+    <time
+      datetime={isoStringDate}
+      class="text-sm"
+      transition:name=`writing-${title}-${isoStringDate}`>{formattedDate}</time
+    >
+  </p>
 
   <Content />
   <Comments />

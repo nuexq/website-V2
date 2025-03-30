@@ -1,7 +1,6 @@
 ---
 import Home from "@/content/home.mdx";
 import Default from "@/layouts/Default.astro";
-import ContentHeader from "@/components/ContentHeader.astro";
 import { siteConfig } from "@/config/site";
 let layoutProps = {
   title: "index",
@@ -11,10 +10,10 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <ContentHeader slot="header" title={siteConfig.name}>
+  <p slot="header">
     <a href={siteConfig.links.github}>GitHub</a> ·
     <a href={siteConfig.links.bluesky}>Bluesky</a> ·
     <a href={siteConfig.links.x}>X</a> · Discord: @{siteConfig.links.discord}
-  </ContentHeader>
+  </p>
   <Home />
 </Default>

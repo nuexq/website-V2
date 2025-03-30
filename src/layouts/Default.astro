@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Navigation from "./components/navigation/Navigation.astro";
 import Footer from "./components/Footer.astro";
 import Head from "./components/Head.astro";
+import ContentHeader from "./components/ContentHeader.astro";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -22,7 +23,9 @@ const { title, description, enableProse, publishedTime } = Astro.props;
     <main
       class="mx-auto flex w-full max-w-[80ch] flex-col px-10 md:px-6 py-8 lg:px-0"
     >
-      <slot name="header" />
+      <ContentHeader title={title}>
+        <slot name="header" />
+      </ContentHeader>
       <article class={cn("max-w-none", enableProse && "prose")}>
         <slot />
       </article>

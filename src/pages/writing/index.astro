@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import MainLayout from "@/layouts/mainLayout.astro";
 import ContentHeader from "@/components/layout/ContentHeader.astro";
-import WritingCard from "@/components/writing/WritingCard.astro";
+import WritingCard from "./_components/WritingCard.astro";
 import { formateDate, sortPosts, type Post } from "@/lib/utils";
 
 const posts: Post[] = await getCollection("writing");

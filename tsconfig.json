@@ -1,12 +1,4 @@
 {
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "esModuleInterop": true
-  },
-  "moduleResolution": "node",
-  "module": "ESNext",
-  "allowSyntheticDefaultImports": true,
-  "esModuleInterop": true,
   "extends": "astro/tsconfigs/strict",
   "include": [
     ".astro/types.d.ts",
@@ -15,10 +7,15 @@
   "exclude": [
     "dist"
   ],
-  "baseUrl": ".",
-  "paths": {
-    "@/*": [
-      "./src/*"
-    ]
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "esModuleInterop": true
   }
 }

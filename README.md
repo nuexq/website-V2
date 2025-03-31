@@ -1,13 +1,15 @@
-# Astro with Tailwind
+# Website V2
 
-```sh
-bun create astro@latest -- --template with-tailwindcss
-```
+The second version of my personal site, build with **Astro**, with focus on performance and simplicity.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+<img width="1694" alt="image" src="https://github.com/user-attachments/assets/1dc2e5db-fdae-4e9a-a3dc-308c31276981">
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+## Features
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+-  **Dynamic OG images** using [og-img](https://github.com/nuexq/og-img).
+-  **Perfect Lighthouse score**.
+-  **RSS feed** with [`@astrojs/rss`](https://github.com/withastro/astro/tree/main/packages/astro-rss).
+
+## License
+
+code is under [MIT](LICENSE), words are under [CC BY-SA 4.0](LICENSE-content).

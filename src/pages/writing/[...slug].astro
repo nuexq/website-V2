@@ -1,7 +1,6 @@
 ---
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
-import Default from "@/layouts/Default.astro"; // Consider moving components
-import PostContentHeader from "./_components/PostContentHeader.astro";
+import Default from "@/layouts/Default.astro";
 import Comments from "./_components/Comments.astro";
 import { formateDate } from "@/lib/utils";
 
@@ -42,12 +41,13 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <p slot="header">
+  <p slot="header" class="flex justify-between items-center text-sm">
     <time
       datetime={isoStringDate}
-      class="text-sm"
       transition:name=`writing-${title}-${isoStringDate}`>{formattedDate}</time
     >
+
+    <a href="/writing" class="text-xs">← Go back</a>
   </p>
 
   <Content />

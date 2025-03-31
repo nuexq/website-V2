@@ -132,6 +132,15 @@ const isWritingPost =
       },
     ]}
   />
+  {
+    process.env.NODE_ENV === "production" && (
+      <script
+        defer
+        src="https://cloud.umami.is/script.js"
+        data-website-id="16abae01-5fcd-4b26-a799-54f62508d04b"
+      />
+    )
+  }
 
   <ClientRouter fallback="swap" />
 </head>

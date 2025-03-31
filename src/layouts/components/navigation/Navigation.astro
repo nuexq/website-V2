@@ -6,6 +6,11 @@ let currentPath = Astro.url.pathname;
 const pathSegments = currentPath.split("/");
 const cleanPath =
   pathSegments.length >= 3 ? `/${pathSegments[1]}/...` : `/${pathSegments[1]}`;
+
+const navLinks = [
+  { name: "Projects", href: "/projects" },
+  { name: "Writing", href: "/writing" },
+];
 ---
 
 <header
@@ -54,9 +59,11 @@ const cleanPath =
       class="pt-6 pb-1"
     >
       <div class="flex items-start gap-6">
-        <NavLink href="/" x-on:click="isOpen = false">Home</NavLink>
-        <NavLink href="/projects" x-on:click="isOpen = false">Projects</NavLink>
-        <NavLink href="/writing" x-on:click="isOpen = false">Writing</NavLink>
+        {
+          navLinks.map((link) => (
+            <NavLink href={link.href}>{link.name}</NavLink>
+          ))
+        }
       </div>
     </nav>
   </div>
@@ -64,9 +71,11 @@ const cleanPath =
   <div class="hidden sm:block">
     <nav id="main-nav" aria-label="Main navigation" class="opacity-100">
       <div class="flex items-start gap-6">
-        <NavLink href="/">Home</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
-        <NavLink href="/writing">Writing</NavLink>
+        {
+          navLinks.map((link) => (
+            <NavLink href={link.href}>{link.name}</NavLink>
+          ))
+        }
       </div>
     </nav>
   </div>

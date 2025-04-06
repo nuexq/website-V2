@@ -1,8 +1,13 @@
 ---
 import Default from "@/layouts/Default.astro";
+let layoutProps = {
+  title: "Page Not Found",
+  description: "couldn't find the page you're looking for",
+  enableProse: true,
+};
 ---
 
-<Default title="Page Not Found" enableProse={true}>
+<Default {...layoutProps}>
   <p>Sorry, we couldn't find the page you're looking for.</p>
   <a href="/">Go back to the homepage</a>
 </Default>

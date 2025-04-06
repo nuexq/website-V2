@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function formateDate(input: string | number): string {
+export function formateDate(input: Date): string {
   const date = new Date(input);
 
   const day = String(date.getDate()).padStart(2, "0");

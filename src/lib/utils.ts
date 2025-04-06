@@ -1,3 +1,4 @@
+import type { CollectionEntry } from "astro:content";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -18,7 +19,9 @@ export function formateDate(input: string | number): string {
   return `${month} ${day}, ${year}`;
 }
 
-export function sortPosts(posts: Post[]): Post[] {
+export function sortPosts(
+  posts: CollectionEntry<"writing">[],
+): CollectionEntry<"writing">[] {
   return posts.sort((a, b) => {
     if (a.data.date > b.data.date) return -1;
     if (a.data.date < b.data.date) return 1;

@@ -4,7 +4,7 @@ export type ProjectsType = {
   name: string;
   slug: string;
   description: string;
-  type?: "demo";
+  type?: "demo" | "crate";
   link?: string;
   tech: string[];
 };

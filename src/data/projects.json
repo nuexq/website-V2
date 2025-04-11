@@ -1,4 +1,12 @@
 [
+{
+    "name": "tkrar",
+    "slug": "tkrar",
+    "description": "A fast and simple CLI tool to count frequency of words in a file or a directory.",
+    "type": "crate",
+    "link": "https://crates.io/crates/tkrar",
+    "tech": ["Rust"]
+  },
   {
     "name": "Conway's Game of Life",
     "slug": "game-of-life",

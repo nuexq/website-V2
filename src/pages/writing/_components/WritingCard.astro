@@ -35,7 +35,7 @@ const { title, formattedDate, isoStringDate, description, slug, tags } =
     <p>
       <span>{description}</span>
       {
-        tags?.length > 0 && (
+        tags.length > 0 && (
           <span>·</span>
           <span class="inline-flex gap-1 prose"> 
             {tags?.map((tag) => (

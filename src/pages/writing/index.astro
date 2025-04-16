@@ -40,7 +40,7 @@ let layoutProps = {
             slug={post.slug}
             isoStringDate={isoStringDate}
             formattedDate={formattedDate}
-            tags={tags}
+            tags={tags ?? []}
           />
         );
       })

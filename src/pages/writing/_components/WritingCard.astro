@@ -12,7 +12,7 @@ const { title, formattedDate, isoStringDate, description, slug, tags } =
   Astro.props;
 ---
 
-<li>
+<li transition:name={`writing-card-${title}`}>
   <div class="flex flex-col gap-1">
     <div
       class="flex flex-col items-start justify-between gap-1 sm:flex-row sm:gap-2"

@@ -51,15 +51,16 @@ let layoutProps = {
       >
       {
         tags && (
-          <span>·</span>
-          <div class="inline-flex gap-1"> 
-            {tags?.map((tag) => (
-              <Tag tag={tag} />
-            ))}
-          </div>
+          <>
+            <span>·</span>
+            <div class="inline-flex gap-1">
+              {tags.map((tag) => (
+                <Tag tag={tag} />
+              ))}
+            </div>
+          </>
         )
       }
-
     </div>
 
     <a href="/writing" class="text-xs">← Go back</a>

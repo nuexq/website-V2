@@ -37,14 +37,16 @@ const { title, formattedDate, isoStringDate, description, slug, tags } =
       <span>{description}</span>
       {
         tags.length > 0 && (
-          <span>·</span>
-          <span class="inline-flex gap-1"> 
-            {tags?.map((tag) => (
-              <Tag tag={tag} />
-            ))}
-          </span>
+          <>
+            <span>·</span>
+            <span class="inline-flex gap-1">
+              {tags.map((tag) => (
+                <Tag tag={tag} />
+              ))}
+            </span>
+          </>
         )
       }
-    </div>
+    </p>
   </div>
 </li>

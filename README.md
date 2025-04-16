@@ -6,9 +6,9 @@ The second version of my personal site, build with **Astro**, with focus on perf
 
 ## Features
 
--  **Dynamic OG images** using [og-img](https://github.com/nuexq/og-img).
--  **Perfect Lighthouse score**.
--  **RSS feed** with [`@astrojs/rss`](https://github.com/withastro/astro/tree/main/packages/astro-rss).
+- **Dynamic OG images** using [og-img](https://github.com/nuexq/og-img).
+- **Perfect Lighthouse score**.
+- **RSS feed** with [`@astrojs/rss`](https://github.com/withastro/astro/tree/main/packages/astro-rss).
 
 ## License
 

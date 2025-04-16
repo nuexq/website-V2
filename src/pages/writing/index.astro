@@ -28,7 +28,7 @@ let layoutProps = {
   <ul class="mt-5 flex flex-col gap-6 !p-0">
     {
       sortedPosts.map((post) => {
-        const { title, date, description } = post.data;
+    const { title, date, description, tags } = post.data;
 
         const isoStringDate = date ? date.toISOString() : "";
         const formattedDate = date ? formateDate(date) : "Date not available";
@@ -40,6 +40,7 @@ let layoutProps = {
             slug={post.slug}
             isoStringDate={isoStringDate}
             formattedDate={formattedDate}
+            tags={tags}
           />
         );
       })

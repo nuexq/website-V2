@@ -22,7 +22,7 @@ if (!post) {
   return Astro.redirect("/404");
 }
 
-const { title, description, date } = post.data;
+const { title, description, date, tags } = post.data;
 const { Content } = await post.render();
 
 if (!date) {
@@ -41,14 +41,28 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <p slot="header" class="flex justify-between items-center text-sm">
-    <time
-      datetime={isoStringDate}
-      transition:name=`writing-${title}-${isoStringDate}`>{formattedDate}</time
-    >
+  <div slot="header" class="text-sm flex justify-between items-center !mt-3">
+    <div>
+      <time
+        datetime={isoStringDate}
+        transition:name=`writing-${title}-${isoStringDate}`
+        >{formattedDate}</time
+      >
+      {
+        tags?.length > 0 && (
+          <span>·</span>
+          <div class="inline-flex gap-1"> 
+            {tags?.map((tag) => (
+              <mark class="text-xs px-1">{tag}</mark>
+            ))}
+          </div>
+        )
+      }
+
+    </div>
 
     <a href="/writing" class="text-xs">← Go back</a>
-  </p>
+  </div>
 
   <Content />
   <Comments />

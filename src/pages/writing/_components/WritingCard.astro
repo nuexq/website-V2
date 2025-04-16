@@ -5,8 +5,10 @@ interface Props {
   slug: string;
   isoStringDate: string;
   formattedDate: string;
+  tags: string[];
 }
-const { title, formattedDate, isoStringDate, description, slug } = Astro.props;
+const { title, formattedDate, isoStringDate, description, slug, tags } =
+  Astro.props;
 ---
 
 <li>
@@ -30,6 +32,18 @@ const { title, formattedDate, isoStringDate, description, slug } = Astro.props;
         >
       </div>
     </div>
-    <p class="text-muted-foreground">{description}</p>
+    <p>
+      <span>{description}</span>
+      {
+        tags?.length > 0 && (
+          <span>·</span>
+          <span class="inline-flex gap-1 prose"> 
+            {tags?.map((tag) => (
+              <mark class="text-xs px-1 ">{tag}</mark>
+            ))}
+          </span>
+        )
+      }
+    </div>
   </div>
 </li>

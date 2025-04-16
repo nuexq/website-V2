@@ -1,0 +1,59 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Default from "@/layouts/Default.astro";
+import WritingCard from "../_components/WritingCard.astro";
+import { formateDate, sortPosts, filterByTags } from "@/lib/utils";
+
+export async function getStaticPaths() {
+  const posts: CollectionEntry<"writing">[] = await getCollection("writing");
+
+  const tags = Array.from(
+    new Set(posts.flatMap((post) => post.data.tags || [])),
+  );
+
+  return tags.map((tag) => ({
+    params: { slug: tag },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const posts = await getCollection("writing");
+
+const filteredPosts = filterByTags(posts, slug);
+const sortedPosts: CollectionEntry<"writing">[] = sortPosts(filteredPosts);
+
+let layoutProps = {
+  title: `Tagged "${slug}"`,
+  description: "Writing about programming and other things.",
+  enableProse: false,
+};
+---
+
+<Default {...layoutProps}>
+  <ul class="mt-5 flex flex-col gap-6 !p-0">
+    {
+      sortedPosts.map((post) => {
+        const { title, date, description, tags } = post.data;
+
+        const isoStringDate = date ? date.toISOString() : "";
+        const formattedDate = date ? formateDate(date) : "Date not available";
+
+        return (
+          <WritingCard
+            title={title}
+            description={description}
+            slug={post.slug}
+            isoStringDate={isoStringDate}
+            formattedDate={formattedDate}
+            tags={tags ?? []}
+          />
+        );
+      })
+    }
+  </ul>
+
+  <div class="prose mt-6">
+    <a href="/writing">← All posts</a>
+  </div>
+</Default>

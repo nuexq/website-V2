@@ -28,3 +28,11 @@ export function sortPosts(
     return 0;
   });
 }
+
+export function filterByTags(posts: CollectionEntry<"writing">[], tag: string) {
+  return posts.filter((post) => {
+    const { tags } = post.data;
+    if (!tags) return false;
+    return tags.includes(tag);
+  });
+}

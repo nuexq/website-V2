@@ -2,6 +2,7 @@
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 import Default from "@/layouts/Default.astro";
 import Comments from "./_components/Comments.astro";
+import Tag from "./_components/Tag.astro";
 import { formateDate } from "@/lib/utils";
 
 export async function getStaticPaths() {
@@ -53,7 +54,7 @@ let layoutProps = {
           <span>·</span>
           <div class="inline-flex gap-1"> 
             {tags?.map((tag) => (
-              <mark class="text-xs px-1">{tag}</mark>
+              <Tag tag={tag} />
             ))}
           </div>
         )

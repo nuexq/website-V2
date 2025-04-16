@@ -1,4 +1,5 @@
 ---
+import Tag from "./Tag.astro";
 interface Props {
   title: string;
   description: string;
@@ -37,9 +38,9 @@ const { title, formattedDate, isoStringDate, description, slug, tags } =
       {
         tags.length > 0 && (
           <span>·</span>
-          <span class="inline-flex gap-1 prose"> 
+          <span class="inline-flex gap-1"> 
             {tags?.map((tag) => (
-              <mark class="text-xs px-1 ">{tag}</mark>
+              <Tag tag={tag} />
             ))}
           </span>
         )

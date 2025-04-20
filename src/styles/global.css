@@ -4,10 +4,11 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-background: hsl(50, 72%, 92%);
-  --color-foreground: hsl(0, 0%, 12%);
+  --color-background: hsl(48, 77%, 95%);
+  --color-foreground: hsl(48, 4%, 23%);
+  --color-bar: hsl(48, 4%, 13%);
   --color-accent: hsl(13, 25%, 28%);
-  --color-muted-foreground: hsl(0, 0%, 40%);
+  --color-muted-foreground: hsl(45, 2%, 46%);
 
   --font-display: "Crimson Pro", "serif";
   --spacing: 0.25rem;
@@ -132,8 +133,8 @@
     @apply text-accent/50;
   }
 
-  li > ul,
-  li > ol {
+  li>ul,
+  li>ol {
     @apply pt-0 pl-4;
   }
 

@@ -2,7 +2,7 @@
 
 The second version of my personal site, build with **Astro**, with focus on performance and simplicity.
 
-<img width="1694" alt="image" src="https://github.com/user-attachments/assets/1dc2e5db-fdae-4e9a-a3dc-308c31276981">
+<img width="1694" alt="image" src="https://github.com/user-attachments/assets/9372bd19-1a0d-4d83-8161-e224c50face8">
 
 ## Features
 

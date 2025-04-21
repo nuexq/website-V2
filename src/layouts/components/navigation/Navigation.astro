@@ -3,9 +3,9 @@ import NavLink from "./NavLink.astro";
 import { siteConfig } from "@/config/site";
 
 let currentPath = Astro.url.pathname;
-const pathSegments = currentPath.split("/");
+const pathSegments = currentPath.split("/").filter(Boolean);
 const cleanPath =
-  pathSegments.length >= 3 ? `/${pathSegments[1]}/...` : `/${pathSegments[1]}`;
+  pathSegments.length >= 2 ? `/${pathSegments[0]}/...` : `/${pathSegments[0]}`;
 
 const navLinks = [
   { name: "Projects", href: "/projects" },

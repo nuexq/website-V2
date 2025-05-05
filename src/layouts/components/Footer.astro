@@ -3,12 +3,19 @@ import { siteConfig } from "@/config/site";
 ---
 
 <footer
-  class="mx-auto prose mt-8 w-full max-w-none border-t-[1px] border-t-accent/20 py-5 text-sm"
+  class="mx-auto prose mt-8 w-full max-w-none border-t-[1px] border-t-accent/20 py-5 text-sm flex justify-between"
   transition:name="footer"
 >
-  <a href={siteConfig.links.github} target="_blank">GitHub</a> ·
-  <a href={siteConfig.links.twitter} target="_blank">Twitter</a> ·
-  <a href={siteConfig.links.bluesky} target="_blank">Bluesky</a> · <span
-    >Discord: @{siteConfig.links.discord}</span
-  >
+  <div>
+    <a href={siteConfig.links.github} target="_blank">GitHub</a> ·
+    <a href={siteConfig.links.twitter} target="_blank">Twitter</a> ·
+    <a href={siteConfig.links.bluesky} target="_blank">Bluesky</a> · <span
+      >Discord: @{siteConfig.links.discord}</span
+    >
+  </div>
+  <div>
+    <a href="https://ctp-webr.ing/nuexq/previous">←</a>
+    <a href="https://ctp-webr.ing/">ctp webring</a>
+    <a href="https://ctp-webr.ing/nuexq/next">→</a>
+  </div>
 </footer>

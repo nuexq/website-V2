@@ -1,5 +1,5 @@
 import type { RenderFunctionInput } from "astro-opengraph-images";
-import type React from "react";
+import React from "react";
 const { twj } = await import("tw-to-css");
 
 export function fnRender({

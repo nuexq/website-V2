@@ -31,6 +31,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha",
+      langs: ["js", "ts", "html", "css", "rust"],
       transformers: [
         transformerNotationDiff(),
         transformerNotationFocus(),

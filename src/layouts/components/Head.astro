@@ -1,8 +1,6 @@
 ---
 import { SEO } from "astro-seo";
-import { AstroFont } from "astro-font";
 import { siteConfig } from "@/config/site";
-import { join } from "node:path";
 import { ClientRouter } from "astro:transitions";
 import { getImagePath } from "astro-opengraph-images";
 
@@ -116,29 +114,6 @@ const ogImageUrl = getImagePath({ url, site });
     }}
   />
 
-  <AstroFont
-    config={[
-      {
-        name: "Crimson Pro",
-        src: [
-          {
-            style: "normal",
-            weight: "400 700",
-            path: join(
-              process.cwd(),
-              "public",
-              "fonts",
-              "CrimsonPro-VariableFont.ttf",
-            ),
-          },
-        ],
-        preload: true,
-        display: "swap",
-        selector: "body",
-        fallback: "serif",
-      },
-    ]}
-  />
   {
     process.env.NODE_ENV === "production" && (
       <script

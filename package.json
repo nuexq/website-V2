@@ -17,7 +17,6 @@
     "@tailwindcss/vite": "^4.0.9",
     "alpinejs": "^3.14.9",
     "astro": "5.5.2",
-    "astro-font": "^1.0.0",
     "astro-opengraph-images": "^1.12.3",
     "astro-seo": "^0.8.4",
     "canvas-confetti": "^1.9.3",

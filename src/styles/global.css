@@ -3,6 +3,13 @@
 
 @plugin "@tailwindcss/typography";
 
+@font-face {
+  font-family: "Crimson Pro";
+  src: url("/fonts/CrimsonPro-VariableFont.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+}
+
 @theme {
   --color-background: hsl(48, 77%, 95%);
   --color-foreground: hsl(48, 4%, 23%);
@@ -13,13 +20,6 @@
 
   --font-display: "Crimson Pro", "serif";
   --spacing: 0.25rem;
-}
-
-@font-face {
-  font-family: "Crimson Pro";
-  src: url("/fonts/CrimsonPro-VariableFont.ttf") format("truetype");
-  font-weight: 400 700;
-  font-style: normal;
 }
 
 @layer base {

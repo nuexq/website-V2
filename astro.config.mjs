@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
@@ -13,9 +14,12 @@ import rehypeSlug from "rehype-slug";
 import remarkHint from "remark-hint";
 
 import sitemap from "@astrojs/sitemap";
+import { fnRender } from "./src/OgRender.tsx";
 import { siteConfig } from "./src/config/site";
 
 import alpinejs from "@astrojs/alpinejs";
+
+import opengraphImages from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
@@ -59,5 +63,20 @@ export default defineConfig({
     mdx(),
     sitemap(),
     alpinejs({ entrypoint: "./alpine.config.ts" }),
+    opengraphImages({
+      options: {
+        fonts: [
+          {
+            name: "Crimson Pro",
+            weight: 400,
+            style: "normal",
+            data: fs.readFileSync(
+              "node_modules/@fontsource/crimson-pro/files/crimson-pro-latin-400-normal.woff",
+            ),
+          },
+        ],
+      },
+      render: fnRender,
+    }),
   ],
 });

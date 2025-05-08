@@ -4,7 +4,6 @@ import Navigation from "./components/navigation/Navigation.astro";
 import Footer from "./components/Footer.astro";
 import Head from "./components/Head.astro";
 import ContentHeader from "./components/ContentHeader.astro";
-import { cn } from "@/lib/utils";
 
 interface Props {
   title: string;
@@ -24,7 +23,7 @@ const { title, description, enableProse, publishedTime } = Astro.props;
       <ContentHeader {title}>
         <slot name="header" />
       </ContentHeader>
-      <article class={cn("max-w-none", enableProse && "prose")}>
+      <article class={`max-w-none ${enableProse ? "prose" : ""}`}>
         <slot />
       </article>
       <Footer />

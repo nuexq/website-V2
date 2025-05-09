@@ -9,13 +9,10 @@
     "format": "bunx --bun prettier --write ."
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.14.9",
-    "@astrojs/alpinejs": "^0.4.3",
     "@astrojs/mdx": "4.2.0",
     "@astrojs/sitemap": "^3.2.1",
     "@shikijs/transformers": "^3.2.1",
     "@tailwindcss/vite": "^4.0.9",
-    "alpinejs": "^3.14.9",
     "astro": "5.5.2",
     "astro-opengraph-images": "^1.12.3",
     "astro-seo": "^0.8.4",
@@ -27,8 +24,6 @@
   "devDependencies": {
     "@fontsource/crimson-pro": "^5.2.5",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/alpinejs": "^3.13.11",
-    "@types/alpinejs__collapse": "^3.13.4",
     "markdown-it": "^14.1.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",

@@ -17,8 +17,6 @@ import sitemap from "@astrojs/sitemap";
 import { fnRender } from "./src/OgRender.tsx";
 import { siteConfig } from "./src/config/site";
 
-import alpinejs from "@astrojs/alpinejs";
-
 import opengraphImages from "astro-opengraph-images";
 
 // https://astro.build/config
@@ -62,7 +60,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    alpinejs({ entrypoint: "./alpine.config.ts" }),
     opengraphImages({
       options: {
         fonts: [

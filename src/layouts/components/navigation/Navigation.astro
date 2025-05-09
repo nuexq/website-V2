@@ -14,69 +14,20 @@ const navLinks = [
 ---
 
 <header
-  x-data="{
-    isOpen: false,
-    isMobile: window.innerWidth < 640,
-    init() {
-      this.isMobile = window.innerWidth < 640;
-      if (!this.isMobile) { this.isOpen = true; }
-    }
-  }"
-  @resize.window=`
-    isMobile = window.innerWidth < 640;
-    if (!isMobile) { isOpen = true; }
-  `
-  class="flex flex-col justify-between bg-bar px-12 py-3 text-bar-foreground sm:flex-row sm:items-center"
+  class="flex flex-col justify-between bg-bar px-12 py-3 text-bar-foreground sm:flex-row sm:items-center relative"
 >
   <div class="flex items-center justify-between">
     <div class="font-display text-xl">
       <a href="/">{siteConfig.name}</a>
-      <span class="text-[10px] text-background/90 sm:hidden font-mono"
-        >{cleanPath}</span
-      >
+      <span class="text-[10px] text-background/90 sm:hidden font-mono">
+        {cleanPath}
+      </span>
     </div>
-    <button
-      class="cursor-pointer text-sm sm:hidden"
-      @click="isOpen = !isOpen"
-      :aria-expanded="isOpen.toString()"
-      aria-controls="main-nav"
-      aria-label="Toggle menu"
-    >
-      Menu
-    </button>
   </div>
 
-  <div
-    x-show="isOpen"
-    x-collapse.duration.400ms
-    class="sm:hidden [&[x-cloak]]:hidden"
-    x-cloak
-  >
-    <nav
-      id="main-nav"
-      aria-label="Main navigation"
-      :aria-hidden="isMobile ? (isOpen ? 'false' : 'true') : 'false'"
-      class="pt-6 pb-1"
-    >
-      <div class="flex items-start gap-6">
-        {
-          navLinks.map((link) => (
-            <NavLink href={link.href}>{link.name}</NavLink>
-          ))
-        }
-      </div>
-    </nav>
-  </div>
-
-  <div class="hidden sm:block">
-    <nav id="main-nav" aria-label="Main navigation" class="opacity-100">
-      <div class="flex items-start gap-6">
-        {
-          navLinks.map((link) => (
-            <NavLink href={link.href}>{link.name}</NavLink>
-          ))
-        }
-      </div>
-    </nav>
-  </div>
+  <nav id="main-nav" aria-label="Main navigation" class="pt-6 sm:pt-0">
+    <div class="flex items-start gap-6">
+      {navLinks.map((link) => <NavLink href={link.href}>{link.name}</NavLink>)}
+    </div>
+  </nav>
 </header>

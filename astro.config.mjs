@@ -32,7 +32,7 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      theme: "catppuccin-mocha",
+      theme: "ayu-dark",
       langs: ["js", "ts", "html", "css", "rust"],
       transformers: [
         transformerNotationDiff(),

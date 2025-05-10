@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 pre.astro-code {
-	@apply mt-4 rounded-none border-[1px] border-muted-foreground/10 !bg-foreground/10 !invert-100 dark: !bg-foreground/5 dark: !invert-0;
+	@apply mt-4 rounded-none border-[1px] border-muted-foreground/10 !bg-foreground/10 !invert-100 transition-all duration-300 dark:!bg-foreground/5 dark:!invert-0;
 	padding: 20px 24px;
 }
 
@@ -23,7 +23,7 @@ pre.astro-code code .line span::-moz-selection {
 }
 
 .line.highlighted {
-	@apply !bg-foreground/20 dark: !bg-foreground/10;
+	@apply !bg-foreground/20 dark:!bg-foreground/10;
 	margin: 0 -24px !important;
 	padding: 0 24px;
 	width: calc(100% + 48px) !important;
@@ -39,11 +39,11 @@ pre.astro-code code .line span::-moz-selection {
 }
 
 .diff.add {
-	@apply bg-error/30 dark:bg-success/30 before:text-error dark:before:text-success;
+	@apply bg-error/30 before:text-error dark:bg-success/30 dark:before:text-success;
 }
 
 .diff.remove {
-	@apply bg-success/30 dark:bg-error/30 before:text-success dark:before:text-error;
+	@apply bg-success/30 before:text-success dark:bg-error/30 dark:before:text-error;
 }
 
 .diff.add::before {

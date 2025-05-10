@@ -16,7 +16,7 @@ const { name, description, link, slug, tech, type } = Astro.props;
 <li class="flex min-h-full flex-col justify-between gap-1 !p-0">
   <div>
     <a
-      class="font-semibold !text-foreground !border-b-foreground/10 hover:!border-b-foreground/60 hover:!bg-foreground/5"
+      class="font-semibold !text-foreground dark:!border-b-foreground/15 !border-b-foreground/10 hover:!border-b-foreground/60 hover:dark:!bg-foreground/10 hover:!bg-foreground/5"
       href={`${siteConfig.links.github}/${slug}`}
       aria-label={`View ${name} on GitHub`}
       target="_blank">{name}</a

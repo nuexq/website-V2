@@ -1,40 +1,40 @@
 [
-	{
-		"name": "tkrar",
-		"slug": "tkrar",
-		"description": "A fast and feature-rich CLI tool to count frequency of words in a file or a directory.",
-		"type": "crate",
-		"link": "https://crates.io/crates/tkrar",
-		"tech": ["Rust"]
-	},
-	{
-		"name": "Conway's Game of Life",
-		"slug": "game-of-life",
-		"description": "A Conway's Game of Life implementation using WebGPU and React/Vite.",
-		"type": "demo",
-		"link": "https://game-of-life-henna-zeta.vercel.app/",
-		"tech": ["Typescript", "WebGPU", "React", "Vite"]
-	},
-	{
-		"name": "This Website",
-		"slug": "website-V2",
-		"description": "V2 of my website, build with Astro",
-		"type": "demo",
-		"link": "https://nuexq.vercel.app",
-		"tech": ["Typescript", "Astro", "Tailwindcss"]
-	},
-	{
-		"name": "My dotfiles",
-		"slug": "dotfiles",
-		"description": "My dotfiles for Arch Linux Hyprland, including my Neovim config, and other tools and apps.",
-		"tech": ["Bash"]
-	},
-	{
-		"name": "React Projects",
-		"slug": "react-projects",
-		"description": "Collection of open-source projects, components, React hooks made with React.",
-		"type": "demo",
-		"link": "https://nuexq.github.io/React-Projects/",
-		"tech": ["JavaScript", "React", "Vite", "Tailwindcss"]
-	}
+  {
+    "name": "tkrar",
+    "slug": "tkrar",
+    "description": "A fast and feature-rich CLI tool to count frequency of words in a file or a directory.",
+    "type": "crate",
+    "link": "https://crates.io/crates/tkrar",
+    "tech": ["Rust"]
+  },
+  {
+    "name": "Conway's Game of Life",
+    "slug": "game-of-life",
+    "description": "A Conway's Game of Life implementation using WebGPU and React/Vite.",
+    "type": "demo",
+    "link": "https://game-of-life-henna-zeta.vercel.app/",
+    "tech": ["Typescript", "WebGPU", "React", "Vite"]
+  },
+  {
+    "name": "This Website",
+    "slug": "website-V2",
+    "description": "V2 of my website, build with Astro",
+    "type": "demo",
+    "link": "https://nuexq.vercel.app",
+    "tech": ["Typescript", "Astro", "Tailwindcss"]
+  },
+  {
+    "name": "My dotfiles",
+    "slug": "dotfiles",
+    "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config, and other tools and apps.",
+    "tech": ["Bash"]
+  },
+  {
+    "name": "React Projects",
+    "slug": "react-projects",
+    "description": "Collection of open-source projects, components, React hooks made with React.",
+    "type": "demo",
+    "link": "https://nuexq.github.io/React-Projects/",
+    "tech": ["JavaScript", "React", "Vite", "Tailwindcss"]
+  }
 ]

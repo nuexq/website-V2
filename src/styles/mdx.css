@@ -61,11 +61,3 @@ pre.astro-code code .line span::-moz-selection {
 	position: absolute;
 	left: 10px;
 }
-
-.has-focused .line {
-	filter: blur(0.095rem);
-}
-
-.has-focused .focused {
-	filter: blur(0);
-}

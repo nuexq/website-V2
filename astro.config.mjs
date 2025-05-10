@@ -6,7 +6,6 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import {
   transformerNotationDiff,
-  transformerNotationFocus,
   transformerNotationHighlight,
 } from "@shikijs/transformers";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -34,11 +33,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "ayu-dark",
       langs: ["js", "ts", "html", "css", "rust"],
-      transformers: [
-        transformerNotationDiff(),
-        transformerNotationFocus(),
-        transformerNotationHighlight(),
-      ],
+      transformers: [transformerNotationDiff(), transformerNotationHighlight()],
     },
     remarkPlugins: [remarkHint],
     rehypePlugins: [

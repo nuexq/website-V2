@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 pre.astro-code {
-  @apply mt-4 rounded-none border-[1px] border-muted-foreground/10 dark:!invert-0 !invert-100 dark:!bg-foreground/5 !bg-foreground/10;
+  @apply mt-4 rounded-none border-[1px] border-muted-foreground/10 !bg-foreground/10 !invert-100 dark:!bg-foreground/5 dark:!invert-0;
   padding: 20px 24px;
 }
 
@@ -10,11 +10,11 @@ pre.astro-code code {
 }
 
 pre.astro-code code .line span::selection {
-  @apply dark:bg-foreground/20 bg-foreground/40;
+  @apply bg-foreground/40 dark:bg-foreground/20;
 }
 
 pre.astro-code code .line span::-moz-selection {
-  @apply dark:bg-foreground/20 bg-foreground/40;
+  @apply bg-foreground/40 dark:bg-foreground/20;
 }
 
 .line {
@@ -23,7 +23,7 @@ pre.astro-code code .line span::-moz-selection {
 }
 
 .line.highlighted {
-  @apply dark:!bg-foreground/10 !bg-foreground/20;
+  @apply !bg-foreground/20 dark:!bg-foreground/10;
   margin: 0 -24px !important;
   padding: 0 24px;
   width: calc(100% + 48px) !important;
@@ -40,21 +40,21 @@ pre.astro-code code .line span::-moz-selection {
 }
 
 .diff.add {
-  @apply dark:bg-success/30 bg-error/30;
+  @apply bg-error/30 dark:bg-success/30;
 }
 
 .diff.remove {
-  @apply dark:bg-error/30 bg-success/30;
+  @apply bg-success/30 dark:bg-error/30;
 }
 
 .diff.remove::before {
   content: "-";
-  @apply dark:text-error text-success;
+  @apply text-success dark:text-error;
 }
 
 .diff.add::before {
   content: "+";
-  @apply dark:text-success text-error;
+  @apply text-error dark:text-success;
 }
 
 .diff::before {

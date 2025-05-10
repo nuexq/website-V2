@@ -111,4 +111,5 @@ const { class: className } = Astro.props;
 
   initThemeSelector();
   document.addEventListener("astro:page-load", initThemeSelector);
+  document.addEventListener("astro:after-swap", initThemeSelector);
 </script>

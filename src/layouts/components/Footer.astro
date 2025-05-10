@@ -48,7 +48,7 @@ const themes = [
   const themeStorageKey = "theme";
   const themeQuery = "(prefers-color-scheme: dark)";
   const defaultTheme = "system";
-  let mediaQuery = window.matchMedia(themeQuery);
+  const mediaQuery = window.matchMedia(themeQuery);
 
   function getStoredTheme() {
     return localStorage.getItem(themeStorageKey) || defaultTheme;
@@ -60,46 +60,37 @@ const themes = [
 
   function applyThemePreference(theme) {
     const html = document.documentElement;
-    html.classList.remove("light", "dark", "system");
+    html.classList.remove("light", "dark");
 
     if (theme === "dark") {
       html.classList.add("dark");
     } else if (theme === "light") {
       html.classList.add("light");
-    } else {
-      html.classList.add("system");
-      if (mediaQuery.matches) {
-        html.classList.add("dark");
-      }
+    } else if (mediaQuery.matches) {
+      html.classList.add("dark");
     }
   }
 
   function updateButtons(selectedTheme) {
-    const themeButtons = document.querySelectorAll(
-      "#theme-selector .theme-button",
-    );
-    themeButtons.forEach((button) => {
+    const buttons = document.querySelectorAll("#theme-selector .theme-button");
+    buttons.forEach((button) => {
       const buttonTheme = button.getAttribute("data-theme");
-      if (buttonTheme === selectedTheme) {
-        button.classList.add("bg-foreground/10", "font-medium");
-        button.classList.remove("hover:bg-foreground/5");
-      } else {
-        button.classList.remove("bg-foreground/10", "font-medium");
-        button.classList.add("hover:bg-foreground/5");
-      }
+      button.classList.toggle(
+        "bg-foreground/10",
+        buttonTheme === selectedTheme,
+      );
+      button.classList.toggle("font-medium", buttonTheme === selectedTheme);
+      button.classList.toggle(
+        "hover:bg-foreground/5",
+        buttonTheme !== selectedTheme,
+      );
     });
   }
 
   function handleSystemThemeChange(e) {
     if (getStoredTheme() === "system") {
       const html = document.documentElement;
-      if (e.matches) {
-        html.classList.add("dark");
-        html.classList.remove("light");
-      } else {
-        html.classList.remove("dark");
-        html.classList.add("light");
-      }
+      html.classList.toggle("dark", e.matches);
     }
   }
 
@@ -116,26 +107,20 @@ const themes = [
   }
 
   function initThemeSelector() {
-    const currentStoredTheme = getStoredTheme();
-    applyThemePreference(currentStoredTheme);
-    updateButtons(currentStoredTheme);
+    const current = getStoredTheme();
+    applyThemePreference(current);
+    updateButtons(current);
 
-    mediaQuery.removeEventListener("change", handleSystemThemeChange);
-    if (currentStoredTheme === "system") {
+    if (current === "system") {
       mediaQuery.addEventListener("change", handleSystemThemeChange);
     }
 
-    const themeButtons = document.querySelectorAll(
-      "#theme-selector .theme-button",
-    );
-    themeButtons.forEach((button) => {
-      if (!button.hasThemeListener) {
-        button.addEventListener("click", () => {
-          const newTheme = button.getAttribute("data-theme");
-          if (newTheme) setTheme(newTheme);
-        });
-        button.hasThemeListener = true;
-      }
+    const buttons = document.querySelectorAll("#theme-selector .theme-button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const newTheme = button.getAttribute("data-theme");
+        if (newTheme) setTheme(newTheme);
+      });
     });
   }
 

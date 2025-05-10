@@ -1,67 +1,71 @@
 @import "tailwindcss";
 
 pre.astro-code {
-  @apply mt-4 rounded-none;
-  padding: 20px 24px;
+	@apply mt-4 rounded-none border-[1px] border-muted-foreground/20 !invert-100 !bg-foreground/10;
+	padding: 20px 24px;
+}
+
+pre.astro-code code {
+	@apply !text-xs;
 }
 
 pre.astro-code code .line span::selection {
-  background-color: --alpha(#9399b2 / 20%) !important;
+	background-color: --alpha(#475266 / 20%) !important;
 }
 
 pre.astro-code code .line span::-moz-selection {
-  background-color: --alpha(#9399b2 / 20%) !important;
+	background-color: --alpha(#475266 / 20%) !important;
 }
 
 .line {
-  display: inline;
-  padding-bottom: 0;
+	display: inline;
+	padding-bottom: 0;
 }
 
 .line.highlighted {
-  background-color: rgba(88, 91, 112, 0.4);
-  margin: 0 -24px !important;
-  padding: 0 24px;
-  width: calc(100% + 48px) !important;
-  display: inline-block;
+	@apply !bg-foreground/40;
+	margin: 0 -24px !important;
+	padding: 0 24px;
+	width: calc(100% + 48px) !important;
+	display: inline-block;
 }
 
 .diff {
-  display: inline-block;
-  width: 100vw;
-  position: relative;
-  margin: 0 -24px !important;
-  padding: 0 24px;
-  width: calc(100% + 48px) !important;
+	display: inline-block;
+	width: 100vw;
+	position: relative;
+	margin: 0 -24px !important;
+	padding: 0 24px;
+	width: calc(100% + 48px) !important;
 }
 
 .diff.add {
-  background-color: --alpha(#a6e3a1 / 30%);
+	@apply bg-error/30;
 }
 
 .diff.remove {
-  background-color: --alpha(#f38ba8 / 30%);
+	@apply bg-success/30;
 }
 
 .diff.remove::before {
-  content: "-";
-  color: #f38ba8;
+	content: "-";
+	color: var(--color-success);
 }
 
 .diff.add::before {
-  content: "+";
-  color: #a6e3a1;
+	content: "+";
+	color: var(--color-error);
 }
 
 .diff::before {
-  position: absolute;
-  left: 10px;
+	position: absolute;
+	left: 10px;
 }
 
 .has-focused .line {
-  filter: blur(0.095rem);
+	filter: blur(0.095rem);
 }
 
 .has-focused .focused {
-  filter: blur(0);
+	filter: blur(0);
 }

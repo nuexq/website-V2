@@ -1,63 +1,60 @@
 @import "tailwindcss";
 
 pre.astro-code {
-  @apply mt-4 rounded-none border-[1px] border-muted-foreground/10 !bg-foreground/10 !invert-100 dark:!bg-foreground/5 dark:!invert-0;
-  padding: 20px 24px;
+	@apply mt-4 rounded-none border-[1px] border-muted-foreground/10 !bg-foreground/10 !invert-100 dark: !bg-foreground/5 dark: !invert-0;
+	padding: 20px 24px;
 }
 
 pre.astro-code code {
-  @apply !text-xs;
+	@apply !text-xs block w-fit;
 }
 
 pre.astro-code code .line span::selection {
-  @apply bg-foreground/40 dark:bg-foreground/20;
+	@apply bg-foreground/40 dark:bg-foreground/20;
 }
 
 pre.astro-code code .line span::-moz-selection {
-  @apply bg-foreground/40 dark:bg-foreground/20;
+	@apply bg-foreground/40 dark:bg-foreground/20;
 }
 
 .line {
-  display: inline;
-  padding-bottom: 0;
+	display: inline;
+	padding-bottom: 0;
 }
 
 .line.highlighted {
-  @apply !bg-foreground/20 dark:!bg-foreground/10;
-  margin: 0 -24px !important;
-  padding: 0 24px;
-  width: calc(100% + 48px) !important;
-  display: inline-block;
+	@apply !bg-foreground/20 dark: !bg-foreground/10;
+	margin: 0 -24px !important;
+	padding: 0 24px;
+	width: calc(100% + 48px) !important;
+	display: inline-block;
 }
 
 .diff {
-  display: inline-block;
-  width: 100vw;
-  position: relative;
-  margin: 0 -24px !important;
-  padding: 0 24px;
-  width: calc(100% + 48px) !important;
+	display: inline-block;
+	position: relative;
+	margin: 0 -24px !important;
+	padding: 0 24px;
+	width: calc(100% + 48px) !important;
 }
 
 .diff.add {
-  @apply bg-error/30 dark:bg-success/30;
+	@apply bg-error/30 dark:bg-success/30 before:text-error dark:before:text-success;
 }
 
 .diff.remove {
-  @apply bg-success/30 dark:bg-error/30;
-}
-
-.diff.remove::before {
-  content: "-";
-  @apply text-success dark:text-error;
+	@apply bg-success/30 dark:bg-error/30 before:text-success dark:before:text-error;
 }
 
 .diff.add::before {
-  content: "+";
-  @apply text-error dark:text-success;
+	content: "+";
+}
+
+.diff.remove::before {
+	content: "-";
 }
 
 .diff::before {
-  position: absolute;
-  left: 10px;
+	position: absolute;
+	left: 10px;
 }

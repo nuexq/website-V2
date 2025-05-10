@@ -10,16 +10,54 @@
 	font-style: normal;
 }
 
+:root {
+	--background: hsl(48, 77%, 95%);
+	--foreground: hsl(48, 4%, 23%);
+	--bar: hsl(48, 4%, 13%);
+	--bar-foreground: hsl(48, 77%, 95%);
+	--accent: hsl(13, 25%, 28%);
+	--muted-foreground: hsl(45, 2%, 46%);
+	--warning: #e6b800;
+	--success: #5a8f6a;
+	--error: #b33a3a;
+}
+
+.dark {
+	--background: hsl(0, 4%, 6%);
+	--foreground: hsl(50, 8%, 79%);
+	--bar: hsl(0, 3%, 10%);
+	--bar-foreground: hsl(50, 8%, 79%);
+	--accent: hsl(24, 31%, 50%);
+	--muted-foreground: hsl(45, 6%, 52%);
+	--warning: hsl(44, 84%, 45%);
+	--success: hsl(102, 23%, 46%);
+	--error: hsl(1, 43%, 46%);
+}
+
+.system {
+	@media (prefers-color-scheme: dark) {
+		--background: hsl(0, 4%, 6%);
+		--foreground: hsl(50, 8%, 79%);
+		--bar: hsl(0, 3%, 10%);
+		--bar-foreground: hsl(50, 8%, 79%);
+		--accent: hsl(24, 31%, 50%);
+		--muted-foreground: hsl(45, 6%, 52%);
+		--warning: hsl(44, 84%, 45%);
+		--success: hsl(102, 23%, 46%);
+		--error: hsl(1, 43%, 46%);
+	}
+}
+
 @theme {
-	--color-background: hsl(48, 77%, 95%);
-	--color-foreground: hsl(48, 4%, 23%);
-	--color-bar: hsl(48, 4%, 13%);
-	--color-bar-foreground: hsl(48, 77%, 95%);
-	--color-accent: hsl(13, 25%, 28%);
-	--color-muted-foreground: hsl(45, 2%, 46%);
-	--color-warning: #e6b800;
-	--color-success: #5a8f6a;
-	--color-error: #b33a3a;
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-bar: var(--bar);
+	--color-bar-foreground: var(--bar-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-warning: var(--warning);
+	--color-success: var(--success);
+	--color-error: var(--error);
 
 	--font-display: "Crimson Pro", "serif";
 	--spacing: 0.25rem;
@@ -104,7 +142,7 @@
 	}
 
 	a {
-		@apply cursor-pointer border-b-2 border-b-accent/30 text-accent no-underline transition-colors duration-300 ease-in-out hover:border-b-accent hover:bg-accent/10;
+		@apply cursor-pointer border-b-2 border-b-accent/30 text-accent no-underline transition-colors duration-300 ease-in-out hover:border-b-accent hover:bg-accent/10 hover:dark:bg-accent/15;
 	}
 
 	strong {

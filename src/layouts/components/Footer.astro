@@ -1,21 +1,144 @@
 ---
 import { siteConfig } from "@/config/site";
+import { Moon, Sun, Monitor } from "astro-feather-icons2";
+
+const themes = [
+  { name: "light", icon: Sun },
+  { name: "dark", icon: Moon },
+  { name: "system", icon: Monitor },
+];
 ---
 
 <footer
-  class="mx-auto prose mt-8 w-full max-w-none border-t-[1px] border-t-accent/20 py-5 text-sm flex flex-col sm:flex-row justify-between"
+  class="mx-auto prose mt-8 w-full max-w-none border-t-[1px] border-t-accent/20 py-5 text-sm flex flex-col gap-2"
   transition:name="footer"
 >
-  <div>
-    <a href={siteConfig.links.github} target="_blank">GitHub</a> ·
-    <a href={siteConfig.links.twitter} target="_blank">Twitter</a> ·
-    <a href={siteConfig.links.bluesky} target="_blank">Bluesky</a> · <span
-      >Discord: @{siteConfig.links.discord}</span
-    >
+  <div class="flex flex-col sm:flex-row justify-between">
+    <div>
+      <a href={siteConfig.links.github} target="_blank">GitHub</a> ·
+      <a href={siteConfig.links.twitter} target="_blank">Twitter</a> ·
+      <a href={siteConfig.links.bluesky} target="_blank">Bluesky</a> · <span
+        >Discord: @{siteConfig.links.discord}</span
+      >
+    </div>
+    <div>
+      <a href="https://ctp-webr.ing/nuexq/previous">←</a>
+      <a href="https://ctp-webr.ing/">ctp webring</a>
+      <a href="https://ctp-webr.ing/nuexq/next">→</a>
+    </div>
   </div>
-  <div>
-    <a href="https://ctp-webr.ing/nuexq/previous">←</a>
-    <a href="https://ctp-webr.ing/">ctp webring</a>
-    <a href="https://ctp-webr.ing/nuexq/next">→</a>
+  <div id="theme-selector" class="flex self-end">
+    {
+      themes.map(({ name, icon: Icon }) => (
+        <button
+          data-theme={name}
+          title={`Switch to ${name} theme`}
+          class:list={
+            "theme-button hover:bg-foreground/5 transition-colors px-2 aspect-square"
+          }
+        >
+          <Icon size="16" />
+        </button>
+      ))
+    }
   </div>
 </footer>
+
+<script is:inline>
+  const themeStorageKey = "theme";
+  const themeQuery = "(prefers-color-scheme: dark)";
+  const defaultTheme = "system";
+  let mediaQuery = window.matchMedia(themeQuery);
+
+  function getStoredTheme() {
+    return localStorage.getItem(themeStorageKey) || defaultTheme;
+  }
+
+  function setStoredTheme(value) {
+    localStorage.setItem(themeStorageKey, value);
+  }
+
+  function applyThemePreference(theme) {
+    const html = document.documentElement;
+    html.classList.remove("light", "dark", "system");
+
+    if (theme === "dark") {
+      html.classList.add("dark");
+    } else if (theme === "light") {
+      html.classList.add("light");
+    } else {
+      html.classList.add("system");
+      if (mediaQuery.matches) {
+        html.classList.add("dark");
+      }
+    }
+  }
+
+  function updateButtons(selectedTheme) {
+    const themeButtons = document.querySelectorAll(
+      "#theme-selector .theme-button",
+    );
+    themeButtons.forEach((button) => {
+      const buttonTheme = button.getAttribute("data-theme");
+      if (buttonTheme === selectedTheme) {
+        button.classList.add("bg-foreground/10", "font-medium");
+        button.classList.remove("hover:bg-foreground/5");
+      } else {
+        button.classList.remove("bg-foreground/10", "font-medium");
+        button.classList.add("hover:bg-foreground/5");
+      }
+    });
+  }
+
+  function handleSystemThemeChange(e) {
+    if (getStoredTheme() === "system") {
+      const html = document.documentElement;
+      if (e.matches) {
+        html.classList.add("dark");
+        html.classList.remove("light");
+      } else {
+        html.classList.remove("dark");
+        html.classList.add("light");
+      }
+    }
+  }
+
+  function setTheme(newTheme) {
+    setStoredTheme(newTheme);
+    applyThemePreference(newTheme);
+    updateButtons(newTheme);
+
+    if (newTheme === "system") {
+      mediaQuery.addEventListener("change", handleSystemThemeChange);
+    } else {
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    }
+  }
+
+  function initThemeSelector() {
+    const currentStoredTheme = getStoredTheme();
+    applyThemePreference(currentStoredTheme);
+    updateButtons(currentStoredTheme);
+
+    mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    if (currentStoredTheme === "system") {
+      mediaQuery.addEventListener("change", handleSystemThemeChange);
+    }
+
+    const themeButtons = document.querySelectorAll(
+      "#theme-selector .theme-button",
+    );
+    themeButtons.forEach((button) => {
+      if (!button.hasThemeListener) {
+        button.addEventListener("click", () => {
+          const newTheme = button.getAttribute("data-theme");
+          if (newTheme) setTheme(newTheme);
+        });
+        button.hasThemeListener = true;
+      }
+    });
+  }
+
+  initThemeSelector();
+  document.addEventListener("astro:page-load", initThemeSelector);
+</script>

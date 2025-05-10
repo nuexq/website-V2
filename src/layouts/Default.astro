@@ -14,7 +14,7 @@ interface Props {
 const { title, description, enableProse, publishedTime } = Astro.props;
 ---
 
-<html lang="en" class={Astro.cookies.get("theme")?.value || "system"}>
+<html lang="en">
   <Head {title} {description} {...publishedTime && { publishedTime }} />
   <body class="mx-auto flex min-h-screen flex-col gap-8">
     <Navigation />

@@ -14,6 +14,7 @@
     "@shikijs/transformers": "^3.2.1",
     "@tailwindcss/vite": "^4.0.9",
     "astro": "5.5.2",
+    "astro-feather-icons2": "^1.0.0",
     "astro-opengraph-images": "^1.12.3",
     "astro-seo": "^0.8.4",
     "feed": "^4.2.2",

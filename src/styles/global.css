@@ -4,255 +4,267 @@
 @plugin "@tailwindcss/typography";
 
 @font-face {
-  font-family: "Crimson Pro";
-  src: url("/fonts/CrimsonPro-VariableFont.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: normal;
+	font-family: "Crimson Pro";
+	src: url("/fonts/CrimsonPro-VariableFont.woff2") format("woff2");
+	font-weight: 400 700;
+	font-style: normal;
 }
 
 :root {
-  --background: hsl(48, 77%, 95%);
-  --foreground: hsl(48, 4%, 23%);
-  --bar: hsl(48, 4%, 13%);
-  --bar-foreground: hsl(48, 77%, 95%);
-  --accent: hsl(13, 25%, 28%);
-  --muted-foreground: hsl(45, 2%, 46%);
-  --warning: #e6b800;
-  --success: #5a8f6a;
-  --error: #b33a3a;
+	--background: hsl(48, 77%, 95%);
+	--foreground: hsl(48, 4%, 23%);
+	--bar: hsl(48, 4%, 13%);
+	--bar-foreground: hsl(48, 77%, 95%);
+	--accent: hsl(13, 25%, 28%);
+	--muted-foreground: hsl(45, 2%, 46%);
+	--warning: #e6b800;
+	--success: #5a8f6a;
+	--error: #b33a3a;
 }
 
 .dark {
-  --background: hsl(0, 4%, 6%);
-  --foreground: hsl(50, 8%, 79%);
-  --bar: hsl(0, 3%, 10%);
-  --bar-foreground: hsl(50, 8%, 79%);
-  --accent: hsl(24, 31%, 50%);
-  --muted-foreground: hsl(45, 6%, 52%);
-  --warning: hsl(44, 84%, 45%);
-  --success: hsl(102, 23%, 46%);
-  --error: hsl(1, 43%, 46%);
+	--background: hsl(0, 4%, 6%);
+	--foreground: hsl(50, 8%, 79%);
+	--bar: hsl(0, 3%, 10%);
+	--bar-foreground: hsl(50, 8%, 79%);
+	--accent: hsl(24, 31%, 50%);
+	--muted-foreground: hsl(45, 6%, 52%);
+	--warning: hsl(44, 84%, 45%);
+	--success: hsl(102, 23%, 46%);
+	--error: hsl(1, 43%, 46%);
 }
 
 .system {
-  @media (prefers-color-scheme: dark) {
-    --background: hsl(0, 4%, 6%);
-    --foreground: hsl(50, 8%, 79%);
-    --bar: hsl(0, 3%, 10%);
-    --bar-foreground: hsl(50, 8%, 79%);
-    --accent: hsl(24, 31%, 50%);
-    --muted-foreground: hsl(45, 6%, 52%);
-    --warning: hsl(44, 84%, 45%);
-    --success: hsl(102, 23%, 46%);
-    --error: hsl(1, 43%, 46%);
-  }
+	@media (prefers-color-scheme: dark) {
+		--background: hsl(0, 4%, 6%);
+		--foreground: hsl(50, 8%, 79%);
+		--bar: hsl(0, 3%, 10%);
+		--bar-foreground: hsl(50, 8%, 79%);
+		--accent: hsl(24, 31%, 50%);
+		--muted-foreground: hsl(45, 6%, 52%);
+		--warning: hsl(44, 84%, 45%);
+		--success: hsl(102, 23%, 46%);
+		--error: hsl(1, 43%, 46%);
+	}
+}
+
+@custom-variant dark {
+	&:where(.dark *) {
+		@slot;
+	}
+
+	&:where(.system *) {
+		@media (prefers-color-scheme: dark) {
+			@slot;
+		}
+	}
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-bar: var(--bar);
-  --color-bar-foreground: var(--bar-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-warning: var(--warning);
-  --color-success: var(--success);
-  --color-error: var(--error);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-bar: var(--bar);
+	--color-bar-foreground: var(--bar-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-warning: var(--warning);
+	--color-success: var(--success);
+	--color-error: var(--error);
 
-  --font-display: "Crimson Pro", "serif";
-  --spacing: 0.25rem;
+	--font-display: "Crimson Pro", "serif";
+	--spacing: 0.25rem;
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    font-size: 18px;
-    scroll-padding-top: 1rem;
-  }
+	html {
+		scroll-behavior: smooth;
+		font-size: 18px;
+		scroll-padding-top: 1rem;
+	}
 
-  ::selection {
-    @apply bg-accent/20;
-  }
+	::selection {
+		@apply bg-accent/20;
+	}
 
-  ::-moz-selection {
-    @apply bg-accent/20;
-  }
+	::-moz-selection {
+		@apply bg-accent/20;
+	}
 
-  body {
-    @apply bg-background font-display text-foreground antialiased;
-  }
+	body {
+		@apply bg-background font-display text-foreground antialiased;
+	}
 }
 
 .prose {
-  & {
-    @apply text-foreground;
-  }
+	& {
+		@apply text-foreground;
+	}
 
-  & * {
-    @apply m-0 text-foreground;
-  }
+	& * {
+		@apply m-0 text-foreground;
+	}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-display font-normal;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-display font-normal;
+	}
 
-  h1 {
-    @apply mt-8 leading-[1.3] font-semibold tracking-[-0.015em];
+	h1 {
+		@apply mt-8 leading-[1.3] font-semibold tracking-[-0.015em];
 
-    a {
-      @apply font-semibold;
-    }
-  }
+		a {
+			@apply font-semibold;
+		}
+	}
 
-  h2 {
-    @apply mt-7 leading-[1.4] font-medium tracking-[-0.01em];
+	h2 {
+		@apply mt-7 leading-[1.4] font-medium tracking-[-0.01em];
 
-    a {
-      @apply font-medium;
-    }
-  }
+		a {
+			@apply font-medium;
+		}
+	}
 
-  h3 {
-    @apply mt-6 leading-[1.5] tracking-[-0.005em] italic;
+	h3 {
+		@apply mt-6 leading-[1.5] tracking-[-0.005em] italic;
 
-    a {
-      @apply font-normal;
-    }
-  }
+		a {
+			@apply font-normal;
+		}
+	}
 
-  h4 {
-    @apply mt-5;
-  }
+	h4 {
+		@apply mt-5;
+	}
 
-  h5 {
-    @apply mt-4;
-  }
+	h5 {
+		@apply mt-4;
+	}
 
-  h6 {
-    @apply mt-3 text-sm;
-  }
+	h6 {
+		@apply mt-3 text-sm;
+	}
 
-  p {
-    @apply mt-3 leading-relaxed;
-  }
+	p {
+		@apply mt-3 leading-relaxed;
+	}
 
-  a {
-    @apply cursor-pointer border-b-2 border-b-accent/30 text-accent no-underline transition-colors duration-300 ease-in-out hover:border-b-accent hover:bg-accent/10 hover:dark:bg-accent/15;
-  }
+	a {
+		@apply cursor-pointer border-b-2 border-b-accent/30 text-accent no-underline transition-colors duration-300 ease-in-out hover:border-b-accent hover:bg-accent/10 hover:dark:bg-accent/15;
+	}
 
-  strong {
-    @apply font-bold;
-  }
+	strong {
+		@apply font-bold;
+	}
 
-  pre,
-  code {
-    @apply text-sm;
-  }
+	pre,
+	code {
+		@apply text-sm;
+	}
 
-  pre:not(.astro-code) code {
-    @apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-xs before:content-none after:content-none;
-  }
+	pre:not(.astro-code) code {
+		@apply relative bg-foreground/10 px-[0.3rem] py-[0.1rem] font-mono text-xs before:content-none after:content-none;
+	}
 
-  hr {
-    @apply mt-7 border-[1px] border-accent/20;
-  }
+	hr {
+		@apply mt-7 border-[1px] border-accent/20;
+	}
 
-  mark {
-    @apply bg-accent/10 font-display text-accent;
-  }
+	mark {
+		@apply bg-accent/10 font-display text-accent;
+	}
 
-  ul {
-    @apply list-outside list-disc;
-  }
+	ul {
+		@apply list-outside list-disc;
+	}
 
-  ol {
-    @apply list-outside list-decimal;
-  }
+	ol {
+		@apply list-outside list-decimal;
+	}
 
-  li {
-    @apply pt-1;
-  }
+	li {
+		@apply pt-1;
+	}
 
-  li::marker {
-    @apply text-accent/50;
-  }
+	li::marker {
+		@apply text-accent/50;
+	}
 
-  li > ul,
-  li > ol {
-    @apply pt-0 pl-4;
-  }
+	li > ul,
+	li > ol {
+		@apply pt-0 pl-4;
+	}
 
-  blockquote {
-    @apply mt-3 w-fit border-accent/30 bg-accent/5 pr-4 pl-6 italic;
-  }
+	blockquote {
+		@apply mt-3 w-fit border-accent/30 bg-accent/5 pr-4 pl-6 italic;
+	}
 
-  table {
-    @apply mt-6 mb-6 w-auto table-auto border-collapse max-sm:min-w-max;
-  }
+	table {
+		@apply mt-6 mb-6 w-auto table-auto border-collapse max-sm:min-w-max;
+	}
 
-  th,
-  td {
-    @apply max-w-md border border-accent/20 px-4 py-2;
-  }
+	th,
+	td {
+		@apply max-w-md border border-accent/20 px-4 py-2;
+	}
 
-  th {
-    @apply bg-accent/10;
-  }
+	th {
+		@apply bg-accent/10;
+	}
 
-  td {
-    @apply border-y-transparent;
-  }
+	td {
+		@apply border-y-transparent;
+	}
 
-  tr:last-child td {
-    @apply border-b-accent/20;
-  }
+	tr:last-child td {
+		@apply border-b-accent/20;
+	}
 
-  .hint {
-    @apply border-[1px] border-l-4 border-solid px-3 py-2;
-  }
+	.hint {
+		@apply border-[1px] border-l-4 border-solid px-3 py-2;
+	}
 
-  .hint.tip {
-    @apply border-success/40 bg-success/5 text-success;
-  }
+	.hint.tip {
+		@apply border-success/40 bg-success/5 text-success;
+	}
 
-  .hint.warn {
-    @apply border-warning/40 bg-warning/5 text-warning;
-  }
+	.hint.warn {
+		@apply border-warning/40 bg-warning/5 text-warning;
+	}
 
-  .hint.error {
-    @apply border-error/40 bg-error/5 text-error;
-  }
+	.hint.error {
+		@apply border-error/40 bg-error/5 text-error;
+	}
 
-  h2 .subheading-anchor::before {
-    @apply content-["2"];
-  }
+	h2 .subheading-anchor::before {
+		@apply content-["2"];
+	}
 
-  h3 .subheading-anchor::before {
-    @apply content-["3"];
-  }
+	h3 .subheading-anchor::before {
+		@apply content-["3"];
+	}
 
-  .subheading-anchor {
-    @apply relative border-0 text-foreground hover:bg-transparent hover:bg-none;
+	.subheading-anchor {
+		@apply relative border-0 text-foreground hover:bg-transparent hover:bg-none;
 
-    &::before {
-      @apply invisible absolute -left-3 text-xs text-accent opacity-0 transition-opacity duration-300 ease-in-out;
-    }
-  }
+		&::before {
+			@apply invisible absolute -left-3 text-xs text-accent opacity-0 transition-opacity duration-300 ease-in-out;
+		}
+	}
 
-  .subheading-anchor:hover {
-    &::before {
-      @apply visible opacity-100;
-    }
-  }
+	.subheading-anchor:hover {
+		&::before {
+			@apply visible opacity-100;
+		}
+	}
 }
 
 @layer utilities {
-  .table-overflow {
-    @apply w-full overflow-x-auto;
-  }
+	.table-overflow {
+		@apply w-full overflow-x-auto;
+	}
 }

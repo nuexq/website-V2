@@ -1,19 +1,13 @@
 ---
 import { siteConfig } from "@/config/site";
-import { Moon, Sun, Monitor } from "astro-feather-icons2";
-
-const themes = [
-  { name: "light", icon: Sun },
-  { name: "dark", icon: Moon },
-  { name: "system", icon: Monitor },
-];
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <footer
-  class="mx-auto prose mt-8 w-full max-w-none border-t-[1px] border-t-accent/20 py-5 text-sm flex flex-col gap-2"
+  class="mx-auto prose mt-8 flex w-full max-w-none flex-col gap-2 border-t-[1px] border-t-accent/20 py-5 text-sm"
   transition:name="footer"
 >
-  <div class="flex flex-col sm:flex-row justify-between">
+  <div class="flex flex-col justify-between sm:flex-row">
     <div>
       <a href={siteConfig.links.github} target="_blank">GitHub</a> ·
       <a href={siteConfig.links.twitter} target="_blank">Twitter</a> ·
@@ -27,103 +21,5 @@ const themes = [
       <a href="https://ctp-webr.ing/nuexq/next">→</a>
     </div>
   </div>
-  <div id="theme-selector" class="flex self-end">
-    {
-      themes.map(({ name, icon: Icon }) => (
-        <button
-          data-theme={name}
-          title={`Switch to ${name} theme`}
-          class:list={
-            "theme-button hover:bg-foreground/5 transition-colors px-2 aspect-square"
-          }
-        >
-          <Icon size="16" />
-        </button>
-      ))
-    }
-  </div>
+  <ThemeToggle class="self-end" />
 </footer>
-
-<script is:inline>
-  const themeStorageKey = "theme";
-  const themeQuery = "(prefers-color-scheme: dark)";
-  const defaultTheme = "system";
-  const mediaQuery = window.matchMedia(themeQuery);
-
-  function getStoredTheme() {
-    return localStorage.getItem(themeStorageKey) || defaultTheme;
-  }
-
-  function setStoredTheme(value) {
-    localStorage.setItem(themeStorageKey, value);
-  }
-
-  function applyThemePreference(theme) {
-    const html = document.documentElement;
-    html.classList.remove("light", "dark");
-
-    if (theme === "dark") {
-      html.classList.add("dark");
-    } else if (theme === "light") {
-      html.classList.add("light");
-    } else if (mediaQuery.matches) {
-      html.classList.add("dark");
-    }
-  }
-
-  function updateButtons(selectedTheme) {
-    const buttons = document.querySelectorAll("#theme-selector .theme-button");
-    buttons.forEach((button) => {
-      const buttonTheme = button.getAttribute("data-theme");
-      button.classList.toggle(
-        "bg-foreground/10",
-        buttonTheme === selectedTheme,
-      );
-      button.classList.toggle("font-medium", buttonTheme === selectedTheme);
-      button.classList.toggle(
-        "hover:bg-foreground/5",
-        buttonTheme !== selectedTheme,
-      );
-    });
-  }
-
-  function handleSystemThemeChange(e) {
-    if (getStoredTheme() === "system") {
-      const html = document.documentElement;
-      html.classList.toggle("dark", e.matches);
-    }
-  }
-
-  function setTheme(newTheme) {
-    setStoredTheme(newTheme);
-    applyThemePreference(newTheme);
-    updateButtons(newTheme);
-
-    if (newTheme === "system") {
-      mediaQuery.addEventListener("change", handleSystemThemeChange);
-    } else {
-      mediaQuery.removeEventListener("change", handleSystemThemeChange);
-    }
-  }
-
-  function initThemeSelector() {
-    const current = getStoredTheme();
-    applyThemePreference(current);
-    updateButtons(current);
-
-    if (current === "system") {
-      mediaQuery.addEventListener("change", handleSystemThemeChange);
-    }
-
-    const buttons = document.querySelectorAll("#theme-selector .theme-button");
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const newTheme = button.getAttribute("data-theme");
-        if (newTheme) setTheme(newTheme);
-      });
-    });
-  }
-
-  initThemeSelector();
-  document.addEventListener("astro:page-load", initThemeSelector);
-</script>

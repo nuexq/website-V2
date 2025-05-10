@@ -10,11 +10,11 @@ pre.astro-code code {
 }
 
 pre.astro-code code .line span::selection {
-	background-color: --alpha(#475266 / 20%) !important;
+  @apply dark:bg-foreground/20 bg-foreground/40;
 }
 
 pre.astro-code code .line span::-moz-selection {
-	background-color: --alpha(#475266 / 20%) !important;
+  @apply dark:bg-foreground/20 bg-foreground/40;
 }
 
 .line {

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 pre.astro-code {
-	@apply mt-4 rounded-none border-[1px] border-muted-foreground/20 !invert-100 !bg-foreground/10;
+	@apply mt-4 rounded-none border-[1px] border-muted-foreground/10 !invert-100 !bg-foreground/10;
 	padding: 20px 24px;
 }
 

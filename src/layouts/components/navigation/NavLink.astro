@@ -11,7 +11,7 @@ const isActive = currentPath === normalizedHref;
 
 <a
   href={normalizedHref}
-  class="text-bar-foreground/80 transition-colors hover:text-bar-foreground aria-[current='page']:text-bar-foreground"
+  class="text-bar-foreground/70 transition-colors hover:text-bar-foreground aria-[current='page']:text-bar-foreground"
   {...isActive ? { "aria-current": "page" } : {}}
 >
   <slot />

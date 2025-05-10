@@ -1,4 +1,4 @@
-<section class="!mt-16 min-h-96">
+<section id="comments" class="!mt-16 min-h-96">
   <script
     is:inline
     src="https://giscus.app/client.js"
@@ -16,3 +16,62 @@
     crossorigin="anonymous"
     async></script>
 </section>
+
+<script is:inline>
+  // Include the loadGiscus function and observer here
+  function loadGiscus() {
+    if (!document.querySelector("#comments")) return;
+
+    const html = document.documentElement;
+    let theme = "light";
+    if (html.classList.contains("dark")) {
+      theme = "dark";
+    } else if (html.classList.contains("system")) {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+
+    const attributes = {
+      src: "https://giscus.app/client.js",
+      "data-repo": "nuexq/website-v2",
+      "data-repo-id": "R_kgDOOEDqVg",
+      "data-category": "General",
+      "data-category-id": "DIC_kwDOOEDqVs4Cog3w",
+      "data-mapping": "og:title",
+      "data-strict": "0",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "0",
+      "data-input-position": "top",
+      "data-theme":
+        theme === "light"
+          ? "https://un2ymss4od.ufs.sh/f/sJ3Aq28e4MVDgZfrPIavFhSP5YW9iB1bjqVHrANKxlZ2ODcz"
+          : "https://un2ymss4od.ufs.sh/f/sJ3Aq28e4MVDMA2MUG9kFOfcvXx4lsZhMRBS3T1zgwQG0r2P",
+      "data-lang": "en",
+      crossorigin: "anonymous",
+      async: "",
+    };
+
+    const comments = document.querySelector("#comments");
+    comments.innerHTML = "";
+    let script = document.createElement("script");
+    Object.entries(attributes).forEach(([key, value]) =>
+      script.setAttribute(key, value),
+    );
+    comments.appendChild(script);
+  }
+
+  document.addEventListener("DOMContentLoaded", loadGiscus);
+
+  let themeChangeTimeout;
+  function debounceThemeChange() {
+    clearTimeout(themeChangeTimeout);
+    themeChangeTimeout = setTimeout(loadGiscus, 100);
+  }
+
+  const observer = new MutationObserver(debounceThemeChange);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+</script>

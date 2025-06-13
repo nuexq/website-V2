@@ -1,8 +1,8 @@
 [
   {
-    "name": "nixOS config",
+    "name": "NixOS config",
     "slug": "nixos-config",
-    "description": "My config for nixOS Hyprland, including my neovim config",
+    "description": "My config for NixOS Hyprland, including my neovim config",
     "tech": [
       "Nix"
     ]

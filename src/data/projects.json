@@ -1,5 +1,13 @@
 [
   {
+    "name": "nixOS config",
+    "slug": "nixos-config",
+    "description": "My config for nixOS Hyprland, including my neovim config",
+    "tech": [
+      "Nix"
+    ]
+  },
+  {
     "name": "tkrar",
     "slug": "tkrar",
     "description": "A fast and feature-rich CLI tool to count frequency of words in a file or a directory.",

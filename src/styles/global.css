@@ -178,6 +178,10 @@
 		@apply bg-accent/10 font-display text-accent;
 	}
 
+	del:has(mark) {
+		@apply decoration-accent;
+	}
+
 	ul {
 		@apply list-outside list-disc;
 	}

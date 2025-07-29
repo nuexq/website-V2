@@ -4,6 +4,7 @@ export const siteConfig = {
   description: "16-year-old developer passionate about programming.",
   author: "nuexq",
   links: {
+    email: "nuexqq@gmail.com",
     github: "https://github.com/nuexq",
     twitter: "https://x.com/_nuexq",
     bluesky: "https://bsky.app/profile/nuexq.bsky.social",

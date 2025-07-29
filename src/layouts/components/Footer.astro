@@ -11,11 +11,12 @@ import ThemeToggle from "./ThemeToggle.astro";
     <div>
       <a href={siteConfig.links.github} target="_blank">GitHub</a> ·
       <a href={siteConfig.links.twitter} target="_blank">Twitter</a> ·
-      <a href={siteConfig.links.bluesky} target="_blank">Bluesky</a> · <span
-        >Discord: @{siteConfig.links.discord}</span
-      >
+      <a href={siteConfig.links.bluesky} target="_blank">Bluesky</a> · <a
+        href={`mailto:${siteConfig.links.email}`}
+        target="_blank">email</a
+      > · <span>Discord: @{siteConfig.links.discord}</span>
     </div>
-    <div>
+    <div class="whitespace-nowrap">
       <a href="https://ctp-webr.ing/nuexq/previous">←</a>
       <a href="https://ctp-webr.ing/">ctp webring</a>
       <a href="https://ctp-webr.ing/nuexq/next">→</a>

@@ -6,7 +6,7 @@ pre.astro-code {
 }
 
 pre.astro-code code {
-	@apply !text-xs block w-fit;
+	@apply !text-xs block w-full;
 }
 
 pre.astro-code code .line span::selection {

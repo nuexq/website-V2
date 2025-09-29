@@ -7,7 +7,7 @@ export const siteConfig = {
     email: "nuexqq@gmail.com",
     github: "https://github.com/nuexq",
     twitter: "https://x.com/_nuexq",
-    bluesky: "https://bsky.app/profile/nuexq.bsky.social",
+    bluesky: "https://bsky.app/profile/nuexq.net",
     discord: "nuexq",
   },
 };

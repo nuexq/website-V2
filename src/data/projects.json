@@ -28,7 +28,7 @@
     "slug": "website-V2",
     "description": "V2 of my website, build with Astro",
     "type": "demo",
-    "link": "https://nuexq.vercel.app",
+    "link": "https://nuexq.net",
     "tech": ["Typescript", "Astro", "Tailwindcss"]
   },
   {

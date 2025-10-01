@@ -9,11 +9,11 @@
     "format": "bunx --bun prettier --write ."
   },
   "dependencies": {
-    "@astrojs/mdx": "4.2.0",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/mdx": "4.3.6",
+    "@astrojs/sitemap": "3.6.0",
     "@shikijs/transformers": "^3.2.1",
     "@tailwindcss/vite": "^4.0.9",
-    "astro": "5.5.2",
+    "astro": "5.14.1",
     "astro-feather-icons2": "^1.0.0",
     "astro-opengraph-images": "^1.12.3",
     "astro-seo": "^0.8.4",

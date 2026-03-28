@@ -1,5 +1,13 @@
 [
   {
+    "name": "nupu-8",
+    "slug": "nupu-8",
+    "description": "An 8-bit virtual CPU with a fully custom architecture",
+    "tech": [
+      "Rust"
+    ]
+  },
+  {
     "name": "NixOS config",
     "slug": "nixos-config",
     "description": "My config for NixOS Hyprland, including my neovim config",
@@ -13,7 +21,9 @@
     "description": "A fast and feature-rich CLI tool to count frequency of words in a file or a directory.",
     "type": "crate",
     "link": "https://crates.io/crates/tkrar",
-    "tech": ["Rust"]
+    "tech": [
+      "Rust"
+    ]
   },
   {
     "name": "Conway's Game of Life",
@@ -21,7 +31,12 @@
     "description": "A Conway's Game of Life implementation using WebGPU and React/Vite.",
     "type": "demo",
     "link": "https://game-of-life-henna-zeta.vercel.app/",
-    "tech": ["Typescript", "WebGPU", "React", "Vite"]
+    "tech": [
+      "Typescript",
+      "WebGPU",
+      "React",
+      "Vite"
+    ]
   },
   {
     "name": "This Website",
@@ -29,13 +44,19 @@
     "description": "V2 of my website, build with Astro",
     "type": "demo",
     "link": "https://nuexq.net",
-    "tech": ["Typescript", "Astro", "Tailwindcss"]
+    "tech": [
+      "Typescript",
+      "Astro",
+      "Tailwindcss"
+    ]
   },
   {
     "name": "My dotfiles",
     "slug": "dotfiles",
     "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config, and other tools and apps.",
-    "tech": ["Bash"]
+    "tech": [
+      "Bash"
+    ]
   },
   {
     "name": "React Projects",
@@ -43,6 +64,11 @@
     "description": "Collection of open-source projects, components, React hooks made with React.",
     "type": "demo",
     "link": "https://nuexq.github.io/React-Projects/",
-    "tech": ["JavaScript", "React", "Vite", "Tailwindcss"]
+    "tech": [
+      "JavaScript",
+      "React",
+      "Vite",
+      "Tailwindcss"
+    ]
   }
 ]

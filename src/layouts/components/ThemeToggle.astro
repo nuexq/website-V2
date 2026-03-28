@@ -1,10 +1,10 @@
 ---
-import { Moon, Sun, Monitor } from "astro-feather-icons2";
+import { Icon } from 'astro-icon/components'
 
 const themes = [
-  { name: "light", icon: Sun },
-  { name: "dark", icon: Moon },
-  { name: "system", icon: Monitor },
+  { name: "light", icon: "lucide:sun" },
+  { name: "dark", icon: "lucide:moon" },
+  { name: "system", icon: "lucide:monitor" },
 ];
 
 interface Props {
@@ -15,7 +15,7 @@ const { class: className } = Astro.props;
 
 <div id="theme-selector" class={`flex ${className}`}>
   {
-    themes.map(({ name, icon: Icon }) => (
+    themes.map(({ name, icon }) => (
       <button
         data-theme={name}
         title={`Switch to ${name} theme`}
@@ -23,7 +23,7 @@ const { class: className } = Astro.props;
           "theme-button hover:bg-foreground/5 transition-colors px-2 aspect-square cursor-pointer"
         }
       >
-        <Icon size="16" />
+        <Icon name={icon} width="16" height="16" />
       </button>
     ))
   }

@@ -3,6 +3,7 @@ import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
+import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import {
   transformerNotationDiff,
@@ -70,5 +71,6 @@ export default defineConfig({
       },
       render: fnRender,
     }),
+    icon(),
   ],
 });

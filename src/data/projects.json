@@ -51,14 +51,6 @@
     ]
   },
   {
-    "name": "My dotfiles",
-    "slug": "dotfiles",
-    "description": "My dotfiles for Arch Linux Hyprland, including my Neovim config, and other tools and apps.",
-    "tech": [
-      "Bash"
-    ]
-  },
-  {
     "name": "React Projects",
     "slug": "react-projects",
     "description": "Collection of open-source projects, components, React hooks made with React.",

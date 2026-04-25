@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Default from "@/layouts/Default.astro";
 import Comments from "./_components/Comments.astro";
 import Tag from "./_components/Tag.astro";
@@ -9,25 +9,22 @@ export async function getStaticPaths() {
   const posts = await getCollection("writing");
 
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
+    props: { post },
   }));
 }
 
-const { slug } = Astro.params;
-const post: CollectionEntry<"writing"> | undefined = await getEntry(
-  "writing",
-  slug!,
-);
+const { post } = Astro.props;
 
 if (!post) {
   return Astro.redirect("/404");
 }
 
 const { title, description, date, tags } = post.data;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 if (!date) {
-  console.error(`Post ${slug} is missing a date!`);
+  console.error(`Post ${post.id} is missing a date!`);
   return Astro.redirect("/404");
 }
 
@@ -42,7 +39,7 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <div slot="header" class="text-sm flex justify-between items-center !mt-3">
+  <div slot="header" class="text-sm flex justify-between items-center mt-3!">
     <div>
       <time
         datetime={isoStringDate}

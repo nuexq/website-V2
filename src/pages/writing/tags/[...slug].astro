@@ -31,7 +31,7 @@ let layoutProps = {
 ---
 
 <Default {...layoutProps}>
-  <ul class="mt-5 flex flex-col gap-6 !p-0">
+  <ul class="mt-5 flex flex-col gap-6 p-0!">
     {
       sortedPosts.map((post) => {
         const { title, date, description, tags } = post.data;
@@ -43,7 +43,7 @@ let layoutProps = {
           <WritingCard
             title={title}
             description={description}
-            slug={post.slug}
+            id={post.id}
             isoStringDate={isoStringDate}
             formattedDate={formattedDate}
             tags={tags ?? []}

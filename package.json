@@ -9,12 +9,12 @@
     "format": "bunx --bun prettier --write ."
   },
   "dependencies": {
-    "@astrojs/mdx": "4.3.6",
-    "@astrojs/sitemap": "3.6.0",
+    "@astrojs/mdx": "5.0.4",
+    "@astrojs/sitemap": "3.7.2",
     "@iconify-json/lucide": "^1.2.100",
     "@shikijs/transformers": "^3.23.0",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "5.14.1",
+    "astro": "6.1.9",
     "astro-icon": "^1.1.5",
     "astro-opengraph-images": "^1.14.3",
     "astro-seo": "^0.8.4",
